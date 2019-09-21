@@ -1,17 +1,16 @@
-
-".container" : {
-
+'#accuille_logo': {
+  top: "10%",
+  image: "/images/logo_cmpl_screens.png",
 }
 
 '#labelCode': {
   top: "15%",
-  text: "Veuiller scanner votre QR Code pour continuer.      ",
+  text: L("enregi_scan_code"),
   width: "80%",
 }
 
 '#scanneButton': {
   titre: L("enregi_scanner"),
-  icon: "/images/icn_scan.png",
-  color: Alloy.CFG.colors.buttons.lightGrey
-
+  icon: "/images/icn_scan_green.png",
+  color: Alloy.CFG.colors.lightGrey
 }

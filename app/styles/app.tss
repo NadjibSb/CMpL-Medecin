@@ -49,14 +49,6 @@ overrode the settings with other TSS, XML, or JS settings:
 	width: Ti.Platform.displayCaps.platformWidth
 }
 
-".wFill":{
-	width: Ti.UI.FILL,
-}
-
-".hFill":{
-	height: Ti.UI.FILL,
-}
-
 ".wSize":{
 	width: Ti.UI.SIZE,
 }
@@ -65,15 +57,6 @@ overrode the settings with other TSS, XML, or JS settings:
 	height: Ti.UI.SIZE,
 }
 
-".Fill":{
-	width: Ti.UI.FILL,
-	height: Ti.UI.FILL
-}
-
-".Size":{
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE
-}
 //positions
 ".t0":{
 	top: 0
@@ -144,24 +127,24 @@ overrode the settings with other TSS, XML, or JS settings:
 // Buttons
 
 ".primaryButton":{
-	backgroundColor: Alloy.CFG.colors.buttons.primaryColor
+	backgroundColor: Alloy.CFG.colors.primaryColor
 }
 
 ".disabledButton":{
-	backgroundColor: Alloy.CFG.colors.buttons.disabled
+	backgroundColor: Alloy.CFG.colors.disabled
 }
 
 ".greenButton":{
-	backgroundColor: Alloy.CFG.colors.buttons.green
+	backgroundColor: Alloy.CFG.colors.green
 }
 
 
 ".purpleButton":{
-	backgroundColor: Alloy.CFG.colors.buttons.purple
+	backgroundColor: Alloy.CFG.colors.purple
 }
 
 ".lightgrey":{
-	backgroundColor: Alloy.CFG.colors.buttons.lightGrey
+	backgroundColor: Alloy.CFG.colors.lightGrey
 }
 
 // Fonts
@@ -238,20 +221,6 @@ overrode the settings with other TSS, XML, or JS settings:
     color: "white",
     height: 46,
     borderRadius: 5,
-    left: 25,
-    right: 25,
-    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-    font: {
-        fontSize: 16,
-        fontWeight: "semibold"
-    },
-
-}
-".communButtonImage" : {
-    zIndex: 100,
-    color: "white",
-    height: 46,
-    borderRadius: 5,
     left: "10%",
     right: "10%",
     textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
@@ -259,28 +228,25 @@ overrode the settings with other TSS, XML, or JS settings:
         fontSize: 16,
         fontWeight: "semibold"
     },
+
 }
 
+
 ".navBar":{
-	backgroundColor: Alloy.CFG.colors.buttons.primaryColor
+	backgroundColor: Alloy.CFG.colors.primaryColor
 }
 
 ".imageInsideButton":{
     left: 15
 }
 
-".imageInsideButtonCentre":{
-  left : "30%",
-}
+
 
 ".lebelInsideButton":{
     left: 67,
     color: "#ffffff"
 }
-".lebelInsideButtonCenter":{
-    left :"40%",
-    color: Alloy.CFG.colors.buttons.primaryColor
-}
+
 ".iosMarginTop[if=Alloy.Globals.isIOS]" : {
     top: 20
 }
@@ -298,10 +264,6 @@ overrode the settings with other TSS, XML, or JS settings:
 "Window[platform=android]":{
     theme : 'Theme.AppCompat.NoTitleBar',
     top: 25
-}
-'#accuille_logo': {
-  top: "10%",
-  image: "/images/logo_cmpl_screens.png",
 }
 
 '.containerDonnee': {

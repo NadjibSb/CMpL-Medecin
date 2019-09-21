@@ -1,9 +1,27 @@
 
-".container" : {
-
-}
 
 '#viewButton': {
   top: "5%",
   height: 50
+}
+
+".communButtonImage" : {
+    zIndex: 100,
+    color: "white",
+    height: 46,
+    borderRadius: 5,
+    left: "10%",
+    right: "10%",
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    font: {
+        fontSize: 16,
+        fontWeight: "semibold"
+    },
+}
+".lebelInsideButtonCenter":{
+    left : 16,
+    color: Alloy.CFG.colors.primaryColor
+}
+
+'.imageInsideButtonCentre': {
 }

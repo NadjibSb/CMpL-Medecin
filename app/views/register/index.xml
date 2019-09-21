@@ -3,36 +3,35 @@
 		<View class="vLayout" >
 			<Widget src="customNavBar" id="navBar" class="navBar" ></Widget>
 			<View class="vLayout">
-        <View id="scrollableViewContainer" height="80%" >
-          <ScrollableView id="scrollableView" onScrollend="onScrollend" scrollingEnabled="false">
-            <Require src="/register/code"></Require>
-            <Require id="donneeComponent" src="/register/donnee" onChooseWilaya="chooseWilaya"></Require>
-            <Require src="/register/info"></Require>
-          </ScrollableView>
-        </View>
-        <View id="treePoint" class="hSize wFill">
-      		<View class="point" id="point1">
-              <Label class="label_enreg boldFont">1</Label>
-          </View>
-        	<View class="point" id="point2">
-            <Label class="label_enreg">2</Label>
-          </View>
-        	<View class="point" id="point3">
-            <Label class="label_enreg">3</Label>
-          </View>
-        </View>
-        <Button id="btStart" class="communButtonImage primaryButton" onClick="btnClicked"></Button>
-      </View>
+                <View id="scrollableViewContainer" height="80%" >
+                  <ScrollableView id="scrollableView" onScrollend="onScrollend" scrollingEnabled="false">
+                    <Require src="/register/code"></Require>
+                    <Require id="donneeComponent" src="/register/donnee" onChooseWilaya="chooseWilaya"></Require>
+                    <Require src="/register/info"></Require>
+                  </ScrollableView>
+                </View>
+                <View id="treePoint" class="hSize wFill">
+              		<View class="point" id="point1">
+                      <Label class="label_enreg boldFont">1</Label>
+                    </View>
+                	<View class="point" id="point2">
+                        <Label class="label_enreg">2</Label>
+                    </View>
+                	<View class="point" id="point3">
+                        <Label class="label_enreg">3</Label>
+                    </View>
+                </View>
+                <Button id="btStart" class="CommunButton primaryButton" onClick="btnClicked"></Button>
+            </View>
 		</View>
-    <View id="pickerContainer" class="wFill vLayout" >
-      <View id="viewButton"class="wFill lightgrey" >
-        <Button id="buttonDone" onClick="wilayaChoosed"></Button>
-      </View>
-      <Picker id="picker" onChange="wilayaChanged">
-          <PickerColumn id="wilayaColumn">
-
-          </PickerColumn>
-      </Picker>
-    </View>
+        <View id="pickerContainer" class="wFill vLayout" >
+          <View id="viewButton"class="wFill lightgrey" >
+            <Button id="buttonDone" onClick="wilayaChoosed"></Button>
+          </View>
+          <Picker id="picker" onChange="wilayaChanged">
+              <PickerColumn id="wilayaColumn">
+              </PickerColumn>
+          </Picker>
+        </View>
 	</Window>
 </Alloy>

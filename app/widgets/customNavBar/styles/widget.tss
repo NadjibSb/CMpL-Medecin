@@ -61,5 +61,5 @@
 
 }
 '#titleWindow[platform=ios]': {
-  bottom:5,
+  bottom:10,
 }

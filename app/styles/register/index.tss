@@ -10,7 +10,7 @@
 ".point" :{
 	width: 30,
 	height: 30,
-	backgroundImage: "/images/icn_ellipse_orange.png",
+	backgroundImage: "/images/icn_ellipse_green.png",
 	opacity : 0.5
 },
 "#point1": {

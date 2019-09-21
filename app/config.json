@@ -1,13 +1,11 @@
 {
     "global": {
         "colors": {
-            "buttons": {
-                "primaryColor": "#E65D3A",
-                "green": "#58B783",
-                "purple": "#B665A5",
-                "lightGrey": "#E3E3E3",
-                "disabled": "#B7B7B7"
-            },
+            "primaryColor": "#58b783",
+            "green": "#58B783",
+            "purple": "#B665A5",
+            "lightGrey": "#F4F4F4",
+            "disabled": "#B7B7B7",
             "fonts": {
                 "primary": "#000",
                 "black": "#000",
@@ -15,24 +13,24 @@
                 "red": "#E35956",
                 "placeholder": "#5A5A5A"
             },
-              "design": {
+            "design": {
                 "Primary": "#EE7151"
             }
         },
         "sizes": {
             "titlebarHeight": 64
         },
-        "fonts":{
-            "Simple" : "Lato-Black",
-            "Italic" : "Lato-BlackItalic",
-            "Bold" : "Lato-Bold",
-            "BItalic" : "Lato-BoldItalic",
-            "Light" : "Lato-Light",
-            "LightItalic" : "Lato-LightItalic",
-            "Regular" : "Lato-Regular",
-            "RItalic" : "Lato-RegularItalic",
-            "Thin" : "Lato-Thin",
-            "TItalic" : "Lato-ThinItalic"
+        "fonts": {
+            "Simple": "Lato-Black",
+            "Italic": "Lato-BlackItalic",
+            "Bold": "Lato-Bold",
+            "BItalic": "Lato-BoldItalic",
+            "Light": "Lato-Light",
+            "LightItalic": "Lato-LightItalic",
+            "Regular": "Lato-Regular",
+            "RItalic": "Lato-RegularItalic",
+            "Thin": "Lato-Thin",
+            "TItalic": "Lato-ThinItalic"
         }
     },
     "env:development": {},
