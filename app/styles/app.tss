@@ -49,6 +49,12 @@ overrode the settings with other TSS, XML, or JS settings:
 	width: Ti.Platform.displayCaps.platformWidth
 }
 
+"Label":{
+    font :{
+		fontFamily: Alloy.CFG.fonts.Regular
+	}
+}
+
 ".wSize":{
 	width: Ti.UI.SIZE,
 }
@@ -266,21 +272,7 @@ overrode the settings with other TSS, XML, or JS settings:
     top: 25
 }
 
-'.containerDonnee': {
-  top: "10%",
-  left: "10%",
-  right : "10%",
-  height: "8%",
-  borderWidth: 0.3,
-  borderColor: 'gray',
-  borderRadius: 5,
-}
-
 '#textFieldNom': {
   hintText : "Etablissement médical",
 	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
-}
-".textFeildRegistre":{
-	right: "10%",
-	left: "5%"
 }

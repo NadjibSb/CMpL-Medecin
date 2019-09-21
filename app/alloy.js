@@ -13,6 +13,7 @@
 
 Alloy.Globals.WILAYA_NAME = "WILAYA_NAME";
 Alloy.Globals.MEDICAL_NAME = "MEDICAL_NAME";
+Alloy.Globals.AUTHCODE = "AUTH_CODE";
 Alloy.Globals.setWilaya = (wilaya)=>{
   Ti.App.Properties.setString(Alloy.Globals.WILAYA_NAME,wilaya)
 }
@@ -27,4 +28,12 @@ Alloy.Globals.setMedical = function setMedical(medical){
 
 Alloy.Globals.getMedical = ()=>{
   return Ti.App.Properties.getString(Alloy.Globals.MEDICAL_NAME)
+}
+
+Alloy.Globals.getCode = ()=>{
+  return Ti.App.Properties.getString(Alloy.Globals.AUTHCODE)
+}
+
+Alloy.Globals.setCode = (code)=>{
+  Ti.App.Properties.setString(Alloy.Globals.AUTHCODE,code)
 }

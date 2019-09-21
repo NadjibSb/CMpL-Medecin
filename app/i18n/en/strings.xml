@@ -20,5 +20,14 @@
 	<string name="enregi_scanner">Scanner</string>
 	<string name="enregi_continuer">Continuer</string>
 	<string name="enregi_scan_code">Veuiller scanner votre QR Code pour continuer.</string>
+	<string name="enregi_fill_donnee">Veuiller remplire les champs suivant.</string>
+
+
+    <!-- Standards -->
+	<string name="wilaya">Wilaya</string>
+
+
+    <!-- Alert Dialog -->
+	<string name="alertDialog_fill_regis_data">Veuillez renseigner votre wilaya ainsi que l’établissement médical que vous visitez.</string>
 
 </Ressources>

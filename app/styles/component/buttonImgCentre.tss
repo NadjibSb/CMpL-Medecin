@@ -16,7 +16,7 @@
     font: {
         fontSize: 16,
         fontWeight: "semibold"
-    },
+    }
 }
 ".lebelInsideButtonCenter":{
     left : 16,

@@ -1,39 +1,55 @@
-
-".container" : {
-
+'#accuille_logo': {
+    top: "10%",
+    image: "/images/logo_cmpl_screens.png",
 }
+
 
 '#labelCode': {
   top: "15%",
-  text: "Veuiller remplire les champs suivant      ",
+  text: L('enregi_fill_donnee'),
   width: "80%",
 }
 
-
-
+'.containerDonnee': {
+  top: "10%",
+  left: "10%",
+  right : "10%",
+  height: 50,
+  borderWidth: 0.3,
+  borderColor: 'gray',
+  borderRadius: 5,
+}
 
 '#labelWilaya': {
-  text: "Wilaya",
+  text: L("wilaya"),
   font: {
     fontSize: 16
   },
-  left: "5%",
-  color: "#929292",
-
-
-
+  left: 16,
+  color: Alloy.CFG.colors.fonts.placeholder
 }
 
 '#localisationImage': {
   image: "/images/icn_localisation.png",
-  right : "5%"
+  right : 16
 }
+
 
 '#meubleImage': {
   image: "/images/icn_hospital.png",
-  right : "5%"
+  right : 16
 }
 
 '#containerDonnee': {
   top: "5%"
+}
+
+'#textFieldNom': {
+    autocorrect: false,
+    autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
+    hintTextColor: Alloy.CFG.colors.fonts.placeholder,
+    backgroundColor : 'transparent',
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	right: 48,
+	left: 16,
 }

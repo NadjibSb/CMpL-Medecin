@@ -17,6 +17,13 @@ var currentWilaya = "Wilaya",
 
 // CONSTRUCTOR ------------------------------------------------------------
 (function contructor(){
+    if (Alloy.Globals.getCode()) {
+        if (Alloy.Globals.getWilaya() && Alloy.Globals.getMedical() ) {
+            $.scrollableView.currentPage = 2;
+        }else {
+            $.scrollableView.currentPage = 1;
+        }
+    }
     $.treePoint.children[ $.scrollableView.currentPage ].opacity = 1;
     remplireWilaya();
 })();
@@ -36,14 +43,14 @@ function remplireWilaya(){
 }
 
 function medicalCheck(callback){
-    var medical = $.donneeComponent.textFieldNom.getValue()
-    var wilaya = $.donneeComponent.labelWilaya.text
-    if (medical == "" || wilaya == "Wilaya") {
-        alertDialog.show("Veuillez renseigner votre wilaya ainsi que l’établissement médical que vous visitez.")
-    }else{
-        Ti.App.Properties.setString(Alloy.Globals.WILAYA_NAME,wilaya)
-        Ti.App.Properties.setString(Alloy.Globals.MEDICAL_NAME,medical)
+    var data = $.donneeComponent.checkData();
+    if (data) {
+        log(data.wilaya+ ' - '+ data.medical, 'medicalCheck');
+        Alloy.Globals.setWilaya(data.wilaya);
+        Alloy.Globals.setMedical(data.medical);
         _.isFunction( callback ) && callback();
+    }else{
+        alertDialog.show(L("alertDialog_fill_regis_data"));
     }
 }
 

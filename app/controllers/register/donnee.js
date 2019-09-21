@@ -1,9 +1,28 @@
-// Arguments passed into this controller can be accessed via the `$.args` object directly or:
-var args = $.args;
-var labelWilaya = $.labelWilaya
-// function
-function choiceWilaya(e){
-  $.trigger("chooseWilaya",labelWilaya)
+const log = require( 'services/logger' )( {
+		tag: "Register donnee",
+		hideLog: false
+	} );
+
+
+
+// PUBLIC INTERFACE
+_.extend($, {
+    checkData: checkData
+});
+
+// PRIVATE FUNCTIONS ------------------------------------------------------------
+
+function checkData(){
+    var medical = $.textFieldNom.value || "";
+    var wilaya = $.labelWilaya.text;
+    if( medical.length >0 && wilaya != L('wilaya')){
+        return { wilaya: wilaya , medical: medical}
+    }else return null
 }
 
-// traitement
+
+// EVENTS Handler ---------------------------------------------------------------
+function choiceWilaya(e){
+  $.trigger("chooseWilaya",$.labelWilaya);
+  $.labelWilaya.color = 'black'
+}
