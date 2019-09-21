@@ -1,0 +1,6 @@
+<Alloy>
+	<View id="viewButton" class="communButtonImage" onClick="buttonClick" >
+            <ImageView id="image_button" class="imageInsideButtonCentre" ></ImageView>
+            <Label  id="label" class="lebelInsideButtonCenter boldFont"></Label>
+    </View>
+</Alloy>

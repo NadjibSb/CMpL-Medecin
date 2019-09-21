@@ -9,3 +9,25 @@
 // object. For example:
 //
 // Alloy.Globals.someGlobalFunction = function(){};
+
+
+Alloy.Globals.WILAYA_NAME = "WILAYA_NAME";
+Alloy.Globals.MEDICAL_NAME = "MEDICAL_NAME";
+Alloy.Globals.LANGUE = "LANGUE"
+Alloy.Globals.setWilaya = (wilaya)=>{
+  Ti.App.Properties.setString(Alloy.Globals.WILAYA_NAME,wilaya)
+}
+
+Alloy.Globals.getWilaya = ()=>{
+  return Ti.App.Properties.getString(Alloy.Globals.WILAYA_NAME)
+}
+
+Alloy.Globals.setMedical = function setMedical(medical){
+  Ti.App.Properties.setString(Alloy.Globals.MEDICAL_NAME,medical)
+  Ti.App.Properties.setString(Alloy.Globals.LANGUE,langue)
+}
+
+Alloy.Globals.getMedical = ()=>{
+  return Ti.App.Properties.getString(Alloy.Globals.MEDICAL_NAME)
+  Ti.App.Properties.getString(Alloy.Globals.LANGUE)
+}

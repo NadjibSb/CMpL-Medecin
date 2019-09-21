@@ -1,9 +1,9 @@
 // DEPENDENCIES
-var log = require( 'utility/logger' )( {
+var log = require( 'services/logger' )( {
 		tag: "HttpManager",
 		hideLog: false
 	} ),
-	responseHandler = require( 'utility/httpResponseHandler' );
+	responseHandler = require( 'services/httpResponseHandler' );
 
 
 

@@ -1,0 +1,29 @@
+
+".container" : {
+
+}
+
+'#picker': {
+
+  selectionIndicator: true,
+  useSpinner: true,
+  bottom: 0
+}
+
+'#viewButton': {
+  height: "15%"
+}
+
+'#buttonDone': {
+  right: "2%",
+  title: "Done"
+}
+
+
+'#pickerContainer': {
+  height: "40%",
+  bottom: 0,
+  backgroundColor: 'white',
+  visible: false,
+  zIndex: 200,
+}

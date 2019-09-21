@@ -1,0 +1,24 @@
+
+".container" : {
+
+}
+
+'#containerDonnee': {
+  top: "5%"
+}
+
+'#containerPicker': {
+  top: "5%"
+}
+
+'#labelPicker': {
+  left : "5%"
+}
+
+'#imagePicker': {
+  right: "5%"
+}
+
+'#ImageText': {
+  right: "5%"
+}

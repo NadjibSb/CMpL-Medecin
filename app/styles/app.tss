@@ -24,3 +24,301 @@ overrode the settings with other TSS, XML, or JS settings:
 }
 
 */
+
+
+"*":{
+	font :{
+		fontFamily: "Lato",
+		fontSize: 18,
+	}
+}
+
+//TopBar
+".noTopBar[if=Alloy.Globals.isIOS]" : {
+    top: 20
+}
+
+".cmpl_logo":{
+	backgroundColor: "red",
+	height: 48,
+	width: 180
+}
+
+// Sizes
+"Window": {
+	width: Ti.Platform.displayCaps.platformWidth
+}
+
+".wFill":{
+	width: Ti.UI.FILL,
+}
+
+".hFill":{
+	height: Ti.UI.FILL,
+}
+
+".wSize":{
+	width: Ti.UI.SIZE,
+}
+
+".hSize":{
+	height: Ti.UI.SIZE,
+}
+
+".Fill":{
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL
+}
+
+".Size":{
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE
+}
+//positions
+".t0":{
+	top: 0
+}
+
+".l0":{
+	left: 0
+}
+
+".b0":{
+	bottom: 0
+}
+
+".r0":{
+	right: 0
+}
+
+//layouts
+".vLayout":{
+    layout: 'vertical'
+}
+
+".hLayout":{
+    layout: 'horizontal'
+}
+
+//Separators
+".hSeparator":{
+	height: "1",
+	width: Ti.UI.FILL,
+}
+
+".vSeparator":{
+	width: "1",
+	height: Ti.UI.FILL
+}
+
+// Background colors
+".bgBlue":{
+	backgroundColor: "blue"
+}
+
+".bgWhite":{
+	backgroundColor: "white"
+}
+
+".bgGold":{
+	backgroundColor: "yellow"
+}
+
+// Text colors
+".txtWhite":{
+	color: "white"
+}
+
+".txtBlack":{
+	color: "black"
+}
+
+".txtGold":{
+	color: "yellow"
+}
+
+".txtBlue":{
+	color: "blue"
+}
+
+// Buttons
+
+".primaryButton":{
+	backgroundColor: Alloy.CFG.colors.buttons.primaryColor
+}
+
+".disabledButton":{
+	backgroundColor: Alloy.CFG.colors.buttons.disabled
+}
+
+".greenButton":{
+	backgroundColor: Alloy.CFG.colors.buttons.green
+}
+
+
+".purpleButton":{
+	backgroundColor: Alloy.CFG.colors.buttons.purple
+}
+
+".lightgrey":{
+	backgroundColor: Alloy.CFG.colors.buttons.lightGrey
+}
+
+// Fonts
+".txtBlack":{
+	color: Alloy.CFG.colors.Fonts.black
+}
+
+".txtPrimary":{
+	color: Alloy.CFG.colors.fonts.primary
+}
+
+".txtPlaceholder":{
+	color: Alloy.CFG.colors.fonts.placeholder
+}
+
+".txtYellow":{
+	color: Alloy.CFG.colors.fonts.yellow
+}
+
+".txtRed":{
+	color: Alloy.CFG.colors.fonts.red
+}
+".blackFont":{
+	font :{
+		fontFamily: Alloy.CFG.fonts.Simple
+	}
+}
+".italicFont":{
+	font :{
+		fontFamily: Alloy.CFG.fonts.Italic
+	}
+}
+".boldFont":{
+	font :{
+		fontFamily: Alloy.CFG.fonts.Bold
+	}
+}
+".boldItalicFont":{
+	font :{
+		fontFamily: Alloy.CFG.fonts.BItalic
+	}
+}
+".lightFont":{
+	font :{
+		fontFamily: Alloy.CFG.fonts.Light
+	}
+}
+".lightItalicFont":{
+	font :{
+		fontFamily: Alloy.CFG.fonts.LightItalic
+	}
+}
+".blackFont":{
+	font :{
+		fontFamily: Alloy.CFG.fonts.Regular
+	}
+}
+".blackFont":{
+	font :{
+		fontFamily: Alloy.CFG.fonts.RItalic
+	}
+}
+".blackFont":{
+	font :{
+		fontFamily: Alloy.CFG.fonts.Thin
+	}
+}
+".blackFont":{
+	font :{
+		fontFamily: Alloy.CFG.fonts.TItalic
+	}
+}
+".CommunButton" : {
+    color: "white",
+    height: 46,
+    borderRadius: 5,
+    left: 25,
+    right: 25,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    font: {
+        fontSize: 16,
+        fontWeight: "semibold"
+    },
+
+}
+".communButtonImage" : {
+    zIndex: 100,
+    color: "white",
+    height: 46,
+    borderRadius: 5,
+    left: "10%",
+    right: "10%",
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    font: {
+        fontSize: 16,
+        fontWeight: "semibold"
+    },
+}
+
+".navBar":{
+	backgroundColor: Alloy.CFG.colors.buttons.primaryColor
+}
+
+".imageInsideButton":{
+    left: 15
+}
+
+".imageInsideButtonCentre":{
+  left : "30%",
+}
+
+".lebelInsideButton":{
+    left: 67,
+    color: "#ffffff"
+}
+".lebelInsideButtonCenter":{
+    left :"40%",
+    color: Alloy.CFG.colors.buttons.primaryColor
+}
+".iosMarginTop[if=Alloy.Globals.isIOS]" : {
+    top: 20
+}
+".iOSwindowTop[if=Alloy.Globals.isIOS]":{
+    top: 25
+}
+"Window[platform=ios]":{
+  navBarHidden: "true",
+}
+
+".androidNoActionBar[if=Alloy.Globals.isAndroid]": {
+    theme: "Theme.AppCompat.NoTitleBar"
+}
+
+"Window[platform=android]":{
+    theme : 'Theme.AppCompat.NoTitleBar',
+    top: 25
+}
+'#accuille_logo': {
+  top: "10%",
+  image: "/images/logo_cmpl_screens.png",
+}
+
+'.containerDonnee': {
+  top: "10%",
+  left: "10%",
+  right : "10%",
+  height: "8%",
+  borderWidth: 0.3,
+  borderColor: 'gray',
+  borderRadius: 5,
+}
+
+'#textFieldNom': {
+  hintText : "Etablissement médical",
+	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
+}
+".textFeildRegistre":{
+	right: "10%",
+	left: "5%"
+}

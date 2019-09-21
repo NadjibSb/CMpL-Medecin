@@ -1,0 +1,17 @@
+
+".container" : {
+
+}
+
+'#labelCode': {
+  top: "15%",
+  text: "Veuiller scanner votre QR Code pour continuer.      ",
+  width: "80%",
+}
+
+'#scanneButton': {
+  titre: L("enregi_scanner"),
+  icon: "/images/icn_scan.png",
+  color: Alloy.CFG.colors.buttons.lightGrey
+
+}

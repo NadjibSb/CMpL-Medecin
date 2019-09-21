@@ -1,0 +1,39 @@
+
+".container" : {
+
+}
+
+'#labelCode': {
+  top: "15%",
+  text: "Veuiller remplire les champs suivant      ",
+  width: "80%",
+}
+
+
+
+
+'#labelWilaya': {
+  text: "Wilaya",
+  font: {
+    fontSize: 16
+  },
+  left: "5%",
+  color: "#929292",
+
+
+
+}
+
+'#localisationImage': {
+  image: "/images/icn_localisation.png",
+  right : "5%"
+}
+
+'#meubleImage': {
+  image: "/images/icn_hospital.png",
+  right : "5%"
+}
+
+'#containerDonnee': {
+  top: "5%"
+}

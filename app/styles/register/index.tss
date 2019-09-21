@@ -1,0 +1,61 @@
+
+".container" : {
+
+}
+
+"#treePoint" : {
+    bottom: 20,
+},
+
+".point" :{
+	width: 30,
+	height: 30,
+	backgroundImage: "/images/icn_ellipse_orange.png",
+	opacity : 0.5
+},
+"#point1": {
+	left : "35%"
+},
+"#point2" : {
+	left : "48%"
+},
+"#point3" : {
+	left : "61%"
+},
+
+'.label_enreg': {
+  color: 'white'
+}
+
+'#btStart': {
+  title: L("enregi_continuer")
+}
+
+'#navBar': {
+  title : L("enregi_title"),
+  zIndex: 200,
+}
+
+'#picker': {
+
+  selectionIndicator: true,
+  useSpinner: true,
+  bottom: 0
+}
+
+'#viewButton': {
+  height: "15%"
+}
+
+'#buttonDone': {
+  right: "2%",
+  title: "Done"
+}
+
+'#pickerContainer': {
+  height: "40%",
+  bottom: 0,
+  backgroundColor: 'white',
+  visible: false,
+  zIndex: 200,
+}

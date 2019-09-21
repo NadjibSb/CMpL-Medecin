@@ -1,19 +1,19 @@
-const log = require('/utility/logger')({
+const log = require('/services/logger')({
   tag : "stringUtil",
   hidelag : false
 });
 
 // PUBLIC --------------------------------------------------------------------
 
-/*  *
+/**  *
     * change the font and the color of "textToAdd"
     ** args{
-            color = '#AAA',
-            font = font{
-                        fontSize:16
-                    },
-            underline = true
-        }
+    *        color = '#AAA',
+    *        font = font{
+    *                    fontSize:16
+    *                },
+    *        underline = true
+    *    }
 */
 exports.labelStyling = function(label, textToAdd,args){
     let attributes = [],

@@ -1,10 +1,48 @@
 {
-	"global": {},
-	"env:development": {},
-	"env:test": {},
-	"env:production": {},
-	"os:android": {},
-	"os:ios": {},
-	"os:windows": {},
-	"dependencies": {}
+    "global": {
+        "colors": {
+            "buttons": {
+                "primaryColor": "#E65D3A",
+                "green": "#58B783",
+                "purple": "#B665A5",
+                "lightGrey": "#E3E3E3",
+                "disabled": "#B7B7B7"
+            },
+            "fonts": {
+                "primary": "#000",
+                "black": "#000",
+                "yellow": "#FFC000",
+                "red": "#E35956",
+                "placeholder": "#5A5A5A"
+            },
+              "design": {
+                "Primary": "#EE7151"
+            }
+        },
+        "sizes": {
+            "titlebarHeight": 64
+        },
+        "fonts":{
+            "Simple" : "Lato-Black",
+            "Italic" : "Lato-BlackItalic",
+            "Bold" : "Lato-Bold",
+            "BItalic" : "Lato-BoldItalic",
+            "Light" : "Lato-Light",
+            "LightItalic" : "Lato-LightItalic",
+            "Regular" : "Lato-Regular",
+            "RItalic" : "Lato-RegularItalic",
+            "Thin" : "Lato-Thin",
+            "TItalic" : "Lato-ThinItalic"
+        }
+    },
+    "env:development": {},
+    "env:test": {},
+    "env:production": {},
+    "os:android": {},
+    "os:ios": {},
+    "os:windows": {},
+    "dependencies": {
+        "customNavBar": "*",
+        "dzmob.widget.TextField": "*"
+    }
 }

@@ -1,0 +1,7 @@
+<Alloy>
+	<View class="container vLayout">
+        <ImageView  id="accuille_logo"></ImageView>
+        <Label id="labelCode"></Label>
+        <Require src="/component/buttonImgCentre" id="scanneButton" onClick="scanneCode"></Require>
+	</View>
+</Alloy>
