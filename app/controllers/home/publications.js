@@ -10,6 +10,8 @@ var publications = [];
 
 // CONSTRUCTOR ------------------------------------------------------------------
 (function constructor(){
+    setup_refreshController();
+
     for (var i = 0; i < 5; i++) {
         publications.push({
             template: "pubTemplate",
@@ -27,4 +29,17 @@ function navigateUp(e){
 }
 
 function onItemclick(e){
+}
+
+
+function setup_refreshController(){
+    var control = Ti.UI.createRefreshControl({
+        tintColor: Alloy.CFG.colors.primaryColor
+    });
+    $.listView.refreshControl = control;
+    control.addEventListener('refreshstart',function(e){
+        log('refreshstart');
+        //getData(()=>{control.endRefreshing();});
+        control.endRefreshing();
+    });
 }
