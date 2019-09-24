@@ -1,4 +1,4 @@
-<Alloy>
+<Alloy autoStyle="true">
 	<View id="navBarContainer" class="backgroundGradient">
 		<Label id="titleWindow" class="navBarTitle" />
 		<View id="separator" />

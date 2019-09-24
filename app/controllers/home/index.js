@@ -10,7 +10,7 @@ function clickButton(e){
     log("buttonId " + e.buttonId);
     switch (e.buttonId) {
         case "publication":
-            navManager.openWindow("home/publications");
+            navManager.openWindow("home/publication/publications");
             break;
         default:
 

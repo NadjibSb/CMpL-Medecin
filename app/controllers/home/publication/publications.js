@@ -29,6 +29,8 @@ function navigateUp(e){
 }
 
 function onItemclick(e){
+    //log(e);
+    navManager.openWindow("home/publication/webView",{url:"http://www.google.com",title:"title test"});
 }
 
 
