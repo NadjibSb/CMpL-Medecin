@@ -13,12 +13,17 @@
   image: "/images/icn_cmpl_green.png",
 }
 
+'.bntContainer': {
+    top: "10%"
+}
+
 '#button_visite_anony': {
   titre : L("home_visite_anony"),
   icon : "/images/icn_visite_anonyme.png",
   color : Alloy.CFG.colors.primaryColor,
   fontColor: "white",
-  alignLeft: true
+  alignLeft: true,
+  buttonId: "visite_anony",
 }
 
 '#button_visite_auth': {
@@ -26,7 +31,8 @@
   icon : "/images/icn_visite_authentifiee.png",
   color : Alloy.CFG.colors.primaryColor,
   fontColor: "white",
-  alignLeft: true
+  alignLeft: true,
+  buttonId: "visite_auth",
 }
 
 '#button_pub': {
@@ -34,7 +40,8 @@
   icon : "/images/icn_publications.png",
   color : Alloy.CFG.colors.purple,
   fontColor: "white",
-  alignLeft: true
+  alignLeft: true,
+  buttonId: "publication",
 
 }
 
@@ -44,7 +51,8 @@
   icon : "/images/icn_synchronisation.png",
   color : Alloy.CFG.colors.orange,
   fontColor: "white",
-  alignLeft: true
+  alignLeft: true,
+  buttonId: "syncronization",
 }
 
 '.seperator': {
@@ -54,8 +62,4 @@
     left: "10%",
     backgroundColor: 'gray',
     opacity: 0.5
-}
-
-'.bntContainer': {
-    top: "10%"
 }

@@ -14,7 +14,7 @@ var left = args.alignLeft;
 
 //function
 function buttonClick(e){
-  $.trigger('click',e)
+  $.trigger('click' ,_.extend(e,{ buttonId: args.id}))
 }
 
 
