@@ -1,6 +1,6 @@
 <Alloy>
     <View id="containerPicker" class="hSize containerDonnee" onClick="choiceDonnee">
-      <Label id="labelPicker" class="blackFont"></Label>
+      <Label id="labelPicker" class="RegularFont"></Label>
       <ImageView id="imagePicker"></ImageView>
     </View>
     <View id="containerDonnee" class="hSize containerDonnee" >

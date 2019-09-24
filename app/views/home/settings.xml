@@ -1,0 +1,36 @@
+<Alloy>
+	<Window id="window">
+        <View class="vLayout">
+            <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
+            <View class="QRcontainer hSize vLayout">
+                <View class="hSize">
+                    <View class="hSize wSize hLayout">
+                        <Label class="QRText RegularFont"></Label>
+                        <ImageView class="downArrow"></ImageView>
+                    </View>
+                </View>
+                <ImageView class="QRimage"></ImageView>
+            </View>
+            <View class="vLayout">
+                <View id="containerWilaya" class="hSize containerDonnee" onClick="chooseWilaya">
+                    <Label id="labelWilaya"></Label>
+                    <ImageView id="localisationImage"></ImageView>
+                </View>
+                <View id="containerDonnee" class="hSize containerDonnee" >
+                    <TextField id="textFieldNom"></TextField>
+                    <ImageView id="meubleImage"></ImageView>
+                </View>
+                <Require src="/component/buttonImgCentre" id="editBtn" onClick="onEdit"></Require>
+            </View>
+        </View>
+        <View id="pickerContainer" class="wFill vLayout" >
+          <View id="viewButton" class="wFill lightgrey" >
+            <Button id="buttonDone" onClick="wilayaChoosed"></Button>
+          </View>
+          <Picker id="picker" onChange="wilayaChanged">
+              <PickerColumn id="wilayaColumn">
+              </PickerColumn>
+          </Picker>
+        </View>
+    </Window>
+</Alloy>

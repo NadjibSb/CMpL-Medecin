@@ -1,0 +1,108 @@
+
+'#navBar': {
+  title : L("settings_title"),
+  zIndex: 200,
+  leftIcon: "/images/icn_topbar_back.png"
+}
+
+'.QRcontainer': {
+    top: 24,
+    right: "10%",
+    left: "10%"
+}
+
+'.QRText': {
+    text: L("settings_QRtext"),
+    color: 'black',
+    font: {
+        fontSize: 18,
+    },
+    bottom: 16
+}
+
+'.downArrow': {
+    left: 8,
+    image: "/images/Group.png",
+    height: 16
+}
+
+'.QRimage': {
+    image: "/images/icn_qrcode.png",
+    width: "50%"
+}
+
+'.containerDonnee': {
+  top: "10%",
+  left: "10%",
+  right : "10%",
+  height: 50,
+  borderWidth: 0.3,
+  borderColor: 'gray',
+  borderRadius: 5,
+}
+'#labelWilaya': {
+  text: L("wilaya"),
+  font: {
+    fontSize: 16
+  },
+  left: 16,
+  color: Alloy.CFG.colors.fonts.placeholder
+}
+
+'#localisationImage': {
+  image: "/images/icn_localisation.png",
+  right : 16
+}
+
+
+'#meubleImage': {
+  image: "/images/icn_hospital.png",
+  right : 16
+}
+
+'#containerDonnee': {
+  top: "5%"
+}
+
+'#textFieldNom': {
+    hintText : L("etablissement"),
+    autocorrect: false,
+    autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
+    hintTextColor: Alloy.CFG.colors.fonts.placeholder,
+    backgroundColor : 'transparent',
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+	right: 48,
+	left: 16,
+}
+
+'#editBtn': {
+    titre: L("settings_btn_edit"),
+    color: Alloy.CFG.colors.primaryColor,
+    fontColor: "#FFF"
+}
+
+
+
+'#picker': {
+
+  selectionIndicator: true,
+  useSpinner: true,
+  bottom: 0
+}
+
+'#viewButton': {
+  height: "15%"
+}
+
+'#buttonDone': {
+  right: "2%",
+  title: "Done"
+}
+
+'#pickerContainer': {
+  height: "40%",
+  bottom: 0,
+  backgroundColor: 'white',
+  visible: false,
+  zIndex: 200,
+}

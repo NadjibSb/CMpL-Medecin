@@ -204,26 +204,12 @@ overrode the settings with other TSS, XML, or JS settings:
 		fontFamily: Alloy.CFG.fonts.LightItalic
 	}
 }
-".blackFont":{
+".RegularFont":{
 	font :{
 		fontFamily: Alloy.CFG.fonts.Regular
 	}
 }
-".blackFont":{
-	font :{
-		fontFamily: Alloy.CFG.fonts.RItalic
-	}
-}
-".blackFont":{
-	font :{
-		fontFamily: Alloy.CFG.fonts.Thin
-	}
-}
-".blackFont":{
-	font :{
-		fontFamily: Alloy.CFG.fonts.TItalic
-	}
-}
+
 ".CommunButton" : {
     color: "white",
     height: 46,
@@ -271,9 +257,4 @@ overrode the settings with other TSS, XML, or JS settings:
 "Window[platform=android]":{
     theme : 'Theme.AppCompat.NoTitleBar',
     top: 25
-}
-
-'#textFieldNom': {
-  hintText : "Etablissement médical",
-	autocapitalization : Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE,
 }

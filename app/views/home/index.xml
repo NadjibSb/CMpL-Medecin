@@ -1,7 +1,7 @@
 <Alloy>
     <Window>
         <View class="vLayout background">
-            <Widget src="customNavBar" id="navBar" class="navBar" ></Widget>
+            <Widget src="customNavBar" id="navBar" class="navBar" onRightButtonClick="navigateToSettings"></Widget>
             <View class="vLayout">
                 <ImageView  id="accuille_logo"></ImageView>
                 <View class="vLayout bntContainer">

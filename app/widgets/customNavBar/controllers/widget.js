@@ -39,12 +39,12 @@ var _leftBottonClickCallback, _rightBottonClickCallback;
 
 if( args.backgroundColor != undefined ) {
 	$.navBarContainer.backgroundGradient = null;
-	$.navBarContainer.setBackgroundColor( args.backgroundColor );
+	$.navBarContainer.backgroundColor =  args.backgroundColor;
 } else if( args.backgroundGradient ) {
 	$.navBarContainer.backgroundGradient = args.backgroundGradient;
 }
 
-args.separatorColor != undefined && $.separator.setBackgroundColor( args.separatorColor );
+args.separatorColor != undefined && ($.separator.backgroundColor =  args.separatorColor);
 
 setTitle( args.title )
 setLeftButtonIcon( args.leftIcon );

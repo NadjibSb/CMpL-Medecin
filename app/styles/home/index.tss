@@ -2,6 +2,7 @@
 '#navBar': {
   title : L("home_title"),
   zIndex: 200,
+  rightIcon: "/images/icn_settings.png"
 }
 
 ".background":{

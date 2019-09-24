@@ -22,6 +22,11 @@
 	<string name="enregi_scan_code">Veuiller scanner votre QR Code pour continuer.</string>
 	<string name="enregi_fill_donnee">Veuiller remplire les champs suivant.</string>
 
+    <!-- Settings -->
+	<string name="settings_title">Mes coordonnées</string>
+	<string name="settings_QRtext">Mon QR Code</string>
+	<string name="settings_btn_edit">Modifier mes coordonnées</string>
+
     <!-- Home -->
 	<string name="home_title">Accueil</string>
 	<string name="home_visite_anony">Visite authentifiée</string>
@@ -31,6 +36,7 @@
 
     <!-- Standards -->
 	<string name="wilaya">Wilaya</string>
+	<string name="etablissement">Etablissement médical</string>
 
 
     <!-- Alert Dialog -->

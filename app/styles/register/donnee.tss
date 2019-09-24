@@ -45,6 +45,7 @@
 }
 
 '#textFieldNom': {
+    hintText : L("etablissement"),
     autocorrect: false,
     autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
     hintTextColor: Alloy.CFG.colors.fonts.placeholder,

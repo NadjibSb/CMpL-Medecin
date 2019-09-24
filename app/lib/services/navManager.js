@@ -8,7 +8,7 @@ const log = require('/services/logger')({
 //PUBLIC INTERFACE
 var $ = module.exports = {
     openWindow: openWindow,
-    closservicesw: closeWindow,
+    closeWindow: closeWindow,
     openAndCloseAll: openAndCloseAll
 };
 
@@ -56,8 +56,8 @@ function openWindow(path,params={}, openAndCloseAllFlag) {
                 } );
                 navigationWindow.hideNavBar();
                 controller.closeWindow = function(){
-                		navigationWindow.popToRootWindow();
-                		navigationWindow.close();
+                	navigationWindow.popToRootWindow();
+                	navigationWindow.close();
                 };
                 if (currentNavWindow && openAndCloseAllFlag) {
                     log("close previous NavigationWindow", "openWindow");

@@ -14,15 +14,15 @@ var left = args.alignLeft;
 
 //function
 function buttonClick(e){
-  $.trigger('click' ,_.extend(e,{ buttonId: args.id}))
+  $.trigger('click' ,_.extend(e,{ buttonId: args.buttonId}))
 }
 
 
 function remplireData(){
-  $.viewButton.backgroundColor = color;
-  $.image_button.image = icon;
-  $.label.text = titre,
-  $.label.color = fontColor;
+  color && ($.viewButton.backgroundColor = color);
+  icon && ($.image_button.image = icon);
+  titre && ($.label.text = titre),
+  fontColor && ($.label.color = fontColor);
   if (left) {
       $.content.left = 24
   }

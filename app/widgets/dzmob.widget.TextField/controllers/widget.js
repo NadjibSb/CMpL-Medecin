@@ -52,7 +52,7 @@ args.left && $.container.setLeft(args.left);
 args.right && $.container.setRight(args.right);
 args.height && $.container.setHeight(args.height);
 args.width && $.container.setWidth(args.width);
-args.backgroundColor && $.container.setBackgroundColor(args.backgroundColor);
+args.backgroundColor && ($.container.backgroundColor =  args.backgroundColor);
 $.tfInput.setKeyboardType(args.keyboardType);
 //Input Style
 $.tfInput.color = inputColor;

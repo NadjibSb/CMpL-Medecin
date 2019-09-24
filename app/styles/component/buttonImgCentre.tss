@@ -20,6 +20,9 @@
 }
 ".lebelInsideButtonCenter":{
     left : 16,
+    font: {
+        fontFamily: Alloy.CFG.fonts.Bold
+    }
 }
 
 '#content': {
