@@ -23,6 +23,9 @@
 	<string name="enregi_fill_donnee">Veuiller remplire les champs suivant.</string>
 
     <!-- Settings -->
+	<string name="publication_title">Publications</string>
+
+    <!-- Settings -->
 	<string name="settings_title">Mes coordonnées</string>
 	<string name="settings_QRtext">Mon QR Code</string>
 	<string name="settings_btn_edit">Modifier mes coordonnées</string>

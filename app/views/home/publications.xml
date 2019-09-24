@@ -1,0 +1,10 @@
+<Alloy>
+	<Window id="window">
+        <View class="vLayout">
+            <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
+            <View class="hSize vLayout">
+                <Label text="pub"></Label>
+            </View>
+        </View>
+    </Window>
+</Alloy>
