@@ -3,3 +3,36 @@
   zIndex: 200,
   leftIcon: "/images/icn_topbar_back.png"
 }
+
+'#listView': {
+    separatorStyle: Ti.UI.TABLE_VIEW_SEPARATOR_STYLE_NONE,
+}
+
+'.itemContainer': {
+    top: 16,
+    left: "5%",
+    right: "5%",
+    borderRadius: 5,
+    backgroundColor: Alloy.CFG.colors.primaryColorLight,
+}
+
+'.itemContent': {
+    top: 16,
+    bottom: 16,
+    left: 24,
+    right: 24
+}
+
+'.icon': {
+    image: "/images/icn_pdf.png",
+    right: 0
+}
+
+'.title': {
+    width: "85%",
+    color: 'black',
+    font: {
+        fontSize: 16,
+    },
+    left: 0
+}

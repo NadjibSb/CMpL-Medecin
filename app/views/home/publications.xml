@@ -2,8 +2,20 @@
 	<Window id="window">
         <View class="vLayout">
             <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
-            <View class="hSize vLayout">
-                <Label text="pub"></Label>
+            <View>
+                <ListView id="listView" onItemclick="onItemclick">
+                    <Templates>
+                        <ItemTemplate name="pubTemplate">
+                            <View class="hSize itemContainer">
+                                <View class="hSize itemContent">
+                                    <Label class="title lightFont" bindId="title"></Label>
+                                    <ImageView class="icon"></ImageView>
+                                </View>
+                            </View>
+                        </ItemTemplate>
+                    </Templates>
+                    <ListSection id="pubSection"></ListSection>
+                </ListView>
             </View>
         </View>
     </Window>
