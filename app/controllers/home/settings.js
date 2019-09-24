@@ -5,6 +5,7 @@ const log = require( '/services/logger' )( {
 	} );
 
 var navManager = require("/services/navManager"),
+    alertDialog = require('/services/alertManager'),
     wilayas = require('/dataFile/wilaya').default;
 
 
