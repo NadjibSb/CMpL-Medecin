@@ -1,0 +1,61 @@
+
+'#navBar': {
+  title : L("home_title"),
+  zIndex: 200,
+}
+
+".background":{
+  backgroundImage: "/images/img_accueil_medecin.png"
+}
+
+'#accuille_logo': {
+  top: "10%",
+  image: "/images/icn_cmpl_green.png",
+}
+
+'#button_visite_anony': {
+  titre : L("home_visite_anony"),
+  icon : "/images/icn_visite_anonyme.png",
+  color : Alloy.CFG.colors.primaryColor,
+  fontColor: "white",
+  alignLeft: true
+}
+
+'#button_visite_auth': {
+  titre : L("home_visite_auth"),
+  icon : "/images/icn_visite_authentifiee.png",
+  color : Alloy.CFG.colors.primaryColor,
+  fontColor: "white",
+  alignLeft: true
+}
+
+'#button_pub': {
+  titre : L("home_publication"),
+  icon : "/images/icn_publications.png",
+  color : Alloy.CFG.colors.purple,
+  fontColor: "white",
+  alignLeft: true
+
+}
+
+'#button_sync': {
+  titre : L("home_syncronization"),
+  classe: "state",
+  icon : "/images/icn_synchronisation.png",
+  color : Alloy.CFG.colors.orange,
+  fontColor: "white",
+  alignLeft: true
+}
+
+'.seperator': {
+    height: 1,
+    top: "5%",
+    right: "10%",
+    left: "10%",
+    backgroundColor: 'gray',
+    opacity: 0.5
+}
+
+'.bntContainer': {
+    top: "10%"
+}

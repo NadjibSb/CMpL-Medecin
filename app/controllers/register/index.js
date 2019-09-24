@@ -2,8 +2,9 @@
 const log = require( 'services/logger' )( {
 		tag: "indexRegister",
 		hideLog: false
-	} ),
-    navmanager = require('/services/navmanager'),
+	} );
+
+var navmanager = require('/services/navmanager'),
     alertDialog = require('/services/alertManager'),
     wilayas = require('/dataFile/wilaya').default;
 
@@ -38,7 +39,7 @@ function remplireWilaya(){
             title : wilaya.nom
         });
         $.wilayaColumn.addRow(data[wilaya.id]);
-        log(wilaya.id+" "+wilaya.nom,"remplireWilaya");
+        //log(wilaya.id+" "+wilaya.nom,"remplireWilaya");
     })
 }
 
@@ -66,7 +67,8 @@ function onScrollend( e ) {
 
 function btnClicked(e){
     if ($.scrollableView.currentPage == 2) {
-        navmanager.openAndCloseAll("/acuille/index")
+        Alloy.Globals.HAS_AUTHENTIFIED();
+        navmanager.openAndCloseAll("home/index");
     }else if ($.scrollableView.currentPage == 1) {
         medicalCheck(()=>{
             $.scrollableView.moveNext();

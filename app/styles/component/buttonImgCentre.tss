@@ -20,8 +20,8 @@
 }
 ".lebelInsideButtonCenter":{
     left : 16,
-    color: Alloy.CFG.colors.primaryColor
 }
 
-'.imageInsideButtonCentre': {
+'#content': {
+    horizontalWrap: false
 }

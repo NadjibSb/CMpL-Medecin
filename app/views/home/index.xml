@@ -1,0 +1,18 @@
+<Alloy>
+    <Window>
+        <View class="vLayout background">
+            <Widget src="customNavBar" id="navBar" class="navBar" ></Widget>
+            <View class="vLayout">
+                <ImageView  id="accuille_logo"></ImageView>
+                <View class="vLayout bntContainer">
+                    <Require src="/component/buttonImgCentre" id="button_visite_auth" onClick="clickButton"></Require>
+                    <Require src="/component/buttonImgCentre" id="button_visite_anony" onClick="clickButton"></Require>
+                    <View class="seperator"></View>
+                    <Require src="/component/buttonImgCentre" id="button_pub" onClick="clickButton"></Require>
+                    <View class="seperator"></View>
+                    <Require src="/component/buttonImgCentre" id="button_sync" onClick="clickButton"></Require>
+                </View>
+            </View>
+        </View>
+    </Window>
+</Alloy>

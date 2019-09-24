@@ -37,3 +37,11 @@ Alloy.Globals.getCode = ()=>{
 Alloy.Globals.setCode = (code)=>{
   Ti.App.Properties.setString(Alloy.Globals.AUTHCODE,code)
 }
+
+Alloy.Globals.HAS_AUTHENTIFIED = ()=>{
+  Ti.App.Properties.setBool("AUTHENTIFIED",true)
+}
+
+Alloy.Globals.AUTHENTIFIED = ()=>{
+  return Ti.App.Properties.getBool("AUTHENTIFIED", false)
+}

@@ -2,8 +2,8 @@
     "global": {
         "colors": {
             "primaryColor": "#58b783",
-            "green": "#58B783",
             "purple": "#B665A5",
+            "orange": "#EE9C51",
             "lightGrey": "#F4F4F4",
             "disabled": "#B7B7B7",
             "fonts": {

@@ -46,7 +46,8 @@ overrode the settings with other TSS, XML, or JS settings:
 
 // Sizes
 "Window": {
-	width: Ti.Platform.displayCaps.platformWidth
+	width: Ti.Platform.displayCaps.platformWidth,
+    backgroundColor: 'white'
 }
 
 "Label":{

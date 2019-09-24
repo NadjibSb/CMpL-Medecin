@@ -22,6 +22,12 @@
 	<string name="enregi_scan_code">Veuiller scanner votre QR Code pour continuer.</string>
 	<string name="enregi_fill_donnee">Veuiller remplire les champs suivant.</string>
 
+    <!-- Home -->
+	<string name="home_title">Accueil</string>
+	<string name="home_visite_anony">Visite authentifiée</string>
+	<string name="home_visite_auth">Visite anonyme</string>
+	<string name="home_publication">Publications</string>
+	<string name="home_syncronization">Syncroniser</string>
 
     <!-- Standards -->
 	<string name="wilaya">Wilaya</string>
