@@ -54,8 +54,8 @@
 
     <!-- Home -->
 	<string name="home_title">Accueil</string>
-	<string name="home_visite_anony">Visite authentifiée</string>
-	<string name="home_visite_auth">Visite anonyme</string>
+	<string name="home_visite_anony">Visite anonyme</string>
+	<string name="home_visite_auth">Visite authentifiée</string>
 	<string name="home_publication">Publications</string>
 	<string name="home_syncronization">Syncroniser</string>
 
@@ -63,6 +63,8 @@
 	<string name="wilaya">Wilaya</string>
 	<string name="etablissement">Etablissement médical</string>
 	<string name="calculer">Calculer</string>
+	<string name="missed_field">Champ manquant</string>
+	<string name="invalid_field">Champ invalide</string>
 
 
     <!-- Alert Dialog -->

@@ -3,7 +3,7 @@
         <View class="vLayout">
             <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
             <ScrollView>
-                <View class="vLayout">
+                <View class="vLayout" onClick="exitKeyBoard">
                     <Label class="text RegularFont"></Label>
                     <View class="hSize containerDonnee" >
                         <TextField id="tfAge" class="tf"></TextField>

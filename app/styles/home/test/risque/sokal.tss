@@ -27,28 +27,30 @@
 
 '.tf': {
     autocorrect: false,
-    autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
     hintTextColor: Alloy.CFG.colors.fonts.placeholder,
     backgroundColor : 'transparent',
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+    inputType: Ti.UI.INPUT_TYPE_CLASS_NUMBER,
 	right: 16,
 	left: 16,
 }
 
 '#tfAge': {
-    hintText : L("risque_sokal_age_hint")
+    hintText : L("risque_sokal_age_hint"),
+    keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBER_PAD,
 }
 
 '#tfRate': {
-    hintText : L("risque_sokal_rate_hint")
+    hintText : L("risque_sokal_rate_hint"),
 }
 
 '#tfPlaquette': {
-    hintText : L("risque_sokal_plaquette_hint")
+    hintText : L("risque_sokal_plaquette_hint"),
 }
 
 '#tfSang': {
     hintText : L("risque_sokal_sang_hint"),
+    keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBER_PAD,
 }
 
 '#btnCalculer': {

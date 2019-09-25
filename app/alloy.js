@@ -10,7 +10,8 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
-
+Alloy.Globals.isAndroid = (Ti.Platform.osname=='android') ? true : false;
+Alloy.Globals.isIOS = (Ti.Platform.osname=='iphone') ? true : false;
 Alloy.Globals.WILAYA_NAME = "WILAYA_NAME";
 Alloy.Globals.MEDICAL_NAME = "MEDICAL_NAME";
 Alloy.Globals.AUTHCODE = "AUTH_CODE";
