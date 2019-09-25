@@ -1,0 +1,24 @@
+'#navBar': {
+  title : L("visiteAuth_title"),
+  zIndex: 200,
+  rightIcon: "/images/icn_settings.png",
+  leftIcon: "/images/icn_topbar_back.png"
+}
+
+'#scanneButton': {
+  titre: L("enregi_scanner"),
+  icon: "/images/icn_scan_green.png",
+  color: Alloy.CFG.colors.lightGrey,
+  fontColor: Alloy.CFG.colors.primaryColor
+}
+
+'.QRtext': {
+    top: "10%",
+    right: "10%",
+    left: "10%",
+    font: {
+        fontSize: 18
+    },
+    color: 'black',
+    text: L('visiteAuth_QRtext')
+}

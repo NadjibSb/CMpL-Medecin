@@ -12,6 +12,9 @@ function clickButton(e){
         case "publication":
             navManager.openWindow("home/publication/publications");
             break;
+        case "visite_auth":
+            navManager.openWindow("home/visiteAuth/index");
+            break;
         default:
 
     }

@@ -1,0 +1,11 @@
+<Alloy>
+    <Window id="window">
+        <View class="vLayout background">
+            <Widget src="customNavBar" id="navBar" class="navBar" onRightButtonClick="navigateToSettings" onLeftButtonClick="navigateUp"></Widget>
+            <View class="vLayout">
+                <Label class="QRtext RegularFont"></Label>
+                <Require src="/component/buttonImgCentre" id="scanneButton" onClick="scanneCode"></Require>
+            </View>
+        </View>
+    </Window>
+</Alloy>

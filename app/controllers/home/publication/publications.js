@@ -30,7 +30,7 @@ function navigateUp(e){
 
 function onItemclick(e){
     //log(e);
-    navManager.openWindow("home/publication/webView",{url:"http://www.google.com",title:"title test"});
+    navManager.openWindow("home/publication/webView",{url:"http://www.orimi.com/pdf-test.pdf",title:"title test"});
 }
 
 

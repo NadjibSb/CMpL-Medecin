@@ -22,6 +22,10 @@
 	<string name="enregi_scan_code">Veuiller scanner votre QR Code pour continuer.</string>
 	<string name="enregi_fill_donnee">Veuiller remplire les champs suivant.</string>
 
+    <!-- visite Auth -->
+	<string name="visiteAuth_title">QR Code patient</string>
+	<string name="visiteAuth_QRtext">Veuillez scanner le QR Code de votre patient.</string>
+
     <!-- publication -->
 	<string name="publication_title">Publications</string>
 	<string name="publicationWebView_title">Publication</string>
