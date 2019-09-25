@@ -17,6 +17,8 @@ function navigateUp(e){
 }
 
 function onCalculer(e){
+    //navManager.openWindow("home/test/result/index");
+
     checkEmptyFields( ()=>{
         checkValidFields( (args)=>{
             log(args);

@@ -22,6 +22,11 @@
 	<string name="enregi_scan_code">Veuiller scanner votre QR Code pour continuer.</string>
 	<string name="enregi_fill_donnee">Veuiller remplire les champs suivant.</string>
 
+    <!-- Result -->
+	<string name="result_sokal_title">Résultat - risque SOKAL</string>
+	<string name="result_btn_recommendation">Voir les recommendations</string>
+	<string name="result_btn_save">Sauvegarder</string>
+
     <!-- Test Med -->
 	<string name="risque_eutos_title">Risque d'EUTOS</string>
 	<string name="risque_sokal_title">Risque de SOKAL</string>
@@ -68,6 +73,7 @@
 	<string name="calculer">Calculer</string>
 	<string name="missed_field">Champ manquant</string>
 	<string name="invalid_field">Champ invalide</string>
+	<string name="result">Résultat :</string>
 
 
     <!-- Alert Dialog -->

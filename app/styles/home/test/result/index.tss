@@ -3,3 +3,88 @@
   zIndex: 200,
   leftIcon: "/images/icn_topbar_back.png"
 }
+
+'.result': {
+    top: 32,
+    right: "10%",
+    left: "10%",
+    font: {
+        fontSize: 18
+    },
+    color: 'black',
+    text: L('result')
+}
+
+'.resultContainer': {
+    top: 24,
+    right: "10%",
+    left: "10%",
+
+}
+
+'#lbResultText': {
+    left: 0,
+    text: 'Result',
+    color: Alloy.CFG.colors.primaryColor,
+    font: {
+        fontFamily: Alloy.CFG.fonts.Simple,
+        fontSize: 28
+    }
+}
+
+'#lbResultNbr': {
+    left: 16,
+    text: '0,00',
+    color: 'black',
+    font: {
+        fontFamily: Alloy.CFG.fonts.Simple,
+        fontSize: 24
+    }
+}
+
+'#icon': {
+    height: 24,
+    width: 24,
+    backgroundColor: Alloy.CFG.colors.primaryColor,
+}
+
+'#lbPStitle': {
+    top: 56,
+    right: "10%",
+    left: "10%",
+    color: 'black',
+    font: {
+        fontFamily: Alloy.CFG.fonts.Simple,
+        fontSize: 18
+    },
+    text: 'PS'
+}
+
+'#lbPStext': {
+    top: 8,
+    right: "10%",
+    left: "10%",
+    color: 'black',
+    font: {
+        fontFamily: Alloy.CFG.fonts.Regular,
+        fontSize: 18
+    },
+    text: 'Attentions Attentions Attentions Attentions Attentions '
+}
+
+'#btnRecommendation': {
+    bottom: 16,
+    titre : L("result_btn_recommendation"),
+    buttonId: "recommendations",
+    color : Alloy.CFG.colors.primaryColor,
+    icon : "/images/icn_recommendations.png",
+    fontColor: "white",
+}
+
+'#btnSave': {
+    bottom: 32,
+    titre : L("result_btn_save"),
+    buttonId: "save",
+    color : Alloy.CFG.colors.primaryColor,
+    fontColor: "white",
+}

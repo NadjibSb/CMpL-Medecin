@@ -42,7 +42,6 @@
 
 '#button_sync': {
   titre : L("home_syncronization"),
-  classe: "state",
   icon : "/images/icn_synchronisation.png",
   color : Alloy.CFG.colors.orange,
   buttonId: "syncronization",

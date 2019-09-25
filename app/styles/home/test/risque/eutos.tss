@@ -47,5 +47,4 @@
     buttonId: "calculer",
     fontColor: "white",
     color : Alloy.CFG.colors.primaryColor,
-    fontColor: "white"
 }
