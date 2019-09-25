@@ -9,6 +9,7 @@ var icon = args.icon;
 var color = args.color;
 var fontColor = args.fontColor;
 var left = args.alignLeft;
+var top = args.top;
 //variable
 
 
@@ -26,6 +27,7 @@ function remplireData(){
   if (left) {
       $.content.left = 24
   }
+  top && ($.viewButton.top = top);
 }
 
 //traintement

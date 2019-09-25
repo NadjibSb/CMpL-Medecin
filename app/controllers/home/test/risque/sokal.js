@@ -14,3 +14,6 @@ var navManager = require("/services/navManager");
 function navigateUp(e){
     navManager.closeWindow($.window);
 }
+
+function onCalculer(e){
+}

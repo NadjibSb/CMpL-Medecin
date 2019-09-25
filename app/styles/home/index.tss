@@ -22,8 +22,6 @@
   titre : L("home_visite_anony"),
   icon : "/images/icn_visite_anonyme.png",
   color : Alloy.CFG.colors.primaryColor,
-  fontColor: "white",
-  alignLeft: true,
   buttonId: "visite_anony",
 }
 
@@ -31,8 +29,6 @@
   titre : L("home_visite_auth"),
   icon : "/images/icn_visite_authentifiee.png",
   color : Alloy.CFG.colors.primaryColor,
-  fontColor: "white",
-  alignLeft: true,
   buttonId: "visite_auth",
 }
 
@@ -40,8 +36,6 @@
   titre : L("home_publication"),
   icon : "/images/icn_publications.png",
   color : Alloy.CFG.colors.purple,
-  fontColor: "white",
-  alignLeft: true,
   buttonId: "publication",
 
 }
@@ -51,8 +45,6 @@
   classe: "state",
   icon : "/images/icn_synchronisation.png",
   color : Alloy.CFG.colors.orange,
-  fontColor: "white",
-  alignLeft: true,
   buttonId: "syncronization",
 }
 
@@ -63,4 +55,10 @@
     left: "10%",
     backgroundColor: 'gray',
     opacity: 0.5
+}
+
+'.btn': {
+    top: "5%",
+    fontColor: "white",
+    alignLeft: true,
 }

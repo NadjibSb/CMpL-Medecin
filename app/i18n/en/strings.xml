@@ -25,6 +25,11 @@
     <!-- Test Med -->
 	<string name="risque_eutos_title">Risque d'EUTOS</string>
 	<string name="risque_sokal_title">Risque de SOKAL</string>
+	<string name="risque_sokal_text">Veuiller renseigner les champs suivants pour le calcul de score de SOKAL de votre patient.</string>
+	<string name="risque_sokal_age_hint">Age (années)</string>
+	<string name="risque_sokal_rate_hint">Rate (cm)</string>
+	<string name="risque_sokal_plaquette_hint">Plaquettes (x10^9)</string>
+	<string name="risque_sokal_sang_hint">Myéloblastes dans le sang (%)</string>
 
     <!-- Test Med -->
 	<string name="test_title">Tests médicaux</string>
@@ -57,6 +62,7 @@
     <!-- Standards -->
 	<string name="wilaya">Wilaya</string>
 	<string name="etablissement">Etablissement médical</string>
+	<string name="calculer">Calculer</string>
 
 
     <!-- Alert Dialog -->

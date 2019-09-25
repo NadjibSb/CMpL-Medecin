@@ -10,6 +10,7 @@
 }
 
 '#scanneButton': {
+  top: "5%",
   titre: L("enregi_scanner"),
   icon: "/images/icn_scan_green.png",
   color: Alloy.CFG.colors.lightGrey,

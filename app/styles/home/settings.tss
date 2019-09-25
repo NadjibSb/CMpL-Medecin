@@ -76,6 +76,7 @@
 }
 
 '#editBtn': {
+    top: "10%",
     titre: L("settings_btn_edit"),
     color: Alloy.CFG.colors.primaryColor,
     fontColor: "#FFF"

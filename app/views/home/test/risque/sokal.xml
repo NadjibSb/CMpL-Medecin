@@ -4,7 +4,20 @@
             <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
             <ScrollView>
                 <View class="vLayout">
-                    <Label class=" RegularFont" text="sokal"></Label>
+                    <Label class="text RegularFont"></Label>
+                    <View class="hSize containerDonnee" >
+                        <TextField id="tfAge" class="tf"></TextField>
+                    </View>
+                    <View class="hSize containerDonnee" >
+                        <TextField id="tfRate" class="tf"></TextField>
+                    </View>
+                    <View class="hSize containerDonnee" >
+                        <TextField id="tfPlaquette" class="tf"></TextField>
+                    </View>
+                    <View class="hSize containerDonnee" >
+                        <TextField id="tfSang" class="tf"></TextField>
+                    </View>
+                    <Require src="/component/buttonImgCentre" id="btnCalculer" onClick="onCalculer"></Require>
                 </View>
             </ScrollView>
         </View>
