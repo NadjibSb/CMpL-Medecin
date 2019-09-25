@@ -17,13 +17,12 @@ function navigateUp(e){
 }
 
 function onCalculer(e){
-    checkEmptyFields(
+    checkEmptyFields( ()=>{
         checkValidFields( (args)=>{
             log(args);
             navManager.openWindow("home/test/result/index", args);
         })
-    );
-
+    });
 }
 
 

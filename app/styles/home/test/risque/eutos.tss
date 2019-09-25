@@ -3,3 +3,49 @@
   zIndex: 200,
   leftIcon: "/images/icn_topbar_back.png"
 }
+
+'.text': {
+    top: 32,
+    right: "10%",
+    left: "10%",
+    font: {
+        fontSize: 18
+    },
+    color: 'black',
+    text: L('risque_eutos_text')
+}
+'.containerDonnee': {
+  top: 24,
+  left: "10%",
+  right : "10%",
+  height: 50,
+  borderColor: 'gray',
+  borderRadius: 5,
+}
+'.tf': {
+    autocorrect: false,
+    hintTextColor: Alloy.CFG.colors.fonts.placeholder,
+    backgroundColor : 'transparent',
+	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
+    inputType: Ti.UI.INPUT_TYPE_CLASS_NUMBER,
+	right: 16,
+	left: 16,
+}
+
+'#tfRate': {
+    hintText : L("risque_eutos_rate_hint"),
+}
+
+'#tfBosiphiles': {
+    hintText : L("risque_eutos_basophiles_hint"),
+    keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBER_PAD,
+}
+
+'#btnCalculer': {
+    top: 56,
+    titre : L("calculer"),
+    buttonId: "calculer",
+    fontColor: "white",
+    color : Alloy.CFG.colors.primaryColor,
+    fontColor: "white"
+}

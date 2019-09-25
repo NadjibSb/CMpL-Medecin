@@ -30,6 +30,9 @@
 	<string name="risque_sokal_rate_hint">Rate (cm)</string>
 	<string name="risque_sokal_plaquette_hint">Plaquettes (x10^9)</string>
 	<string name="risque_sokal_sang_hint">Myéloblastes dans le sang (%)</string>
+	<string name="risque_eutos_text">Veuillez renseigner les champs suivants pour le calcul du score d'EUTOS de votre patient.</string>
+	<string name="risque_eutos_rate_hint">Rate (cm)</string>
+	<string name="risque_eutos_basophiles_hint">Basophiles (%)</string>
 
     <!-- Test Med -->
 	<string name="test_title">Tests médicaux</string>
