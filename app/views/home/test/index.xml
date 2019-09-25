@@ -1,0 +1,19 @@
+<Alloy>
+    <Window id="window">
+        <View class="vLayout">
+            <Widget src="customNavBar" id="navBar" class="navBar" onRightButtonClick="navigateToSettings" onLeftButtonClick="navigateUp"></Widget>
+            <ScrollView>
+                <View class="vLayout">
+                    <Label class="calculTaxt RegularFont"></Label>
+                    <Require src="/component/buttonImgCentre" id="button_sokal" class="btn" onClick="clickButton"></Require>
+                    <Require src="/component/buttonImgCentre" id="button_eutos" class="btn" onClick="clickButton"></Require>
+                    <View class="separator"></View>
+                    <Label class="calculTaxt RegularFont"></Label>
+                    <Require src="/component/buttonImgCentre" id="button_tracker" class="btn" onClick="clickButton"></Require>
+                    <View class="separator"></View>
+                    <Require src="/component/buttonImgCentre" id="button_finish" onClick="clickButton"></Require>
+                </View>
+            </ScrollView>
+        </View>
+    </Window>
+</Alloy>

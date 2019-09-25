@@ -15,6 +15,9 @@ function clickButton(e){
         case "visite_auth":
             navManager.openWindow("home/visiteAuth/index");
             break;
+        case "visite_anony":
+            navManager.openWindow("home/test/index");
+            break;
         default:
 
     }

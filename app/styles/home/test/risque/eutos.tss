@@ -1,0 +1,5 @@
+'#navBar': {
+  title : L("risque_eutos_title"),
+  zIndex: 200,
+  leftIcon: "/images/icn_topbar_back.png"
+}

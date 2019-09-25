@@ -1,6 +1,6 @@
 <Alloy>
     <Window id="window">
-        <View class="vLayout background">
+        <View class="vLayout">
             <Widget src="customNavBar" id="navBar" class="navBar" onRightButtonClick="navigateToSettings" onLeftButtonClick="navigateUp"></Widget>
             <View class="vLayout">
                 <Label class="QRtext RegularFont"></Label>

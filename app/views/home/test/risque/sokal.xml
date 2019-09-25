@@ -1,0 +1,12 @@
+<Alloy>
+    <Window id="window">
+        <View class="vLayout">
+            <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
+            <ScrollView>
+                <View class="vLayout">
+                    <Label class=" RegularFont" text="sokal"></Label>
+                </View>
+            </ScrollView>
+        </View>
+    </Window>
+</Alloy>

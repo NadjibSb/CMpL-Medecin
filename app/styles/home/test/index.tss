@@ -1,0 +1,57 @@
+'#navBar': {
+  title : L("test_title"),
+  zIndex: 200,
+  rightIcon: "/images/icn_settings.png",
+  leftIcon: "/images/icn_topbar_back.png"
+}
+
+'.calculTaxt': {
+    top: 32,
+    right: "10%",
+    left: "10%",
+    font: {
+        fontSize: 18
+    },
+    color: 'black',
+    text: L('test_calcule_text')
+}
+'.separator': {
+    top: 32,
+    right: "10%",
+    left: "10%",
+    height: 1,
+    opacity: 0.5,
+    backgroundColor: 'gray'
+}
+
+'.btn': {
+    color : Alloy.CFG.colors.primaryColor,
+    fontColor: "white",
+    alignLeft: true,
+}
+
+'#button_sokal': {
+    titre : L("test_btn_sokal"),
+    icon : "/images/icn_calcul_risques.png",
+    buttonId: "sokal",
+}
+
+'#button_eutos': {
+    titre : L("test_btn_eutos"),
+    icon : "/images/icn_calcul_risques.png",
+    buttonId: "eutos",
+}
+
+'#button_tracker': {
+    titre : L("test_btn_tracker"),
+    icon : "/images/icn_monitoring_tracker.png",
+    buttonId: "tracker",
+    color : Alloy.CFG.colors.purple,
+}
+
+'#button_finish': {
+    titre : L("test_btn_finish"),
+    buttonId: "finish",
+    fontColor: "white",
+    color : Alloy.CFG.colors.orange,
+}
