@@ -10,7 +10,8 @@ var navManager = require("/services/navManager"),
 
 
 // PRIVATE VAR-------------------------------------------------------------------
-var currentWilaya;
+var currentWilaya,
+    touchEnabled = false;
 
 
 // CONSTRUCTOR ------------------------------------------------------------------
@@ -44,26 +45,41 @@ function navigateUp(e){
 }
 
 function onEdit(e){
-    var medical = $.textFieldNom.value || "";
-    var wilaya = $.labelWilaya.text;
-    if( medical.length >0 && wilaya != L('wilaya')){
-        log(wilaya+ ' - '+ medical, 'onEdit');
-        Alloy.Globals.setWilaya(wilaya);
-        Alloy.Globals.setMedical(medical);
-        navManager.closeWindow($.window);
+    log("on Edit");
+    if (touchEnabled) {
+        var medical = $.textFieldNom.value || "";
+        var wilaya = $.labelWilaya.text;
+        if( medical.length >0 && wilaya != L('wilaya')){
+            log(wilaya+ ' - '+ medical, 'onEdit');
+            Alloy.Globals.setWilaya(wilaya);
+            Alloy.Globals.setMedical(medical);
+            navManager.closeWindow($.window);
+        }else {
+            alertDialog.show(L("alertDialog_fill_regis_data"));
+        }
     }else {
-        alertDialog.show(L("alertDialog_fill_regis_data"));
+        touchEnabled = true;
+        $.labelWilaya.color = "black";
+        $.textFieldNom.color = 'black';
+        $.textFieldNom.editable = true;
+        $.editBtn.titre = "Save";
+        $.containerWilaya.addEventListener('click', (e)=>{
+            chooseWilaya(e);
+        } );
     }
 }
 
 
 // Picker events
 function chooseWilaya(e){
-    exitPickerAndKeyboard();
-    currentWilaya = wilayas[0].nom;
-    setTimeout(()=>{
-        $.pickerContainer.visible = true;
-    }, 100);
+    log("choose Wilaya");
+    if (touchEnabled) {
+        exitPickerAndKeyboard();
+        currentWilaya = wilayas[0].nom;
+        setTimeout(()=>{
+            $.pickerContainer.visible = true;
+        }, 100);
+    }
 }
 
 function wilayaChanged(e){

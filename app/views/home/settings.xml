@@ -11,7 +11,7 @@
                     <ImageView class="QRimage"></ImageView>
                 </View>
                 <View class="vLayout hSize" top="32">
-                    <View id="containerWilaya" class="hSize containerDonnee" onClick="chooseWilaya">
+                    <View id="containerWilaya" class="hSize containerDonnee">
                         <Label id="labelWilaya"></Label>
                         <ImageView id="localisationImage"></ImageView>
                     </View>
