@@ -106,8 +106,5 @@ function exitPickerAndKeyboard(e){
     $.pickerContainer.visible = false
     if (Alloy.Globals.isAndroid) {
         Ti.UI.Android.hideSoftKeyboard();
-    }else {
-        $.tfRate.blur();
-        $.tfBosiphiles.blur();
     }
 }

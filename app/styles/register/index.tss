@@ -49,6 +49,7 @@
   zIndex: 200,
 }
 
+
 '#btStart': {
     titre: L("enregi_continuer"),
     top: 16,

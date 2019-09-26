@@ -17,36 +17,39 @@
     font: {
         fontSize: 18,
     },
-    bottom: 16
 }
 
 '.downArrow': {
     left: 8,
     image: "/images/Group.png",
-    height: 16
 }
 
 '.QRimage': {
     image: "/images/icn_qrcode.png",
-    width: "50%"
+    width: "50%",
+    top: 16
 }
 
 '.containerDonnee': {
-  top: "10%",
+  top: 16,
   left: "10%",
   right : "10%",
   height: 50,
-  borderWidth: 0.3,
-  borderColor: 'gray',
+  borderWidth: 1,
+  borderColor: '#d7d7d7',
   borderRadius: 5,
+  backgroundColor: "white",
+  bubbleParent: false
+
 }
 '#labelWilaya': {
-  text: L("wilaya"),
-  font: {
-    fontSize: 16
-  },
-  left: 16,
-  color: Alloy.CFG.colors.fonts.placeholder
+    text: L("wilaya"),
+    font: {
+        fontFamily: Alloy.CFG.fonts.Regular,
+        fontSize: 16
+    },
+    left: 16,
+    color: 'black'
 }
 
 '#localisationImage': {
@@ -73,10 +76,18 @@
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
 	right: 48,
 	left: 16,
+    font: {
+        fontFamily: Alloy.CFG.fonts.Regular,
+        fontSize: 16
+    },
+    color: 'black'
 }
 
 '#editBtn': {
-    top: "10%",
+    top: 32,
+    bottom: 16,
+    left: "10%",
+    right: "10%",
     titre: L("settings_btn_edit"),
     color: Alloy.CFG.colors.primaryColor,
     fontColor: "#FFF"
@@ -92,11 +103,11 @@
 }
 
 '#viewButton': {
-  height: "15%"
+  height: 40
 }
 
 '#buttonDone': {
-  right: "2%",
+  right: 16,
   title: "Done"
 }
 

@@ -2,17 +2,15 @@
     <Window>
         <View class="vLayout background">
             <Widget src="customNavBar" id="navBar" class="navBar" onRightButtonClick="navigateToSettings"></Widget>
-            <ScrollView>
-                <View class="vLayout">
-                    <ImageView  id="accuille_logo"></ImageView>
-                    <View class="vLayout bntContainer">
-                        <Require src="/component/buttonImgCentre" id="button_visite_auth" class="btn" onClick="clickButton"></Require>
-                        <Require src="/component/buttonImgCentre" id="button_visite_anony" class="btn" onClick="clickButton"></Require>
-                        <View class="seperator"></View>
-                        <Require src="/component/buttonImgCentre" id="button_pub" class="btn" onClick="clickButton"></Require>
-                        <View class="seperator"></View>
-                        <Require src="/component/buttonImgCentre" id="button_sync" class="btn" onClick="clickButton"></Require>
-                    </View>
+            <ScrollView class="vLayout">
+                <ImageView  id="accuille_logo"></ImageView>
+                <View class="bntContainer hSize vLayout">
+                    <Require src="/component/buttonImgCentre" id="button_visite_auth" class="btn" onClick="clickButton"></Require>
+                    <Require src="/component/buttonImgCentre" id="button_visite_anony" class="btn" onClick="clickButton"></Require>
+                    <View class="seperator"></View>
+                    <Require src="/component/buttonImgCentre" id="button_pub" class="btn" onClick="clickButton"></Require>
+                    <View class="seperator"></View>
+                    <Require src="/component/buttonImgCentre" id="button_sync" class="btn" onClick="clickButton"></Require>
                 </View>
             </ScrollView>
         </View>

@@ -10,12 +10,13 @@
 }
 
 '#accuille_logo': {
-  top: "10%",
+  top: 64,
   image: "/images/icn_cmpl_green.png",
 }
 
 '.bntContainer': {
-    top: "10%"
+    top: 40,
+    bottom: 16
 }
 
 '#button_visite_anony': {
@@ -49,7 +50,7 @@
 
 '.seperator': {
     height: 1,
-    top: "5%",
+    top: 16,
     right: "10%",
     left: "10%",
     backgroundColor: 'gray',
@@ -57,7 +58,9 @@
 }
 
 '.btn': {
-    top: "5%",
+    top: 16,
+    right: "10%",
+    left: "10%",
     fontColor: "white",
     alignLeft: true,
 }

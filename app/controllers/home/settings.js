@@ -59,8 +59,11 @@ function onEdit(e){
 
 // Picker events
 function chooseWilaya(e){
-  $.pickerContainer.visible = true
-  currentWilaya = wilayas[0].nom;
+    exitPickerAndKeyboard();
+    currentWilaya = wilayas[0].nom;
+    setTimeout(()=>{
+        $.pickerContainer.visible = true;
+    }, 100);
 }
 
 function wilayaChanged(e){
@@ -72,4 +75,12 @@ function wilayaChoosed(e){
   $.labelWilaya.text = currentWilaya;
   $.labelWilaya.color =  "#000";
   $.pickerContainer.visible = false
+}
+
+function exitPickerAndKeyboard(e){
+    $.pickerContainer.visible = false;
+    $.textFieldNom.blur();
+    if (Alloy.Globals.isAndroid) {
+        Ti.UI.Android.hideSoftKeyboard();
+    }
 }
