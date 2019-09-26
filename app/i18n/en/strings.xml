@@ -24,6 +24,7 @@
 
     <!-- Result -->
 	<string name="result_sokal_title">Résultat - risque SOKAL</string>
+	<string name="result_eutos_title">Résultat - risque EUTOS</string>
 	<string name="result_btn_recommendation">Voir les recommendations</string>
 	<string name="result_btn_save">Sauvegarder</string>
 

@@ -1,0 +1,22 @@
+<Alloy>
+    <Window id="window">
+        <View class="vLayout">
+            <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
+            <ScrollView class="vLayout" height="80%">
+                <Label class="result RegularFont"></Label>
+                <View class="resultContainer hSize">
+                    <Label id="lbResultText"></Label>
+                    <View class="hSize wSize hLayout" right="0" horizontalWrap="false">
+                        <View id="icon"></View>
+                        <Label id="lbResultNbr"></Label>
+                    </View>
+                </View>
+                <Label id="lbPStitle"></Label>
+                <Label id="lbPStext"></Label>
+            </ScrollView>
+        </View>
+        <View class="hSize vLayout" bottom="0">
+            <Require src="/component/buttonImgCentre" id="btnRecommendation" onClick="navigateToRecommendations"></Require>
+        </View>
+    </Window>
+</Alloy>

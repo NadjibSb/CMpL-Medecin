@@ -20,7 +20,7 @@ function onCalculer(e){
     checkEmptyFields( ()=>{
         checkValidFields( (args)=>{
             log(args);
-            navManager.openWindow("home/test/result/index", args);
+            navManager.openWindow("home/test/result/eutos", args);
         })
     });
 }
