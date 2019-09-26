@@ -22,6 +22,7 @@
   height: 50,
   borderColor: 'gray',
   borderRadius: 5,
+  bubbleParent: false
 }
 
 
@@ -33,6 +34,7 @@
     inputType: Ti.UI.INPUT_TYPE_CLASS_NUMBER,
 	right: 16,
 	left: 16,
+    color: 'black'
 }
 
 '#tfAge': {
@@ -55,6 +57,9 @@
 
 '#btnCalculer': {
     top: 56,
+    right: 32,
+    left: 32,
+    bottom: 16,
     titre : L("calculer"),
     buttonId: "calculer",
     fontColor: "white",

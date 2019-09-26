@@ -26,11 +26,10 @@ function onCalculer(e){
 }
 
 function exitKeyBoard(e){
+    $.tfRate.blur();
+    $.tfBosiphiles.blur();
     if (Alloy.Globals.isAndroid) {
         Ti.UI.Android.hideSoftKeyboard();
-    }else {
-        $.tfRate.blur();
-        $.tfBosiphiles.blur();
     }
 }
 

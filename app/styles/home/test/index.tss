@@ -7,25 +7,26 @@
 
 '.calculTaxt': {
     top: 32,
-    right: "10%",
-    left: "10%",
+    right: 32,
+    left: 32,
     font: {
         fontSize: 18
     },
-    color: 'black',
-    text: L('test_calcule_text')
+    color: 'black'
 }
 '.separator': {
-    top: "5%",
-    right: "10%",
-    left: "10%",
+    top: 16,
+    right: 32,
+    left: 32,
     height: 1,
     opacity: 0.5,
     backgroundColor: 'gray'
 }
 
 '.btn': {
-    top: "5%",
+    top: 16,
+    right: 32,
+    left: 32,
     color : Alloy.CFG.colors.primaryColor,
     fontColor: "white",
     alignLeft: true,
@@ -51,7 +52,10 @@
 }
 
 '#button_finish': {
-    top: "5%",
+    top: 16,
+    right: 32,
+    left: 32,
+    bottom: 16,
     titre : L("test_btn_finish"),
     buttonId: "finish",
     fontColor: "white",

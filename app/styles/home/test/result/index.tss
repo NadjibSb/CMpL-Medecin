@@ -73,18 +73,12 @@
 }
 
 '#btnRecommendation': {
-    bottom: 16,
+    bottom: 32,
+    right: 32,
+    left: 32,
     titre : L("result_btn_recommendation"),
     buttonId: "recommendations",
     color : Alloy.CFG.colors.primaryColor,
     icon : "/images/icn_recommendations.png",
-    fontColor: "white",
-}
-
-'#btnSave': {
-    bottom: 32,
-    titre : L("result_btn_save"),
-    buttonId: "save",
-    color : Alloy.CFG.colors.primaryColor,
     fontColor: "white",
 }

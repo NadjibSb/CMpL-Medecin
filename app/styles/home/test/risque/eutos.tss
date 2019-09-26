@@ -21,7 +21,9 @@
   height: 50,
   borderColor: 'gray',
   borderRadius: 5,
+  bubbleParent: false
 }
+
 '.tf': {
     autocorrect: false,
     hintTextColor: Alloy.CFG.colors.fonts.placeholder,
@@ -30,19 +32,23 @@
     inputType: Ti.UI.INPUT_TYPE_CLASS_NUMBER,
 	right: 16,
 	left: 16,
+    color: 'black',
 }
 
 '#tfRate': {
     hintText : L("risque_eutos_rate_hint"),
+    keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBER_PAD,
 }
 
 '#tfBosiphiles': {
     hintText : L("risque_eutos_basophiles_hint"),
-    keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBER_PAD,
 }
 
 '#btnCalculer': {
     top: 56,
+    right: 32,
+    left: 32,
+    bottom: 16,
     titre : L("calculer"),
     buttonId: "calculer",
     fontColor: "white",

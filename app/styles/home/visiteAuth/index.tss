@@ -6,15 +6,17 @@
 }
 
 '#scanneButton': {
-    top: "5%",
-  titre: L("enregi_scanner"),
-  icon: "/images/icn_scan_green.png",
-  color: Alloy.CFG.colors.lightGrey,
-  fontColor: Alloy.CFG.colors.primaryColor
+    top: 32,
+    right: "10%",
+    left: "10%",
+    titre: L("enregi_scanner"),
+    icon: "/images/icn_scan_green.png",
+    color: Alloy.CFG.colors.lightGrey,
+    fontColor: Alloy.CFG.colors.primaryColor
 }
 
 '.QRtext': {
-    top: "10%",
+    top: 56,
     right: "10%",
     left: "10%",
     font: {

@@ -29,13 +29,12 @@ function onCalculer(e){
 
 
 function exitKeyBoard(e){
+    $.tfAge.blur();
+    $.tfRate.blur();
+    $.tfPlaquette.blur();
+    $.tfSang.blur();
     if (Alloy.Globals.isAndroid) {
         Ti.UI.Android.hideSoftKeyboard();
-    }else {
-        $.tfAge.blur();
-        $.tfRate.blur();
-        $.tfPlaquette.blur();
-        $.tfSang.blur();
     }
 }
 

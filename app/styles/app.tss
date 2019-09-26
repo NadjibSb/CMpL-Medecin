@@ -38,6 +38,9 @@ overrode the settings with other TSS, XML, or JS settings:
     width: Ti.Platform.displayCaps.platformWidth,
     statusBarStyle: Ti.UI.iOS.StatusBar.LIGHT_CONTENT
 }
+"Window[if=Alloy.Globals.isAndroid]": {
+    animated: false
+}
 
 "Label":{
     font :{
