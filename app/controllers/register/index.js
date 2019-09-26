@@ -21,11 +21,14 @@ var currentWilaya = "Wilaya",
     if (Alloy.Globals.getCode()) {
         if (Alloy.Globals.getWilaya() && Alloy.Globals.getMedical() ) {
             $.scrollableView.currentPage = 2;
+            $.treePoint.children[ 2 ].opacity = 1;
         }else {
             $.scrollableView.currentPage = 1;
+            $.treePoint.children[ 1 ].opacity = 1;
         }
+    }else {
+        $.treePoint.children[ 0 ].opacity = 1;
     }
-    $.treePoint.children[ $.scrollableView.currentPage ].opacity = 1;
     remplireWilaya();
 })();
 
@@ -79,16 +82,32 @@ function btnClicked(e){
 }
 
 function chooseWilaya(e){
-  $.pickerContainer.visible = true
-  labelWilaya = e
+    exitPickerAndKeyboard();
+    currentWilaya = wilayas[0].nom;
+    labelWilaya = e;
+    setTimeout(()=>{
+        $.pickerContainer.visible = true;
+    }, 100);
+
 }
 
 function wilayaChanged(e){
-  log(e.row.title);
-  currentWilaya = e.row.title
+  currentWilaya = e.row.title;
+    log(currentWilaya);
 }
 
 function wilayaChoosed(e){
-  labelWilaya.text = currentWilaya
+  labelWilaya.text = currentWilaya;
+  labelWilaya.color =  "#000";
   $.pickerContainer.visible = false
+}
+
+function exitPickerAndKeyboard(e){
+    $.pickerContainer.visible = false
+    if (Alloy.Globals.isAndroid) {
+        Ti.UI.Android.hideSoftKeyboard();
+    }else {
+        $.tfRate.blur();
+        $.tfBosiphiles.blur();
+    }
 }

@@ -8,11 +8,15 @@ var titre = args.titre;
 var icon = args.icon;
 var color = args.color;
 var fontColor = args.fontColor;
-var left = args.alignLeft;
+var alignLeft = args.alignLeft;
 var top = args.top;
 var bottom = args.bottom;
+var left = args.left;
+var right = args.right;
 //variable
 
+//traintement
+remplireData();
 
 //function
 function buttonClick(e){
@@ -22,15 +26,19 @@ function buttonClick(e){
 
 function remplireData(){
   color && ($.viewButton.backgroundColor = color);
-  icon && ($.image_button.image = icon);
-  titre && ($.label.text = titre),
+  if (icon) {
+      $.image_button.image = icon;
+  }else {
+      $.image_button.visible = false;
+  }
+  /*icon && ($.image_button.image = icon);*/
+  titre && ($.label.text = titre);
   fontColor && ($.label.color = fontColor);
-  if (left) {
+  if (alignLeft) {
       $.content.left = 24
   }
   top && ($.viewButton.top = top);
   bottom && ($.viewButton.bottom = bottom);
+  left && ($.viewButton.left = left);
+  right && ($.viewButton.right = right);
 }
-
-//traintement
-remplireData()

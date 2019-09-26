@@ -1,12 +1,12 @@
 <Alloy>
-	<View class="container vLayout">
+	<View class="container vLayout hSize">
     <ImageView  id="accuille_logo"></ImageView>
     <Label id="labelCode"></Label>
-    <View id="containerWilaya" class="hSize containerDonnee" onClick="choiceWilaya">
+    <View id="containerWilaya" class="containerDonnee" onClick="choiceWilaya">
         <Label id="labelWilaya"></Label>
         <ImageView id="localisationImage"></ImageView>
     </View>
-    <View id="containerDonnee" class="hSize containerDonnee" >
+    <View id="containerDonnee" class="containerDonnee" >
         <TextField id="textFieldNom"></TextField>
         <ImageView id="meubleImage"></ImageView>
     </View>

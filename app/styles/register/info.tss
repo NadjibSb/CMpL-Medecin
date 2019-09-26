@@ -1,10 +1,9 @@
 
 ".container" : {
-
+    top: 0
 }
 
 '#webCondition': {
-  top : "10%",
-  bottom: "5%",
+  bottom: 16,
   url : "http://www.google.com"
 }

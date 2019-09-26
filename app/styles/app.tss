@@ -25,35 +25,23 @@ overrode the settings with other TSS, XML, or JS settings:
 
 */
 
-
-"*":{
-	font :{
-		fontFamily: "Lato",
-		fontSize: 18,
-	}
-}
-
 //TopBar
 ".noTopBar[if=Alloy.Globals.isIOS]" : {
     top: 20
 }
 
-".cmpl_logo":{
-	backgroundColor: "red",
-	height: 48,
-	width: 180
-}
-
 // Sizes
 "Window": {
-	width: Ti.Platform.displayCaps.platformWidth,
     backgroundColor: 'white',
+}
+"Window[if=Alloy.Globals.isIOS]": {
+    width: Ti.Platform.displayCaps.platformWidth,
     statusBarStyle: Ti.UI.iOS.StatusBar.LIGHT_CONTENT
 }
 
 "Label":{
     font :{
-		fontFamily: Alloy.CFG.fonts.Regular
+		fontFamily: Alloy.CFG.fonts.Simple
 	}
 }
 

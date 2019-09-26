@@ -1,5 +1,5 @@
 <Alloy>
-  <View class="container vLayout">
-    <WebView id="webCondition"></WebView>
+  <View class="container vLayout hSize">
+    <WebView id="webCondition" enableZoomControls="false"></WebView>
   </View>
 </Alloy>

@@ -1,29 +1,41 @@
+'.container': {
+    top: 0
+}
+
 '#accuille_logo': {
-    top: "10%",
-    image: "/images/logo_cmpl_screens.png",
+    top: 64,
+    image: "/images/icn_cmpl_green.png",
 }
 
 
 '#labelCode': {
-  top: "15%",
+  top: 56,
   text: L('enregi_fill_donnee'),
   width: "80%",
+  color: 'black',
+  font: {
+      fontSize: 16,
+      fontFamily: Alloy.CFG.fonts.Regular
+  }
 }
 
 '.containerDonnee': {
-  top: "10%",
-  left: "10%",
-  right : "10%",
-  height: 50,
-  borderWidth: 0.3,
-  borderColor: 'gray',
-  borderRadius: 5,
+    top: 16,
+    left: 32,
+    right : 32,
+    height: 50,
+    borderWidth: 1,
+    borderColor: "d7d7d7",
+    borderRadius: 5,
+    zIndex: 10,
+    bubbleParent: false
 }
 
 '#labelWilaya': {
   text: L("wilaya"),
   font: {
-    fontSize: 16
+      fontFamily: Alloy.CFG.fonts.Regular,
+      fontSize: 16
   },
   left: 16,
   color: Alloy.CFG.colors.fonts.placeholder
@@ -40,17 +52,22 @@
   right : 16
 }
 
-'#containerDonnee': {
-  top: "5%"
-}
-
 '#textFieldNom': {
     hintText : L("etablissement"),
     autocorrect: false,
     autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
     hintTextColor: Alloy.CFG.colors.fonts.placeholder,
     backgroundColor : 'transparent',
+    color: 'black',
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
 	right: 48,
 	left: 16,
+    font: {
+        fontFamily: Alloy.CFG.fonts.Regular,
+        fontSize: 16
+    },
+}
+
+'.container': {
+    top: 0
 }

@@ -15,7 +15,7 @@ var navManager = require("/services/navManager");
 })();
 
 function calculScore(age,rate){
-    var result = 0.0016 * (age - 0.0345 + (43.4 *(rate - 0.188 + (7.51 *()))))
+    var result = 0.0016 * (age - 0.0345 + (43.4 *(rate - 0.188 + (7.51 *(5)))))
 }
 
 // EVENTS HANDLERS------------------------------------------------------------------

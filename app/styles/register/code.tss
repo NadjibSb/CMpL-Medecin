@@ -1,18 +1,29 @@
 '#accuille_logo': {
-  top: "10%",
-  image: "/images/logo_cmpl_screens.png",
+  top: 64,
+  image: "/images/icn_cmpl_green.png",
 }
 
 '#labelCode': {
-  top: "15%",
+  top: 56,
   text: L("enregi_scan_code"),
   width: "80%",
+  color: 'black',
+  font: {
+      fontSize: 16,
+      fontFamily: Alloy.CFG.fonts.Regular
+  }
 }
 
 '#scanneButton': {
-  top: "5%",
+  top: 16,
+  right: 32,
+  left: 32,
   titre: L("enregi_scanner"),
   icon: "/images/icn_scan_green.png",
   color: Alloy.CFG.colors.lightGrey,
   fontColor: Alloy.CFG.colors.primaryColor
+}
+
+'.container': {
+    top: 0
 }

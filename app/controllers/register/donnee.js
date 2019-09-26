@@ -24,5 +24,4 @@ function checkData(){
 // EVENTS Handler ---------------------------------------------------------------
 function choiceWilaya(e){
   $.trigger("chooseWilaya",$.labelWilaya);
-  $.labelWilaya.color = 'black'
 }

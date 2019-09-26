@@ -1,8 +1,8 @@
 <Alloy>
 	<View id="viewButton" class="communButtonImage" onClick="buttonClick" >
-        <View id="content" class="hSize wSize hLayout">
+        <View id="content" class="wSize hLayout">
             <ImageView id="image_button"></ImageView>
-            <Label  id="label" class="lebelInsideButtonCenter boldFont"></Label>
+            <Label  id="label" class="lebelInsideButtonCenter"></Label>
         </View>
     </View>
 </Alloy>

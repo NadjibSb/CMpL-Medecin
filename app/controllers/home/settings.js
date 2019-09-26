@@ -56,6 +56,7 @@ function onEdit(e){
     }
 }
 
+
 // Picker events
 function chooseWilaya(e){
   $.pickerContainer.visible = true
