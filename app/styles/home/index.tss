@@ -15,7 +15,7 @@
 }
 
 '.bntContainer': {
-    top: 40,
+    top: 56,
     bottom: 16
 }
 

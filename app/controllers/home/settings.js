@@ -41,6 +41,7 @@ function getLocalData(){
 
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
+    log("navigateUp");
     navManager.closeWindow($.window);
 }
 

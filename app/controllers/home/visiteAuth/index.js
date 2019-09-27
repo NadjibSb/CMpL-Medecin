@@ -21,5 +21,5 @@ function navigateToSettings(e){
 
 function scanneCode(e){
     navManager.openWindow("home/test/index");
-    navManager.closeWindow($.window);
+    //navManager.closeWindow($.window);
 }

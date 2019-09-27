@@ -31,7 +31,7 @@ function openWindow(path,params={}, openAndCloseAllFlag) {
     	var controller = Alloy.createController(path, params);
 
         // si android
-        if (OS_ANDROID) {
+        if (Alloy.Globals.isAndroid) {
           log("taille stack cont : "+ stackController.length);
           stackController.push(controller);
           log("taille stack apres push cont : "+ stackController.length);
@@ -77,7 +77,14 @@ function openWindow(path,params={}, openAndCloseAllFlag) {
 
 // to close window
 function closeWindow(window) {
-    window.close();
+    log("closeWindow");
+    if (OS_ANDROID) {
+        var cont = stackController.pop();
+        log("apres le pop :"+ stackController.length);
+        cont.getView().close();
+    }else{
+        window.close();
+    }
 };
 
 // pour ouvrire un liste de window et

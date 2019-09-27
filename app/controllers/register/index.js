@@ -4,9 +4,10 @@ const log = require( 'services/logger' )( {
 		hideLog: false
 	} );
 
-var navmanager = require('/services/navmanager'),
-    alertDialog = require('/services/alertManager'),
-    wilayas = require('/dataFile/wilaya').default;
+
+var alertDialog = require('/services/alertManager');
+var wilayas = require('/dataFile/wilaya').default;
+var navmanager = require('/services/navManager');
 
 
 // PRIVATE VARIABLES------------------------------------------------------------
@@ -18,6 +19,7 @@ var currentWilaya = "Wilaya",
 
 // CONSTRUCTOR ------------------------------------------------------------
 (function contructor(){
+    log("constructor");
     if (Alloy.Globals.getCode()) {
         if (Alloy.Globals.getWilaya() && Alloy.Globals.getMedical() ) {
             $.scrollableView.currentPage = 2;
@@ -42,7 +44,7 @@ function remplireWilaya(){
             title : wilaya.nom
         });
         $.wilayaColumn.addRow(data[wilaya.id]);
-        //log(wilaya.id+" "+wilaya.nom,"remplireWilaya");
+        log(wilaya.id+" "+wilaya.nom,"remplireWilaya");
     })
 }
 
@@ -70,8 +72,9 @@ function onScrollend( e ) {
 
 function btnClicked(e){
     if ($.scrollableView.currentPage == 2) {
-        Alloy.Globals.HAS_AUTHENTIFIED();
-        navmanager.openAndCloseAll("home/index");
+        //Alloy.Globals.HAS_AUTHENTIFIED();
+        navmanager.openWindow("home/index");
+        //navmanager.closeWindow($.window);
     }else if ($.scrollableView.currentPage == 1) {
         medicalCheck(()=>{
             $.scrollableView.moveNext();

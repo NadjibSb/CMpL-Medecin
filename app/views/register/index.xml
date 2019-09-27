@@ -1,31 +1,29 @@
 <Alloy>
-	<Window>
+	<Window id="window">
 		<View class="vLayout" >
 			<Widget src="customNavBar" id="navBar" class="navBar" ></Widget>
             <ScrollView class="vLayout" scrollType="vertical" onClick="exitPickerAndKeyboard">
-                <ScrollView id="scrollableViewContainer">
-                    <View class="hSize">
-                      <ScrollableView id="scrollableView" class="hSize" onScrollend="onScrollend" scrollingEnabled="false" >
+                <View id="scrollableViewContainer" class="vLayout">
+                      <ScrollableView id="scrollableView"  onScrollend="onScrollend" scrollingEnabled="false">
                         <Require src="/register/code"></Require>
                         <Require id="donneeComponent" src="/register/donnee" onChooseWilaya="chooseWilaya"></Require>
                         <Require src="/register/info"></Require>
                       </ScrollableView>
-                    </View>
-                </ScrollView>
-                    <View id="bottomContainer" class="hSize vLayout" >
-                        <View id="treePoint" class="hSize" >
-                      		<View class="point" id="point1">
-                              <Label class="label_enreg boldFont">1</Label>
-                            </View>
-                        	<View class="point" id="point2">
-                                <Label class="label_enreg">2</Label>
-                            </View>
-                        	<View class="point" id="point3">
-                                <Label class="label_enreg">3</Label>
-                            </View>
+                </View>
+                <View id="bottomContainer" class="hSize vLayout" >
+                    <View id="treePoint" class="hSize" >
+                  		<View class="point" id="point1">
+                          <Label class="label_enreg boldFont">1</Label>
                         </View>
-                        <Require src="/component/buttonImgCentre" id="btStart" onClick="btnClicked"></Require>
+                    	<View class="point" id="point2">
+                            <Label class="label_enreg">2</Label>
+                        </View>
+                    	<View class="point" id="point3">
+                            <Label class="label_enreg">3</Label>
+                        </View>
                     </View>
+                    <Require src="/component/buttonImgCentre" id="btStart" onClick="btnClicked"></Require>
+                </View>
             </ScrollView>
 		</View>
         <View id="pickerContainer" class="vLayout" >

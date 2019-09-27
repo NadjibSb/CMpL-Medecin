@@ -61,10 +61,11 @@
 }
 
 '#bottomContainer': {
+    top: 8,
     bottom: 16
 }
 
 '#scrollableViewContainer': {
-    height: "80%",
+    height: "78%",
     scrollType: "vertical"
 }
