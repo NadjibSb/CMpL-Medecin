@@ -4,7 +4,7 @@
             <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
             <ScrollView class="vLayout" onClick="exitPickerAndKeyboard">
                 <View class="QRcontainer hSize vLayout">
-                    <View class="hSize wSize hLayout">
+                    <View class="hSize wSize hLayout" horizontalWrap="false">
                         <Label class="QRText RegularFont"></Label>
                         <ImageView class="downArrow"></ImageView>
                     </View>

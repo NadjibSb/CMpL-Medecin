@@ -72,7 +72,7 @@ function onScrollend( e ) {
 
 function btnClicked(e){
     if ($.scrollableView.currentPage == 2) {
-        //Alloy.Globals.HAS_AUTHENTIFIED();
+        Alloy.Globals.HAS_AUTHENTIFIED();
         navmanager.openWindow("home/index");
         //navmanager.closeWindow($.window);
     }else if ($.scrollableView.currentPage == 1) {
@@ -86,7 +86,7 @@ function btnClicked(e){
 
 function chooseWilaya(e){
     exitPickerAndKeyboard();
-    currentWilaya = wilayas[0].nom;
+    (currentWilaya == "Wilaya") && (currentWilaya = wilayas[0].nom);
     labelWilaya = e;
     setTimeout(()=>{
         $.pickerContainer.visible = true;

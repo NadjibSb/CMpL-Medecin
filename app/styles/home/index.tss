@@ -10,12 +10,12 @@
 }
 
 '#accuille_logo': {
-  top: 64,
+  top: "15%",
   image: "/images/icn_cmpl_green.png",
 }
 
 '.bntContainer': {
-    top: 56,
+    top: "15%",
     bottom: 16
 }
 

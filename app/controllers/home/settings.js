@@ -76,7 +76,7 @@ function chooseWilaya(e){
     log("choose Wilaya");
     if (touchEnabled) {
         exitPickerAndKeyboard();
-        currentWilaya = wilayas[0].nom;
+        (!currentWilaya) && (currentWilaya = wilayas[0].nom);
         setTimeout(()=>{
             $.pickerContainer.visible = true;
         }, 100);
