@@ -4,5 +4,5 @@
 }
 
 '#webCondition': {
-  url : "http://www.google.com"
+  url : Alloy.CFG.urls.conditions
 }

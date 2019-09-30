@@ -17,18 +17,15 @@ function navigateUp(e){
 }
 
 function onCalculer(e){
-    navManager.openWindow("home/test/result/index", {
-        source: EUTOS,
-        rate: 3.5,
-        bosiphiles: 50
-    });
-    /*
+
     checkEmptyFields( ()=>{
         checkValidFields( (args)=>{
-            log(args);
+            _.extend(args, {
+                source: EUTOS
+            });
             navManager.openWindow("home/test/result/index", args);
         })
-    });*/
+    });
 }
 
 function exitKeyBoard(e){
@@ -64,7 +61,7 @@ function checkEmptyFields(callback){
 
 function checkValidFields(callback){
     // verify rate
-    var rate = $.tfRate.value;
+    var rate = parseFloat($.tfRate.value);
     if ( rate>= 1 && rate <= 150) {
         // verify bosiphiles
         try {

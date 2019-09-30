@@ -22,6 +22,10 @@
 	<string name="enregi_scan_code">Veuiller scanner votre QR Code pour continuer.</string>
 	<string name="enregi_fill_donnee">Veuiller remplire les champs suivant.</string>
 
+
+    <!-- recommendations -->
+	<string name="recommendations_title">Recommendations</string>
+
     <!-- Result -->
 	<string name="result_sokal_title">Résultat - risque SOKAL</string>
 	<string name="result_eutos_title">Résultat - risque EUTOS</string>

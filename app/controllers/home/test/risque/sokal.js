@@ -17,20 +17,14 @@ function navigateUp(e){
 }
 
 function onCalculer(e){
-    navManager.openWindow("home/test/result/index", {
-        source: SOKAL,
-        age: 5,
-        rate: 3.3,
-        plaquette: 7,
-        sang: 1
-    });
-/*
     checkEmptyFields( ()=>{
         checkValidFields( (args)=>{
-            log(args);
-            navManager.openWindow("home/test/result/sokal", args);
+            _.extend(args, {
+                source: SOKAL
+            });
+            navManager.openWindow("home/test/result/index", args);
         })
-    });*/
+    });
 }
 
 
@@ -74,7 +68,7 @@ function checkEmptyFields(callback){
 
 function checkValidFields(callback){
     // verify age
-    var age = $.tfAge.value;
+    var age = parseFloat($.tfAge.value);
     if ( age>= 1 && age <= 150) {
         // verify rate
         try {
@@ -85,7 +79,7 @@ function checkValidFields(callback){
                     var plaquette = parseFloat( $.tfPlaquette.value.replace(",", ".") );
                     if (plaquette >=0 && plaquette <=100) {
                         // verify sang
-                        var sang = $.tfSang.value;
+                        var sang = parseFloat($.tfSang.value);
                         if (sang>=0 && sang<=100) {
                             _.isFunction( callback ) && callback({
                                 age: age,

@@ -1,0 +1,9 @@
+'#navBar': {
+  title : L("recommendations_title"),
+  zIndex: 200,
+  leftIcon: "/images/icn_topbar_back.png"
+}
+
+'#pdf': {
+    url: Alloy.CFG.urls.recommendations
+}

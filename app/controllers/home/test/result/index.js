@@ -1,36 +1,65 @@
-// DEPENDENCIES
+// DEPENDENCIES ------------------------------------------------------------------------
 const log = require( '/services/logger' )( {
-		tag: "result sokal",
+		tag: "result index",
 		hideLog: false
 	} );
 
 var navManager = require("/services/navManager");
 
 
+// VARIABLES ------------------------------------------------------------------------
 const SOKAL = "SOKAL",
     EUTOS = "EUTOS";
 var args = $.args;
 
-// CONSTRUCTOR
+
+// CONSTRUCTOR ------------------------------------------------------------------------
 (function contructor(){
-    log(args);
+    log(args, 'args');
     var result;
     switch (args.source) {
         case SOKAL:
+            log(SOKAL);
             $.navBar.setTitle(L("result_sokal_title"));
             result = calculScore(args);
             updateSokalUI(result);
             break;
         case EUTOS:
+            log(EUTOS);
             $.navBar.setTitle(L("result_eutos_title"));
             result = calculScore(args);
             updateEutosUI(result);
             break;
         default:
     }
-    log(result, "result");
 })();
 
+
+
+// PRIVATE FUNCTIONS ------------------------------------------------------------------------
+function calculScore(args){
+    var result = 0;
+    switch (args.source) {
+        case SOKAL:
+            if (args && args.age && args.rate && args.plaquette && args.sang ) {
+                result = (0.0016 * (args.age - 43.4));
+                result = result + (0.0345 * (args.rate- 7.51));
+                result = result + (0.188 * ( Math.pow(( args.plaquette / 700 ), 2)- 0.563));
+                result = result + (0.0887 * (args.sang - 2.10));
+            }else {
+                log(args, 'no args')
+            }
+            break;
+        case EUTOS:
+            if (args && args.rate && args.bosiphiles) {
+                result = (7 * args.bosiphiles) + (4 * args.rate);
+            }
+            break;
+        default:
+    }
+    log(result, 'calcul result');
+    return result
+}
 
 function updateSokalUI(result){
     $.lbResultNbr.text = result.toFixed(2);
@@ -72,23 +101,6 @@ function updateEutosUI(result){
     }
 }
 
-function calculScore(args){
-    var result = 0;
-    switch (args.source) {
-        case SOKAL:
-            if (args && args.age && args.rate && args.plaquette && args.sang ) {
-                result = (0.0016 * (args.age - 43.4)) + (0.0345 * (args.rate- 7.51)) + (0.188 * ( Math.pow(( args.plaquette / 700 ), 2)- 0.563)) + (0.0887 * (args.sang - 2.10))
-            }
-            break;
-        case EUTOS:
-            if (args && args.rate && args.bosiphiles) {
-                result = (7 * args.bosiphiles) + (4 * args.rate)
-            }
-            break;
-        default:
-    }
-    return result
-}
 
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
@@ -96,7 +108,5 @@ function navigateUp(e){
 }
 
 function navigateToRecommendations(e){
-}
-
-function onSave(e){
+    navManager.openWindow("home/test/result/recommendations");
 }

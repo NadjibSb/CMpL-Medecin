@@ -2,7 +2,9 @@
     "global": {
         "urls": {
             "apiUrl": "http://novartis.dzmob.com/api/v1/",
-            "backOfficeUrl": "http://novartis.dzmob.com/"
+            "backOfficeUrl": "http://novartis.dzmob.com/",
+            "conditions": "http://www.google.com",
+            "recommendations": "http://www.orimi.com/pdf-test.pdf"
         },
         "colors": {
             "primaryColor": "#58b783",
