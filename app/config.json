@@ -1,5 +1,9 @@
 {
     "global": {
+        "urls": {
+            "apiUrl": "http://novartis.dzmob.com/api/v1/",
+            "backOfficeUrl": "http://novartis.dzmob.com/"
+        },
         "colors": {
             "primaryColor": "#58b783",
             "primaryColorLight": "#d2f2c3",
@@ -14,13 +18,7 @@
                 "red": "#E35956",
                 "placeholder": "#929292",
                 "placeholder2": "#5A5A5A"
-            },
-            "design": {
-                "Primary": "#EE7151"
             }
-        },
-        "sizes": {
-            "titlebarHeight": 64
         },
         "fonts": {
             "Simple": "Lato-Black",
@@ -43,6 +41,8 @@
     "os:windows": {},
     "dependencies": {
         "customNavBar": "*",
-        "dzmob.widget.TextField": "*"
+        "dzmob.widget.TextField": "*",
+        "customIndicatorInsideView": "*",
+        "customIndicator": "*"
     }
 }

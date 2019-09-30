@@ -1,6 +1,8 @@
 <Alloy autoStyle="true">
 	<View id="navBarContainer" class="backgroundGradient">
-		<Label id="titleWindow" class="navBarTitle" />
+        <View class="navBarTitle">
+            <Label id="titleWindow"  />
+        </View>
 		<View id="separator" />
 		<View id="zoneClickRight" module="module/touchView" onClick="rightButtonClick">
 			<View class="iconContainer">

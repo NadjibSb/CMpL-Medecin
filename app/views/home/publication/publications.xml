@@ -3,7 +3,8 @@
         <View class="vLayout">
             <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
             <View>
-                <ListView id="listView" onItemclick="onItemclick">
+                <Widget src="customIndicatorInsideView" id="progressIndicator"></Widget>
+                <ListView id="listView" onItemclick="onItemclick" onMarker="onMarkerReached">
                     <Templates>
                         <ItemTemplate name="pubTemplate">
                             <View class="hSize itemContainer">

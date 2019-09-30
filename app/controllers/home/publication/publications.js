@@ -4,24 +4,82 @@ const log = require( '/services/logger' )( {
 		hideLog: false
 	} );
 
-var navManager = require("/services/navManager");
+var navManager = require("/services/navManager"),
+    http = require("/services/httpManager"),
+	alertDialog = require( 'services/alertManager' ),
+    BASE_URL = Alloy.CFG.urls.apiUrl;
 
-var publications = [];
+const PAGE_COUNT = 10;
+var publications = [],
+    listToDisplay = [],
+    total = 0,
+    curentPage = 1;
 
 // CONSTRUCTOR ------------------------------------------------------------------
 (function constructor(){
     setup_refreshController();
 
-    for (var i = 0; i < 5; i++) {
-        publications.push({
-            template: "pubTemplate",
-            title: {text:"titre titre "+i}
-        })
-    }
-    $.pubSection.items = publications;
+    loadPage(curentPage, ()=>{
+        setTimeout(function(){
+        $.progressIndicator.hide();
+    }, 100);
+
+    });
 })();
 
 
+function loadPage(page, callback){
+    getDataByPage(page, (newList)=>{
+        if (newList && newList.length>0) {
+            publications.push(...newList) ;
+            bindDataList(newList, listToDisplay);
+        }
+        _.isFunction( callback ) && callback();
+    });
+}
+
+
+function getDataByPage(pageNbr, successCallback){
+    http.request({
+        url: BASE_URL + "publications",
+        fullResponse: true,
+        params: {page: pageNbr},
+        method: "GET"
+        },
+        (r)=>{
+            log(r, "getPage "+pageNbr);
+            try {
+                var response = JSON.parse( r );
+                total = response.total;
+                _.isFunction( successCallback ) && successCallback( response.pubs);
+
+            }catch (e) {
+                log.e( e, "json parse error " );
+                log.e( r, "response " );
+                alertDialog.show({title: 'Error', message:e});
+            }
+        },
+        (e)=>{
+            log.e(e, "getPage "+pageNbr);
+            alertDialog.show({title: 'Error', message:e});
+        }
+    );
+}
+
+function bindDataList(sourceList, resultList){
+    _.each(sourceList, (item)=>{
+        //log(item , 'bindDataList');
+        resultList.push({
+            template: "pubTemplate",
+            title: {text: item.title},
+        });
+    });
+    $.pubSection.items = resultList;
+    $.listView.setMarker({
+        sectionIndex:0,
+        itemIndex: $.pubSection.items.length-3
+    })
+}
 
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
@@ -29,8 +87,12 @@ function navigateUp(e){
 }
 
 function onItemclick(e){
-    //log(e);
-    navManager.openWindow("home/publication/webView",{url:"http://www.orimi.com/pdf-test.pdf",title:"title test"});
+    log(publications[e.itemIndex] , 'onItemclick');
+    //navManager.openWindow("home/publication/webView",{url:"http://www.orimi.com/pdf-test.pdf",title:"title test"});
+    navManager.openWindow("home/publication/webView",{
+        url: Alloy.CFG.urls.backOfficeUrl + publications[e.itemIndex].path ,
+        title: publications[e.itemIndex].title
+    });
 }
 
 
@@ -41,7 +103,18 @@ function setup_refreshController(){
     $.listView.refreshControl = control;
     control.addEventListener('refreshstart',function(e){
         log('refreshstart');
-        //getData(()=>{control.endRefreshing();});
-        control.endRefreshing();
+        curentPage = 1;
+        publications = [];
+        listToDisplay = [];
+        loadPage(curentPage, ()=>{
+            control.endRefreshing();
+        });
+
     });
+}
+
+function onMarkerReached(e){
+    log('Marker reached');
+    curentPage++;
+    loadPage(curentPage);
 }

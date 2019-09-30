@@ -54,6 +54,13 @@
   height: 23,
 
 }
-'#titleWindow[platform=ios]': {
+
+
+'.navBarTitle': {
+    height: Ti.UI.SIZE,
+    right: 56,
+    left: 56
+}
+'.navBarTitle[platform=ios]': {
   bottom:10,
 }

@@ -50,7 +50,7 @@ function onEdit(e){
     if (touchEnabled) {
         var medical = $.textFieldNom.value || "";
         var wilaya = $.labelWilaya.text;
-        if( medical.length >0 && wilaya != L('wilaya')){
+        if( medical.length >0){
             log(wilaya+ ' - '+ medical, 'onEdit');
             Alloy.Globals.setWilaya(wilaya);
             Alloy.Globals.setMedical(medical);
@@ -63,7 +63,7 @@ function onEdit(e){
         $.labelWilaya.color = "black";
         $.textFieldNom.color = 'black';
         $.textFieldNom.editable = true;
-        $.editBtn.titre = "Save";
+        $.editBtn.setTitle(L("save"))
         $.containerWilaya.addEventListener('click', (e)=>{
             chooseWilaya(e);
         } );

@@ -6,7 +6,7 @@
 }
 
 '.QRcontainer': {
-    top: 24,
+    top: "5%",
     right: "10%",
     left: "10%"
 }

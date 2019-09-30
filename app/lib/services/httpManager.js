@@ -93,6 +93,7 @@ function request( args, successCallback, errorCallback ) {
 			default:
 				error = REQUEST_ERROR;
 		}
+        log.e(errorRequest , "full error");
 		responseHandler.handleErrorResponse( args, error, this, errorCallback );
 	};
 	if(_.isFunction(onProgress)){

@@ -76,6 +76,7 @@
 	<string name="missed_field">Champ manquant</string>
 	<string name="invalid_field">Champ invalide</string>
 	<string name="result">Résultat :</string>
+	<string name="save">Sauvegarder</string>
 
 
     <!-- Alert Dialog -->
