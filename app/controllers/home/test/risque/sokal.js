@@ -8,7 +8,7 @@ var navManager = require("/services/navManager"),
     alertDialog = require('/services/alertManager');
 
 
-
+const SOKAL = "SOKAL";
 
 
 // EVENTS HANDLERS------------------------------------------------------------------
@@ -17,14 +17,20 @@ function navigateUp(e){
 }
 
 function onCalculer(e){
-    //navManager.openWindow("home/test/result/index");
-
+    navManager.openWindow("home/test/result/index", {
+        source: SOKAL,
+        age: 5,
+        rate: 3.3,
+        plaquette: 7,
+        sang: 1
+    });
+/*
     checkEmptyFields( ()=>{
         checkValidFields( (args)=>{
             log(args);
             navManager.openWindow("home/test/result/sokal", args);
         })
-    });
+    });*/
 }
 
 

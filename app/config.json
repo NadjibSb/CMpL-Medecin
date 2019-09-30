@@ -9,15 +9,12 @@
             "primaryColorLight": "#d2f2c3",
             "purple": "#B665A5",
             "orange": "#EE9C51",
+            "red": "#D52505",
             "lightGrey": "#F4F4F4",
             "disabled": "#B7B7B7",
             "fonts": {
                 "primary": "#000",
-                "black": "#000",
-                "yellow": "#FFC000",
-                "red": "#E35956",
-                "placeholder": "#929292",
-                "placeholder2": "#5A5A5A"
+                "black": "#000"
             }
         },
         "fonts": {

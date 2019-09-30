@@ -39,7 +39,7 @@
       fontSize: 16
   },
   left: 16,
-  color: Alloy.CFG.colors.fonts.placeholder
+  color: 'gray'
 }
 
 '#localisationImage': {
@@ -57,7 +57,7 @@
     hintText : L("etablissement"),
     autocorrect: false,
     autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
-    hintTextColor: Alloy.CFG.colors.fonts.placeholder,
+    hintTextColor: 'gray',
     backgroundColor : 'transparent',
     color: 'black',
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,

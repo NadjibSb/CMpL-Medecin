@@ -8,7 +8,7 @@ var navManager = require("/services/navManager"),
     alertDialog = require('/services/alertManager');
 
 
-
+const EUTOS = "EUTOS";
 
 
 // EVENTS HANDLERS------------------------------------------------------------------
@@ -17,12 +17,18 @@ function navigateUp(e){
 }
 
 function onCalculer(e){
+    navManager.openWindow("home/test/result/index", {
+        source: EUTOS,
+        rate: 3.5,
+        bosiphiles: 50
+    });
+    /*
     checkEmptyFields( ()=>{
         checkValidFields( (args)=>{
             log(args);
-            navManager.openWindow("home/test/result/eutos", args);
+            navManager.openWindow("home/test/result/index", args);
         })
-    });
+    });*/
 }
 
 function exitKeyBoard(e){

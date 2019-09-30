@@ -155,17 +155,6 @@ overrode the settings with other TSS, XML, or JS settings:
 	color: Alloy.CFG.colors.fonts.primary
 }
 
-".txtPlaceholder":{
-	color: Alloy.CFG.colors.fonts.placeholder
-}
-
-".txtYellow":{
-	color: Alloy.CFG.colors.fonts.yellow
-}
-
-".txtRed":{
-	color: Alloy.CFG.colors.fonts.red
-}
 ".blackFont":{
 	font :{
 		fontFamily: Alloy.CFG.fonts.Simple

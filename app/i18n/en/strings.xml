@@ -26,7 +26,17 @@
 	<string name="result_sokal_title">Résultat - risque SOKAL</string>
 	<string name="result_eutos_title">Résultat - risque EUTOS</string>
 	<string name="result_btn_recommendation">Voir les recommendations</string>
-	<string name="result_btn_save">Sauvegarder</string>
+	<string name="result_faible">Faible</string>
+	<string name="result_intermediate">Intermediaire</string>
+	<string name="result_high">Elevé</string>
+	<string name="result_bien">Bien!</string>
+	<string name="result_attention">Attention!</string>
+	<string name="result_danger">Danger!</string>
+	<string name="result_sokal_bien">Le risque de SOKAL de votre patient est faible.</string>
+	<string name="result_sokal_intermediate">Le risque de SOKAL de votre patient est inquiétant.</string>
+	<string name="result_sokal_high">Le risque de SOKAL est élevé, votre patient est en danger!</string>
+	<string name="result_eutos_bien">Le risque d'EUTOS de votre patient est faible.</string>
+	<string name="result_eutos_high">Le risque d'EUTOS est élevé, votre patient est en danger!</string>
 
     <!-- Test Med -->
 	<string name="risque_eutos_title">Risque d'EUTOS</string>

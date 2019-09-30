@@ -71,7 +71,7 @@
     hintText : L("etablissement"),
     autocorrect: false,
     autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
-    hintTextColor: Alloy.CFG.colors.fonts.placeholder,
+    hintTextColor: 'gray',
     backgroundColor : 'transparent',
 	textAlign: Titanium.UI.TEXT_ALIGNMENT_LEFT,
 	right: 48,

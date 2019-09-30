@@ -9,7 +9,6 @@ var navManager = require("/services/navManager"),
 	alertDialog = require( 'services/alertManager' ),
     BASE_URL = Alloy.CFG.urls.apiUrl;
 
-const PAGE_COUNT = 10;
 var publications = [],
     listToDisplay = [],
     total = 0,
@@ -27,6 +26,9 @@ var publications = [],
     });
 })();
 
+
+
+// PRIVATE FUNCTIONS ------------------------------------------------------------------
 
 function loadPage(page, callback){
     getDataByPage(page, (newList)=>{
@@ -81,20 +83,6 @@ function bindDataList(sourceList, resultList){
     })
 }
 
-// EVENTS HANDLERS------------------------------------------------------------------
-function navigateUp(e){
-    navManager.closeWindow($.window);
-}
-
-function onItemclick(e){
-    log(publications[e.itemIndex] , 'onItemclick');
-    //navManager.openWindow("home/publication/webView",{url:"http://www.orimi.com/pdf-test.pdf",title:"title test"});
-    navManager.openWindow("home/publication/webView",{
-        url: Alloy.CFG.urls.backOfficeUrl + publications[e.itemIndex].path ,
-        title: publications[e.itemIndex].title
-    });
-}
-
 
 function setup_refreshController(){
     var control = Ti.UI.createRefreshControl({
@@ -110,6 +98,22 @@ function setup_refreshController(){
             control.endRefreshing();
         });
 
+    });
+}
+
+
+
+// EVENTS HANDLERS------------------------------------------------------------------
+function navigateUp(e){
+    navManager.closeWindow($.window);
+}
+
+function onItemclick(e){
+    log(publications[e.itemIndex] , 'onItemclick');
+    //navManager.openWindow("home/publication/webView",{url:"http://www.orimi.com/pdf-test.pdf",title:"title test"});
+    navManager.openWindow("home/publication/webView",{
+        url: Alloy.CFG.urls.backOfficeUrl + publications[e.itemIndex].path ,
+        title: publications[e.itemIndex].title
     });
 }
 
