@@ -2,7 +2,10 @@
 	<Window id="window">
         <View class="vLayout">
             <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
-            <WebView id="pdf"></WebView>
+            <View>
+                <Widget id="ProgressIndecator" src="customIndicatorInsideView"></Widget>
+                <WebView id="pdf" onError="onError" onLoad="OnLoaded"></WebView>
+            </View>
         </View>
     </Window>
 </Alloy>

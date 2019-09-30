@@ -3,3 +3,7 @@
   zIndex: 200,
   leftIcon: "/images/icn_topbar_back.png"
 }
+
+'#ProgressIndecator': {
+    backgroundColor: "#55DDDDDD"
+}

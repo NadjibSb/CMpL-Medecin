@@ -35,6 +35,8 @@ function loadPage(page, callback){
         if (newList && newList.length>0) {
             publications.push(...newList) ;
             bindDataList(newList, listToDisplay);
+        }else {
+            $.footer.visible = false;
         }
         _.isFunction( callback ) && callback();
     });
@@ -79,7 +81,7 @@ function bindDataList(sourceList, resultList){
     $.pubSection.items = resultList;
     $.listView.setMarker({
         sectionIndex:0,
-        itemIndex: $.pubSection.items.length-3
+        itemIndex: $.pubSection.items.length-1
     })
 }
 
@@ -97,7 +99,6 @@ function setup_refreshController(){
         loadPage(curentPage, ()=>{
             control.endRefreshing();
         });
-
     });
 }
 
@@ -119,6 +120,7 @@ function onItemclick(e){
 
 function onMarkerReached(e){
     log('Marker reached');
+    $.footer.visible = true;
     curentPage++;
     loadPage(curentPage);
 }

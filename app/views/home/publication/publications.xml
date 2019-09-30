@@ -16,6 +16,11 @@
                         </ItemTemplate>
                     </Templates>
                     <ListSection id="pubSection"></ListSection>
+                    <FooterView>
+                        <View id="footer">
+                            <Widget src="customIndicatorInsideView"></Widget>
+                        </View>
+                    </FooterView>
                 </ListView>
             </View>
         </View>

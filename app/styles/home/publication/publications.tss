@@ -36,3 +36,8 @@
     },
     left: 0
 }
+
+'#footer': {
+    height: 32,
+    visible: false
+}
