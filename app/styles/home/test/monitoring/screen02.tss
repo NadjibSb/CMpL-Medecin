@@ -1,0 +1,43 @@
+'.container': {
+    top: 0
+}
+
+
+'#lbQst': {
+    text: L("monitoring_screen02_text"),
+    top: 32,
+    right: 32,
+    left: 32,
+    font: {
+        fontSize: 18
+    },
+    color: 'black'
+}
+
+'.btn': {
+  top: 32,
+  right: 32,
+  left: 32,
+  color: Alloy.CFG.colors.primaryColorLight,
+  fontSize: 16,
+  fontFamily: Alloy.CFG.fonts.Light
+}
+
+'#btn1': {
+    titre: L("monitoring_screen02_btn1"),
+    buttonId: "screen02_btn1"
+}
+
+'#btn2': {
+    titre: L("monitoring_screen02_btn2"),
+    buttonId: "screen02_btn2"
+}
+
+'#btn3': {
+    titre: L("monitoring_screen02_btn3"),
+    buttonId: "screen02_btn3"
+}
+'#btn4': {
+    titre: L("monitoring_screen02_btn4"),
+    buttonId: "screen02_btn4"
+}

@@ -17,6 +17,8 @@ var titre = args.titre;
 var icon = args.icon;
 var color = args.color;
 var fontColor = args.fontColor;
+var fontFamily = args.fontFamily;
+var fontSize = args.fontSize;
 var alignLeft = args.alignLeft;
 var top = args.top;
 var bottom = args.bottom;
@@ -42,6 +44,8 @@ var right = args.right;
     bottom && ($.viewButton.bottom = bottom);
     left && ($.viewButton.left = left);
     right && ($.viewButton.right = right);
+    fontSize && fontFamily && ($.label.font = {fontFamily: fontFamily , fontSize: fontSize});
+    //fontFamily && ($.label.font = {fontFamily: fontFamily});
 })();
 
 //function

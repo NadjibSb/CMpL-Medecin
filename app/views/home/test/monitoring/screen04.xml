@@ -1,0 +1,22 @@
+<Alloy>
+	<View class="container" onClick="exitKeyBoard">
+        <ScrollView class="vLayout">
+            <Label id="lbQst" class="RegularFont"></Label>
+            <View id="centerView" class="hSize" onClick="onFocusInTF">
+                <View id="tfContainer" class="wSize hSize hLayout" horizontalWrap="false">
+                    <TextField id="tfContent" class="boldFont">
+                        <KeyboardToolbar platform="ios">
+                          <Toolbar>
+                              <Items>
+                                  <Button title="L('Next')" onClick="exitKeyBoard"/>
+                              </Items>
+                          </Toolbar>
+                        </KeyboardToolbar>
+                    </TextField>
+                    <Label class="label boldFont"></Label>
+                </View>
+            </View>
+        </ScrollView>
+        <Require src="/component/buttonImgCentre" id="btnNext" class="btn" onClick="onClick"></Require>
+	</View>
+</Alloy>

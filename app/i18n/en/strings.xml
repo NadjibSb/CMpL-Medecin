@@ -23,6 +23,24 @@
 	<string name="enregi_fill_donnee">Veuiller remplire les champs suivant.</string>
 
 
+    <!-- monitoring_title -->
+	<string name="monitoring_title">Monitoring tracker</string>
+	<string name="monitoring_screen01_text">01. Dans quel ligne de traitement est votre patient ?</string>
+	<string name="monitoring_screen01_btn1">1ère ligne</string>
+	<string name="monitoring_screen01_btn2">2ème ligne</string>
+	<string name="monitoring_screen02_text">02. Laquel des ITK votre patient a t-il reçu ?</string>
+	<string name="monitoring_screen02_btn1">Imatinib</string>
+	<string name="monitoring_screen02_btn2">Nilotinib</string>
+	<string name="monitoring_screen02_btn3">Dasatinib</string>
+	<string name="monitoring_screen02_btn4">Autres</string>
+	<string name="monitoring_screen03_text">03. Pendant combien de temps votre patient a-t-il reçu son traitement ?</string>
+	<string name="monitoring_screen03_btn1">03 Mois</string>
+	<string name="monitoring_screen03_btn2">04 - 06 mois</string>
+	<string name="monitoring_screen03_btn3">07 - 12 mois</string>
+	<string name="monitoring_screen03_btn4">Plus d'une année</string>
+	<string name="monitoring_screen03_btn5">Plus de deux ans</string>
+	<string name="monitoring_screen04_text">04. Taux de BCR-ABL ?</string>
+
     <!-- recommendations -->
 	<string name="recommendations_title">Recommendations</string>
 
@@ -91,6 +109,7 @@
 	<string name="invalid_field">Champ invalide</string>
 	<string name="result">Résultat :</string>
 	<string name="save">Sauvegarder</string>
+	<string name="Next">Suivant</string>
 
 
     <!-- Alert Dialog -->

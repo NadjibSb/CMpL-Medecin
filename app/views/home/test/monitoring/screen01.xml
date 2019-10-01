@@ -1,0 +1,9 @@
+<Alloy>
+	<View class="container vLayout hSize">
+        <ScrollView class="vLayout">
+            <Label id="lbQst" class="RegularFont"></Label>
+            <Require src="/component/buttonImgCentre" id="btn1" class="btn" onClick="onClick"></Require>
+            <Require src="/component/buttonImgCentre" id="btn2" class="btn" onClick="onClick"></Require>
+        </ScrollView>
+	</View>
+</Alloy>

@@ -29,7 +29,7 @@ function clickButton(e){
             navManager.openWindow("home/test/risque/sokal");
             break;
         case "tracker":
-
+            navManager.openWindow("home/test/monitoring/index");
             break;
         case "finish":
 

@@ -1,0 +1,64 @@
+'.container': {
+    top: 0
+}
+
+
+'#lbQst': {
+    text: L("monitoring_screen04_text"),
+    top: 32,
+    right: 32,
+    left: 32,
+    font: {
+        fontSize: 18
+    },
+    color: 'black'
+}
+
+'#centerView': {
+    top: 48,
+    bottom: 16,
+    width: "40%",
+    borderWidth: 3,
+    borderColor: Alloy.CFG.colors.primaryColorLight,
+    borderRadius: 3,
+    bubbleParent: false
+}
+
+'#tfContent': {
+    font: {
+        fontSize: 22
+    },
+    color: 'black',
+    hintTextColor: 'gray',
+    hintText: "00",
+    keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBER_PAD,
+    maxLength: 3
+}
+
+'.label': {
+    font: {
+        fontSize: 22
+    },
+    color: 'black',
+    text: "%",
+    left: 0
+}
+
+'#tfContainer': {
+    top: 16,
+    bottom: 16,
+}
+
+
+'.btn': {
+  right: 32,
+  left: 32,
+  color: Alloy.CFG.colors.primaryColor,
+  fontColor: 'white'
+}
+
+'#btnNext': {
+    bottom: 16,
+    titre: L("Next"),
+    buttonId: "Done"
+}

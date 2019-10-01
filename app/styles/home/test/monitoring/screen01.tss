@@ -1,0 +1,34 @@
+'.container': {
+    top: 0
+}
+
+
+'#lbQst': {
+    text: L("monitoring_screen01_text"),
+    top: 32,
+    right: 32,
+    left: 32,
+    font: {
+        fontSize: 18
+    },
+    color: 'black'
+}
+
+'.btn': {
+  top: 32,
+  right: 32,
+  left: 32,
+  color: Alloy.CFG.colors.primaryColorLight,
+  fontSize: 16,
+  fontFamily: Alloy.CFG.fonts.Light
+}
+
+'#btn1': {
+    titre: L("monitoring_screen01_btn1"),
+    buttonId: "screen01_btn1"
+}
+
+'#btn2': {
+    titre: L("monitoring_screen01_btn2"),
+    buttonId: "screen01_btn2"
+}

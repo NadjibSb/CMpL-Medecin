@@ -1,0 +1,29 @@
+'#navBar': {
+  title : L("monitoring_title"),
+  zIndex: 200,
+  leftIcon: "/images/icn_topbar_back.png"
+}
+
+
+'#scrollableViewContainer': {
+    height: "90%",
+    scrollType: "vertical"
+}
+
+".point" :{
+	width: 30,
+	height: 30,
+	backgroundImage: "/images/icn_ellipse_green.png",
+	opacity : 0.5,
+    left : 8,
+    right: 8
+},
+
+'.whiteFont': {
+  color: 'white'
+}
+
+'#treePoint': {
+    top: 8,
+    bottom: 16
+}

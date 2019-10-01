@@ -1,0 +1,33 @@
+<Alloy >
+	<Window id="window">
+        <View class="vLayout">
+            <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
+            <View>
+                <ScrollView class="vLayout" scrollType="vertical">
+                    <View id="scrollableViewContainer" class="vLayout">
+                          <ScrollableView id="scrollableView"  onScrollend="onScrollend" scrollingEnabled="false">
+                            <Require src="/home/test/monitoring/screen01" onClick="onChooseS1"></Require>
+                            <Require src="/home/test/monitoring/screen02" onClick="onChooseS2"></Require>
+                            <Require src="/home/test/monitoring/screen03" onClick="onChooseS3"></Require>
+                            <Require src="/home/test/monitoring/screen04" onClick="onDone"></Require>
+                          </ScrollableView>
+                    </View>
+                    <View id="treePoint" class="hSize wSize hLayout" horizontalWrap="false">
+                  		<View class="point">
+                            <Label class="whiteFont">1</Label>
+                        </View>
+                    	<View class="point">
+                            <Label class="whiteFont">2</Label>
+                        </View>
+                        <View class="point">
+                            <Label class="whiteFont">3</Label>
+                        </View>
+                        <View class="point">
+                            <Label class="whiteFont">4</Label>
+                        </View>
+                    </View>
+                </ScrollView>
+            </View>
+        </View>
+    </Window>
+</Alloy>
