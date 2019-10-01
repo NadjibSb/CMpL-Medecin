@@ -4,19 +4,22 @@ const log = require( '/services/logger' )( {
 		hideLog: false
 	} );
 
-var navManager = require("/services/navManager");
+var navManager = require("/services/navManager"),
+    fileManager = require("/services/fileManager");
 
 
 // VARIABLES ------------------------------------------------------------------------
 const SOKAL = "SOKAL",
     EUTOS = "EUTOS";
+const TMP_FILE = Alloy.Globals.TMP_FILE;
+
 var args = $.args;
+var result;
 
 
 // CONSTRUCTOR ------------------------------------------------------------------------
 (function contructor(){
     log(args, 'args');
-    var result;
     switch (args.source) {
         case SOKAL:
             log(SOKAL);
@@ -32,7 +35,20 @@ var args = $.args;
             break;
         default:
     }
+
+
+    saveData();
 })();
+
+
+// EVENTS HANDLERS------------------------------------------------------------------
+function navigateUp(e){
+    navManager.closeWindow($.window);
+}
+
+function navigateToRecommendations(e){
+    navManager.openWindow("home/test/result/recommendations");
+}
 
 
 
@@ -102,11 +118,71 @@ function updateEutosUI(result){
 }
 
 
-// EVENTS HANDLERS------------------------------------------------------------------
-function navigateUp(e){
-    navManager.closeWindow($.window);
+function saveData(){
+    switch (args.source) {
+        case SOKAL:
+            if (fileManager.fileExists(TMP_FILE)) {
+                var data = fileManager.readFile(TMP_FILE);
+                fileManager.deleteFile(TMP_FILE);
+                data = JSON.parse(data);
+                var toSave = {
+                    age: args.age,
+                    rate: args.rate,
+                    plaquette: args.plaquette,
+                    metabolise_sang: args.sang,
+                    resultat: {
+                        note: result,
+                        message: getResultMsg(result)
+                    }
+                };
+                _.extend(data, {sokal: toSave});
+                fileManager.writeToFile(TMP_FILE, data);
+                log(fileManager.readFile(TMP_FILE), "SOKAL data saved");
+            }
+            break;
+
+        case EUTOS:
+            if (fileManager.fileExists(TMP_FILE)) {
+                var data = fileManager.readFile(TMP_FILE);
+                fileManager.deleteFile(TMP_FILE);
+                data = JSON.parse(data);
+                var toSave = {
+                    rate: args.rate,
+                    bosiphiles: args.bosiphiles,
+                    resultat: {
+                        note: result,
+                        message: getResultMsg(result)
+                    }
+                };
+                _.extend(data, {eutos:toSave});
+                fileManager.writeToFile(TMP_FILE, data);
+                log(fileManager.readFile(TMP_FILE) ,"EUTOS data saved");
+            }
+            break;
+        default:
+    }
 }
 
-function navigateToRecommendations(e){
-    navManager.openWindow("home/test/result/recommendations");
+function getResultMsg(result){
+    var msg = "";
+    switch (args.source) {
+        case SOKAL:
+            if (result < 0.8) {
+                msg = L("result_faible");
+            }else if (result < 1.2) {
+                msg = L("result_intermediate");
+            }else if (result >= 1.2) {
+                msg = L("result_high");
+            }
+            break;
+        case EUTOS:
+            if (result < 87) {
+                msg = L("result_faible");
+            }else if (result >= 87) {
+                msg = L("result_high");
+            }
+            break;
+        default:
+    }
+    return msg
 }

@@ -7,8 +7,7 @@ const log = require( '/services/logger' )( {
 var navManager = require("/services/navManager");
 
 
-
-
+var codePatient= "P00001";
 
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
@@ -20,6 +19,6 @@ function navigateToSettings(e){
 }
 
 function scanneCode(e){
-    navManager.openWindow("home/test/index");
+    navManager.openWindow("home/test/index", {codePatient: codePatient});
     //navManager.closeWindow($.window);
 }

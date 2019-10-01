@@ -18,6 +18,7 @@ Alloy.Globals.MEDICAL_NAME = "cmplMedecin.MEDICAL_NAME";
 Alloy.Globals.AUTHCODE = "cmplMedecin.AUTH_CODE";
 Alloy.Globals.AUTH = "cmplMedecin.AUTHENTIFIED";
 Alloy.Globals.DATA_FILE = "cmplMedecin_Data.json";
+Alloy.Globals.TMP_FILE = "cmplMedecin_Tmp.json";
 
 
 Alloy.Globals.setWilaya = (wilaya)=>{

@@ -10,7 +10,7 @@ var navManager = require("/services/navManager"),
 const LOCALE_FILE = Alloy.Globals.DATA_FILE;
 
 (function constructor(){
-    if (!fileManager.fileExists()) {
+    if (!fileManager.fileExists(LOCALE_FILE)) {
         var data = {
             codeMedcin: "M00001",
             visites: []
@@ -19,6 +19,7 @@ const LOCALE_FILE = Alloy.Globals.DATA_FILE;
         var s = fileManager.readFile(LOCALE_FILE);
         log(s , "data");
     }
+
 })();
 
 
