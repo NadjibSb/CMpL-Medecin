@@ -1,4 +1,76 @@
+'#navBar': {
+  zIndex: 200,
+  title : L("monitoring_result_title"),
+  leftIcon: "/images/icn_topbar_back.png"
+}
 
-".container" : {
-  
+'.result': {
+    top: 32,
+    right: "10%",
+    left: "10%",
+    font: {
+        fontSize: 18
+    },
+    color: 'black',
+    text: L('result')
+}
+
+'.resultContainer': {
+    top: 24,
+    right: "10%",
+    left: "10%",
+
+}
+
+'#lbResultText': {
+    left: 0,
+    text: 'Result',
+    color: Alloy.CFG.colors.primaryColor,
+    font: {
+        fontFamily: Alloy.CFG.fonts.Simple,
+        fontSize: 28
+    }
+}
+
+
+'#icon': {
+    height: 24,
+    width: 24,
+    right: 0,
+    backgroundColor: Alloy.CFG.colors.primaryColor,
+}
+
+'#lbPStitle': {
+    top: 56,
+    right: "10%",
+    left: "10%",
+    color: 'black',
+    font: {
+        fontFamily: Alloy.CFG.fonts.Simple,
+        fontSize: 18
+    },
+    text: 'PS'
+}
+
+'#lbPStext': {
+    top: 8,
+    right: "10%",
+    left: "10%",
+    color: 'black',
+    font: {
+        fontFamily: Alloy.CFG.fonts.Regular,
+        fontSize: 18
+    },
+    text: 'Attentions Attentions Attentions Attentions Attentions '
+}
+
+'#btnRecommendation': {
+    bottom: 32,
+    right: 32,
+    left: 32,
+    titre : L("result_btn_recommendation"),
+    buttonId: "recommendations",
+    color : Alloy.CFG.colors.primaryColor,
+    icon : "/images/icn_recommendations.png",
+    fontColor: "white",
 }

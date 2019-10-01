@@ -2,6 +2,7 @@
 var args = $.args;
 
 function onClick(e){
+    _.extend(e, {tfValue: $.tfContent.value})
     $.trigger('click' , e);
 }
 

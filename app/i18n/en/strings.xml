@@ -24,6 +24,10 @@
 
 
     <!-- monitoring_title -->
+	<string name="monitoring_result_title">Résultats - Monitoring tracker</string>
+
+
+    <!-- monitoring_title -->
 	<string name="monitoring_title">Monitoring tracker</string>
 	<string name="monitoring_screen01_text">01. Dans quel ligne de traitement est votre patient ?</string>
 	<string name="monitoring_screen01_btn1">1ère ligne</string>
