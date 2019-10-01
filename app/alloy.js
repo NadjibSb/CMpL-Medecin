@@ -12,9 +12,14 @@
 
 Alloy.Globals.isAndroid = (Ti.Platform.osname=='android') ? true : false;
 Alloy.Globals.isIOS = (Ti.Platform.osname=='iphone') ? true : false;
-Alloy.Globals.WILAYA_NAME = "WILAYA_NAME";
-Alloy.Globals.MEDICAL_NAME = "MEDICAL_NAME";
-Alloy.Globals.AUTHCODE = "AUTH_CODE";
+
+Alloy.Globals.WILAYA_NAME = "cmplMedecin.WILAYA_NAME";
+Alloy.Globals.MEDICAL_NAME = "cmplMedecin.MEDICAL_NAME";
+Alloy.Globals.AUTHCODE = "cmplMedecin.AUTH_CODE";
+Alloy.Globals.AUTH = "cmplMedecin.AUTHENTIFIED";
+Alloy.Globals.DATA_FILE = "cmplMedecin_Data.json";
+
+
 Alloy.Globals.setWilaya = (wilaya)=>{
   Ti.App.Properties.setString(Alloy.Globals.WILAYA_NAME,wilaya)
 }
@@ -40,9 +45,9 @@ Alloy.Globals.setCode = (code)=>{
 }
 
 Alloy.Globals.HAS_AUTHENTIFIED = ()=>{
-  Ti.App.Properties.setBool("AUTHENTIFIED",true)
+  Ti.App.Properties.setBool(Alloy.Globals.AUTH,true)
 }
 
 Alloy.Globals.AUTHENTIFIED = ()=>{
-  return Ti.App.Properties.getBool("AUTHENTIFIED", false)
+  return Ti.App.Properties.getBool(Alloy.Globals.AUTH, false)
 }

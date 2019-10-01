@@ -4,7 +4,25 @@ const log = require( '/services/logger' )( {
 		hideLog: false
 	} );
 
-var navManager = require("/services/navManager");
+var navManager = require("/services/navManager"),
+    fileManager = require("/services/fileManager");
+
+const LOCALE_FILE = Alloy.Globals.DATA_FILE;
+
+(function constructor(){
+    if (!fileManager.fileExists()) {
+        var data = {
+            codeMedcin: "M00001",
+            visites: []
+        };
+        fileManager.writeToFile(LOCALE_FILE, data);
+        var s = fileManager.readFile(LOCALE_FILE);
+        log(s , "data");
+    }
+})();
+
+
+
 
 function clickButton(e){
     log("buttonId " + e.buttonId);
