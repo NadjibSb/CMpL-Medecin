@@ -17,7 +17,7 @@ var $ = module.exports = {
 function deleteFile(fileName){
     var file = getFile(fileName);
     if (file.exists()) {
-        log(file.deleteFile(), "Delete file "+ fileName);
+        log(file.deleteFile(), fileName + " > Delete file ");
     }
 }
 
@@ -27,7 +27,7 @@ function writeToFile(fileName, data){
     if (file.exists()){
         if (data) {
             var dataToSave = typeof(data)== "string" ? data : JSON.stringify(data);
-            log(file.write(JSON.stringify(dataToSave)) , 'Write data ');
+            log( dataToSave , fileName + ' > Write data '+ file.write(JSON.stringify(dataToSave)));
         }
     }
 }
@@ -57,7 +57,7 @@ function getFile(fileName){
     var dir = getRootDir();
     var file = Titanium.Filesystem.getFile(dir.resolve(), fileName);
     if (!file.exists()) {
-        log(file.createFile(), "Create file '"+ fileName);
+        log(file.createFile(), fileName+" > Create file");
     }
     return file
 }

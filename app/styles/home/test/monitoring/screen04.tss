@@ -31,8 +31,7 @@
     color: 'black',
     hintTextColor: 'gray',
     hintText: "00",
-    keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBER_PAD,
-    maxLength: 3
+    maxLength: 6
 }
 
 '.label': {

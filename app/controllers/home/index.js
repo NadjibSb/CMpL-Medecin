@@ -9,6 +9,8 @@ var navManager = require("/services/navManager"),
 
 const LOCALE_FILE = Alloy.Globals.DATA_FILE;
 
+
+
 (function constructor(){
     if (!fileManager.fileExists(LOCALE_FILE)) {
         var data = {
@@ -24,18 +26,30 @@ const LOCALE_FILE = Alloy.Globals.DATA_FILE;
 
 
 
+function syncronization(){
+    if (fileManager.fileExists(LOCALE_FILE)) {
+        var s = fileManager.readFile(LOCALE_FILE);
+        log(s , LOCALE_FILE);
+    }
+}
+
+
+
 
 function clickButton(e){
     log("buttonId " + e.buttonId);
     switch (e.buttonId) {
-        case "publication":
-            navManager.openWindow("home/publication/publications");
-            break;
         case "visite_auth":
             navManager.openWindow("home/visiteAuth/index");
             break;
         case "visite_anony":
             navManager.openWindow("home/test/index");
+            break;
+        case "publication":
+            navManager.openWindow("home/publication/publications");
+            break;
+        case "syncronization":
+            syncronization();
             break;
         default:
 

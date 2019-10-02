@@ -42,10 +42,10 @@ function onChooseS1(e){
     log(e.buttonId, 'onClick');
     switch (e.buttonId) {
         case "screen01_btn1":
-            _.extend(args, {ligne:1});
+            _.extend(args, {ligne: L("monitoring_screen01_btn1")});
             break;
         case "screen01_btn2":
-            _.extend(args, {ligne:2});
+            _.extend(args, {ligne: L("monitoring_screen01_btn2")});
             break;
     }
     $.scrollableView.moveNext();
@@ -55,16 +55,16 @@ function onChooseS2(e){
     log(e.buttonId, 'onClick');
     switch (e.buttonId) {
         case "screen02_btn1":
-            _.extend(args, {itk:"Imatinib"});
+            _.extend(args, {itk:L("monitoring_screen02_btn1")});
             break;
         case "screen02_btn2":
-            _.extend(args, {itk:"Nilotinib"});
+            _.extend(args, {itk:L("monitoring_screen02_btn2")});
             break;
         case "screen02_btn3":
-            _.extend(args, {itk:"Dasatinib"});
+            _.extend(args, {itk:L("monitoring_screen02_btn3")});
             break;
         case "screen02_btn4":
-            _.extend(args, {itk:"Autres"});
+            _.extend(args, {itk:L("monitoring_screen02_btn4")});
             break;
     }
     $.scrollableView.moveNext();
@@ -74,19 +74,19 @@ function onChooseS3(e){
     log(e.buttonId, 'onClick');
     switch (e.buttonId) {
         case "screen03_btn1":
-            _.extend(args, {duree:3});
+            _.extend(args, {duree:L("monitoring_screen03_btn1")});
             break;
         case "screen03_btn2":
-            _.extend(args, {duree:4});
+            _.extend(args, {duree:L("monitoring_screen03_btn2")});
             break;
         case "screen03_btn3":
-            _.extend(args, {duree:7});
+            _.extend(args, {duree:L("monitoring_screen03_btn3")});
             break;
         case "screen03_btn4":
-            _.extend(args, {duree:12});
+            _.extend(args, {duree:L("monitoring_screen03_btn4")});
             break;
         case "screen03_btn5":
-            _.extend(args, {duree:24});
+            _.extend(args, {duree:L("monitoring_screen03_btn5")});
             break;
     }
     $.scrollableView.moveNext();
@@ -95,12 +95,19 @@ function onChooseS3(e){
 function onDone(e){
     log(e.buttonId, 'onClick');
     if (e.buttonId == "Done") {
-        if (e.tfValue && e.tfValue >0 && e.tfValue <100) {
-            _.extend(args, {bcr_abl:24});
-            navManager.openWindow("home/test/monitoring/result", args);
-        }else {
-            alertDialog.show("Champ invalid");
+        try {
+            var bcr = parseFloat( e.tfValue.replace(",", ".") );
+            if (bcr >=0 && bcr <=100) {
+                _.extend(args, {bcr_abl:bcr});
+                navManager.openWindow("home/test/monitoring/result", args);
+            }else {
+                throw "parseFloat error";
+            }
+        } catch (e) {
+            alertDialog.show({title: "Champ invalid" , message: 'Veuillez remplir le champ correctement'});
         }
+
+
 
     }
 }

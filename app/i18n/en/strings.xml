@@ -23,11 +23,17 @@
 	<string name="enregi_fill_donnee">Veuiller remplire les champs suivant.</string>
 
 
-    <!-- monitoring_title -->
+    <!-- monitoring result -->
 	<string name="monitoring_result_title">Résultats - Monitoring tracker</string>
+	<string name="monitoring_result_Good">Réponse Optimale</string>
+	<string name="monitoring_result_Moy">Alarme</string>
+	<string name="monitoring_result_Low">Echec</string>
+	<string name="monitoring_result_Good_Text">Lorem ipsum </string>
+	<string name="monitoring_result_Moy_Text">allarm </string>
+	<string name="monitoring_result_Low_Text">dangeeer</string>
 
 
-    <!-- monitoring_title -->
+    <!-- monitoring tracker -->
 	<string name="monitoring_title">Monitoring tracker</string>
 	<string name="monitoring_screen01_text">01. Dans quel ligne de traitement est votre patient ?</string>
 	<string name="monitoring_screen01_btn1">1ère ligne</string>
