@@ -6,7 +6,7 @@
                 <View id="scrollableViewContainer" class="vLayout">
                       <ScrollableView id="scrollableView"  onScrollend="onScrollend" scrollingEnabled="false">
                         <Require src="/register/code"></Require>
-                        <Require id="donneeComponent" src="/register/donnee" onChooseWilaya="chooseWilaya"></Require>
+                        <Require id="donneeComponent" src="/register/donnee" onChooseWilaya="chooseWilaya" onHidePicker="exitPicker"></Require>
                         <Require src="/register/info"></Require>
                       </ScrollableView>
                 </View>

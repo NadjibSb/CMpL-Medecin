@@ -123,7 +123,6 @@ function saveData(){
         case SOKAL:
             if (fileManager.fileExists(TMP_FILE)) {
                 var data = fileManager.readFile(TMP_FILE);
-                fileManager.deleteFile(TMP_FILE);
                 data = JSON.parse(data);
                 var toSave = {
                     age: args.age,
@@ -144,7 +143,6 @@ function saveData(){
         case EUTOS:
             if (fileManager.fileExists(TMP_FILE)) {
                 var data = fileManager.readFile(TMP_FILE);
-                fileManager.deleteFile(TMP_FILE);
                 data = JSON.parse(data);
                 var toSave = {
                     rate: args.rate,

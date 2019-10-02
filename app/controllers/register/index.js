@@ -111,3 +111,7 @@ function exitPickerAndKeyboard(e){
         Ti.UI.Android.hideSoftKeyboard();
     }
 }
+
+function exitPicker(e){
+    $.pickerContainer.visible = false
+}

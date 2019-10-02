@@ -31,7 +31,8 @@
     color: 'black',
     hintTextColor: 'gray',
     hintText: "00",
-    maxLength: 6
+    maxLength: 6,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT
 }
 
 '.label': {
@@ -40,7 +41,7 @@
     },
     color: 'black',
     text: "%",
-    left: 0
+    left: 4
 }
 
 '#tfContainer': {

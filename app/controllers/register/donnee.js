@@ -7,7 +7,7 @@ const log = require( 'services/logger' )( {
 
 // PUBLIC INTERFACE
 _.extend($, {
-    checkData: checkData
+    checkData: checkData,
 });
 
 // PRIVATE FUNCTIONS ------------------------------------------------------------
@@ -23,5 +23,17 @@ function checkData(){
 
 // EVENTS Handler ---------------------------------------------------------------
 function choiceWilaya(e){
+    hideKeyBoard();
   $.trigger("chooseWilaya",$.labelWilaya);
+}
+
+function hideKeyBoard(e){
+    $.textFieldNom.blur();
+    if (Alloy.Globals.isAndroid) {
+        Ti.UI.Android.hideSoftKeyboard();
+    }
+}
+
+function hidePicker(e){
+    $.trigger("hidePicker", e);
 }

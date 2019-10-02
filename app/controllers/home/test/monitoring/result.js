@@ -122,7 +122,6 @@ function saveData(args, message){
     log("saveData ...");
     if (fileManager.fileExists(TMP_FILE)) {
         var data = fileManager.readFile(TMP_FILE);
-        fileManager.deleteFile(TMP_FILE);
         data = JSON.parse(data);
         var toSave = {
             ligne_traitement: args.ligne,

@@ -139,6 +139,7 @@ function request( args, successCallback, errorCallback ) {
  */
 
 function setRequestHeader( client, header ) {
+    /*
 	client.setRequestHeader( "language", Ti.Locale.currentLanguage );
 	client.setRequestHeader( "country", Ti.Locale.currentCountry );
 	client.setRequestHeader( "deployType", Ti.App.deployType );
@@ -146,7 +147,7 @@ function setRequestHeader( client, header ) {
 	client.setRequestHeader( "os-name", Alloy.Globals.isIOS ? "ios" : "android" );
 	client.setRequestHeader( "os-version", Ti.Platform.version );
 	client.setRequestHeader( "platform-name", Ti.Platform.name );
-	client.setRequestHeader( "environment", Alloy.CFG.environment );
+	client.setRequestHeader( "environment", Alloy.CFG.environment );*/
 
 	if( typeof( header ) == "object" ) {
 		for( var key in header ) {

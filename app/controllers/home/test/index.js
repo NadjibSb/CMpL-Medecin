@@ -22,7 +22,7 @@ var visite;
     }
     log(visite, "visite");
 
-    // create a yemp file to save the current visite
+    // create a temp file to save the current visite
     fileManager.deleteFile(TMP_FILE);
     fileManager.writeToFile(TMP_FILE, {});
 
@@ -73,7 +73,6 @@ function saveVisite(){
         if (!_.isEmpty(visiteData)) {
             if (fileManager.fileExists(LOCALE_FILE)) {
                 var allData = fileManager.readFile(LOCALE_FILE);
-                //fileManager.deleteFile(LOCALE_FILE);
                 allData = JSON.parse(allData);
                 if (allData.visites) {
                     allData.visites.push(visite);

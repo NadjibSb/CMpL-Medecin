@@ -15,6 +15,7 @@ var $ = module.exports = {
 
 
 function deleteFile(fileName){
+    log("delete file...");
     var file = getFile(fileName);
     if (file.exists()) {
         log(file.deleteFile(), fileName + " > Delete file ");
@@ -23,6 +24,7 @@ function deleteFile(fileName){
 
 
 function writeToFile(fileName, data){
+    log("write to file...");
     var file = getFile(fileName);
     if (file.exists()){
         if (data) {
@@ -33,6 +35,7 @@ function writeToFile(fileName, data){
 }
 
 function readFile(fileName){
+    log("read file ...");
     var data;
     var file = getFile(fileName);
     if (file.exists()){
@@ -44,6 +47,7 @@ function readFile(fileName){
 function fileExists(fileName){
     var dir = getRootDir();
     var file = Titanium.Filesystem.getFile(dir.resolve(), fileName);
+    log(file.exists(), "file exists");
     return file.exists()
 }
 

@@ -4,15 +4,7 @@
             <Label id="lbQst" class="RegularFont"></Label>
             <View id="centerView" class="hSize" onClick="onFocusInTF">
                 <View id="tfContainer" class="wSize hSize hLayout" horizontalWrap="false">
-                    <TextField id="tfContent" class="boldFont">
-                        <KeyboardToolbar platform="ios">
-                          <Toolbar>
-                              <Items>
-                                  <Button title="L('Next')" onClick="exitKeyBoard"/>
-                              </Items>
-                          </Toolbar>
-                        </KeyboardToolbar>
-                    </TextField>
+                    <TextField id="tfContent" class="boldFont"></TextField>
                     <Label class="label boldFont"></Label>
                 </View>
             </View>
