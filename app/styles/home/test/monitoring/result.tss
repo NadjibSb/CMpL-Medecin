@@ -40,30 +40,6 @@
     backgroundColor: Alloy.CFG.colors.primaryColor,
 }
 
-'#lbPStitle': {
-    top: 56,
-    right: "10%",
-    left: "10%",
-    color: 'black',
-    font: {
-        fontFamily: Alloy.CFG.fonts.Simple,
-        fontSize: 18
-    },
-    text: 'PS'
-}
-
-'#lbPStext': {
-    top: 8,
-    right: "10%",
-    left: "10%",
-    color: 'black',
-    font: {
-        fontFamily: Alloy.CFG.fonts.Regular,
-        fontSize: 18
-    },
-    text: 'Attentions Attentions Attentions Attentions Attentions '
-}
-
 '#btnRecommendation': {
     bottom: 32,
     right: 32,

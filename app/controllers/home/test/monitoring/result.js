@@ -95,24 +95,18 @@ function updateUIAndSave(type){
             $.lbResultText.text = L('monitoring_result_Good');
             $.lbResultText.color = Alloy.CFG.colors.primaryColor;
             $.icon.backgroundColor = Alloy.CFG.colors.primaryColor;
-            $.lbPStitle.text = L('result_bien');
-            $.lbPStext.text = L('monitoring_result_Good_Text');
             saveData(args, L('monitoring_result_Good'));
             break;
         case MOY:
             $.lbResultText.text = L('monitoring_result_Moy');
             $.lbResultText.color = Alloy.CFG.colors.orange;
             $.icon.backgroundColor = Alloy.CFG.colors.orange;
-            $.lbPStitle.text = L('result_attention');
-            $.lbPStext.text = L('monitoring_result_Moy_Text');
             saveData(args, L('monitoring_result_Moy'));
             break;
         case LOW:
             $.lbResultText.text = L('monitoring_result_Low');
             $.lbResultText.color = Alloy.CFG.colors.red;
             $.icon.backgroundColor = Alloy.CFG.colors.red;
-            $.lbPStitle.text = L('result_danger');
-            $.lbPStext.text = L('monitoring_result_Low_Text');
             saveData(args, L('monitoring_result_Low'));
             break;
     }
