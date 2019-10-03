@@ -58,6 +58,8 @@ function createLocalFile(){
 }
 
 function syncronization(){
+    $.progressIndicator.setMessage(L("home_syncronization"));
+    $.progressIndicator.show();
     var localData = fileManager.readFile(LOCALE_FILE);
     log(localData, "localData1");
     if (fileManager.fileExists(LOCALE_FILE)) {
@@ -81,10 +83,11 @@ function syncronization(){
             log(typeof( r), "reponse");
             log(typeof( JSON.parse(r)), "reponse parse");
             log(typeof( JSON.parse(r).visites), "visites");
-
-                log(r, "reponse");
+            log(r, "reponse");
+            $.progressIndicator.hide();
         },
         (e)=>{
+            $.progressIndicator.hide();
             log(e, "error");
         });
     }

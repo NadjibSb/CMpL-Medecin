@@ -4,13 +4,14 @@
 	width: Titanium.UI.SIZE,
 	zIndex: 10000,
 	touchEnabled : false,
-	bubbleParent: false
+	bubbleParent: false,
+    visible: false
 }
 
 "#activityContainer[if=$.args.blockScreen]":{
 	height: Ti.UI.FILL,
 	width: Ti.UI.FILL,
-    backgroundColor: "#44999999"
+    backgroundColor: "#66AAAAAA"
 }
 
 "#activityIndicator":{

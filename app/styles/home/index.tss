@@ -64,3 +64,7 @@
     fontColor: "white",
     alignLeft: true,
 }
+
+'#progressIndicator': {
+    blockScreen: true
+}

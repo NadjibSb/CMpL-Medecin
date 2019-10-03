@@ -14,5 +14,6 @@
                 </View>
             </ScrollView>
         </View>
+        <Widget src="customIndicatorInsideView" id="progressIndicator"></Widget>
     </Window>
 </Alloy>
