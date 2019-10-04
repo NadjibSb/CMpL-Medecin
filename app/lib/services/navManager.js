@@ -26,16 +26,18 @@ var previousStackSize = 0;
 
 // PRIVATE FUNCTIONS
 
-function openWindow(path,params={}) {
+function openWindow(path,params={},newNavWindowFlag, oldNavWindow) {
 	try {
-        log("create controller");
+        // if newNavWindowFlag is on
+        if (newNavWindowFlag && oldNavWindow) {
+            _.extend(params, {navWindow: oldNavWindow})
+        }
+        log("create controller", "openWindow");
     	var controller = Alloy.createController(path, params);
+        stackController.push(controller);
+        log("taille stack apres push : "+ stackController.length);
 
-        // si android
         if (Alloy.Globals.isAndroid) {
-          log("taille stack cont : "+ stackController.length);
-          stackController.push(controller);
-          log("taille stack apres push cont : "+ stackController.length);
           // quand on press back
           controller.getView().addEventListener('android:back',()=>{
             var cont = stackController.pop();
@@ -46,22 +48,16 @@ function openWindow(path,params={}) {
           controller.getView().open();
 
         }else{//sinon ios
-            stackController.push(controller);
-            if(currentNavWindow){ //il existe deja un nav windows
+            if(!newNavWindowFlag && currentNavWindow){ //il existe deja un nav windows
               log("there is a navwindow", "openWindow");
               currentNavWindow.openWindow(controller.getView());
 
             }else{ // il n'existe pas deja un navigationWindow
-                log("there is no navwindow", "openWindow");
+                log("New navWindow", "openWindow");
                 var navigationWindow = Ti.UI.createNavigationWindow( {
                 		window: controller.getView(),
                 } );
                 navigationWindow.hideNavBar();
-                /*
-                controller.closeWindow = function(){
-                	navigationWindow.popToRootWindow();
-                	navigationWindow.close();
-                };*/
                 currentNavWindow = navigationWindow;
                 currentNavWindow.open();
             }
@@ -92,6 +88,7 @@ function popUpTo(controller, returnTag){
         closeWindow(controller);
     }else {
         // popup into the taged controller
+        controller = stackController.pop();
         while (!(controller && controller.args && controller.args.tag == returnTag)) {
             log(controller.args, "popUpTo > ========== Close ");
             currentNavWindow.closeWindow(controller.getView(), {animated: false});
@@ -118,9 +115,15 @@ function openAndCloseAll(path,params={}){
         }
         log("stack.length = "+stackController.length, "after openAndCloseAll");
 
+
     }else{ //iOS
-        log("current Window in openClose "+currentNavWindow, "before openAndCloseAll");
-        var win = openWindow(path,params, true);
-        log("current Window in openClose "+currentNavWindow, "after openAndCloseAll");
+        log("current Window in openClose "+stackController.length, "before openAndCloseAll");
+        var currentController = openWindow(path, params, true, currentNavWindow);
+        if (currentController.args && currentController.args.navWindow) {
+            currentController.args.navWindow.close();
+        }
+        stackController = [];
+        stackController.push(currentController);
+        log("current Window in openClose "+stackController.length, "after openAndCloseAll");
     }
 };

@@ -33,6 +33,7 @@ overrode the settings with other TSS, XML, or JS settings:
 // Sizes
 "Window": {
     backgroundColor: 'white',
+    swipeToClose: false
 }
 "Window[if=Alloy.Globals.isIOS]": {
     width: Ti.Platform.displayCaps.platformWidth,

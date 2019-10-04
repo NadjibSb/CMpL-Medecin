@@ -73,7 +73,7 @@ function onScrollend( e ) {
 function btnClicked(e){
     if ($.scrollableView.currentPage == 2) {
         Alloy.Globals.HAS_AUTHENTIFIED();
-        navmanager.openWindow("home/index");
+        navmanager.openAndCloseAll("home/index");
         //navmanager.closeWindow($.window);
     }else if ($.scrollableView.currentPage == 1) {
         medicalCheck(()=>{
