@@ -17,7 +17,7 @@ var navManager = require("/services/navManager"),
 
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
-    navManager.closeWindow($.window);
+    navManager.closeWindow($);
 }
 
 function onError(e){

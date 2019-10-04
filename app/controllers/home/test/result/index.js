@@ -43,7 +43,7 @@ var result;
 
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
-    navManager.closeWindow($.window);
+    navManager.popUpTo($,TEST);
 }
 
 function navigateToRecommendations(e){

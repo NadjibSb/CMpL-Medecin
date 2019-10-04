@@ -11,7 +11,7 @@ var codePatient= "P00001";
 
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
-    navManager.closeWindow($.window);
+    navManager.closeWindow($);
 }
 
 function navigateToSettings(e){
@@ -20,5 +20,4 @@ function navigateToSettings(e){
 
 function scanneCode(e){
     navManager.openWindow("home/test/index", {codePatient: codePatient});
-    //navManager.closeWindow($.window);
 }

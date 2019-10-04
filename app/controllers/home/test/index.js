@@ -12,6 +12,10 @@ const TMP_FILE = Alloy.Globals.TMP_FILE,
 var args = $.args;
 var visite;
 
+_.extend($.args, {
+    tag: TEST
+});
+
 
 (function constructor(){
     visite = {
@@ -32,7 +36,7 @@ var visite;
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
     fileManager.deleteFile(TMP_FILE);
-    navManager.closeWindow($.window);
+    navManager.popUpTo($, HOME);
 }
 
 function navigateToSettings(e){
@@ -82,7 +86,4 @@ function saveVisite(){
             }
         }
     }
-
-
-
 }

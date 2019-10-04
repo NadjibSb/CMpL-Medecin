@@ -23,7 +23,7 @@ var args = {};
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
     if ($.scrollableView.currentPage == 0) {
-        navManager.closeWindow($.window);
+        navManager.closeWindow($);
     }else {
         $.scrollableView.movePrevious();
     }

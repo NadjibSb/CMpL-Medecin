@@ -134,7 +134,7 @@ function saveData(args, message){
 
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
-    navManager.closeWindow($.window);
+    navManager.popUpTo($,TEST);
 }
 
 function navigateToRecommendations(e){

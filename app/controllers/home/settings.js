@@ -42,7 +42,7 @@ function getLocalData(){
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
     log("navigateUp");
-    navManager.closeWindow($.window);
+    navManager.closeWindow($);
 }
 
 function onEdit(e){
@@ -54,7 +54,7 @@ function onEdit(e){
             log(wilaya+ ' - '+ medical, 'onEdit');
             Alloy.Globals.setWilaya(wilaya);
             Alloy.Globals.setMedical(medical);
-            navManager.closeWindow($.window);
+            navManager.closeWindow($);
         }else {
             alertDialog.show(L("alertDialog_fill_regis_data"));
         }

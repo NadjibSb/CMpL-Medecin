@@ -9,7 +9,8 @@ const log = require('/services/logger')({
 var $ = module.exports = {
     openWindow: openWindow,
     closeWindow: closeWindow,
-    openAndCloseAll: openAndCloseAll
+    openAndCloseAll: openAndCloseAll,
+    popUpTo: popUpTo
 };
 
 
@@ -25,7 +26,7 @@ var previousStackSize = 0;
 
 // PRIVATE FUNCTIONS
 
-function openWindow(path,params={}, openAndCloseAllFlag) {
+function openWindow(path,params={}) {
 	try {
         log("create controller");
     	var controller = Alloy.createController(path, params);
@@ -45,27 +46,24 @@ function openWindow(path,params={}, openAndCloseAllFlag) {
           controller.getView().open();
 
         }else{//sinon ios
-            if(currentNavWindow && !openAndCloseAllFlag){ //il existe deja un nav windows
+            stackController.push(controller);
+            if(currentNavWindow){ //il existe deja un nav windows
               log("there is a navwindow", "openWindow");
               currentNavWindow.openWindow(controller.getView());
 
             }else{ // il n'existe pas deja un navigationWindow
-                log("there is not a navwindow", "openWindow");
+                log("there is no navwindow", "openWindow");
                 var navigationWindow = Ti.UI.createNavigationWindow( {
                 		window: controller.getView(),
                 } );
                 navigationWindow.hideNavBar();
+                /*
                 controller.closeWindow = function(){
                 	navigationWindow.popToRootWindow();
                 	navigationWindow.close();
-                };
-                if (currentNavWindow && openAndCloseAllFlag) {
-                    log("close previous NavigationWindow", "openWindow");
-                    currentNavWindow.close();
-                }
+                };*/
                 currentNavWindow = navigationWindow;
                 currentNavWindow.open();
-                log("close previous NavigationWindow "+currentNavWindow + openAndCloseAllFlag, "openWindow");
             }
         }
     	return controller;
@@ -76,16 +74,35 @@ function openWindow(path,params={}, openAndCloseAllFlag) {
 };
 
 // to close window
-function closeWindow(window) {
+function closeWindow(controller) {
     log("closeWindow");
     if (OS_ANDROID) {
         var cont = stackController.pop();
         log("apres le pop :"+ stackController.length);
         cont.getView().close();
     }else{
-        window.close();
+        log(controller.args, "closeWindow > ========== Close ");
+        stackController.pop();
+        currentNavWindow.closeWindow(controller.getView(), {animated: false});
     }
 };
+
+function popUpTo(controller, returnTag){
+    if (OS_ANDROID) {
+        closeWindow(controller);
+    }else {
+        // popup into the taged controller
+        while (!(controller && controller.args && controller.args.tag == returnTag)) {
+            log(controller.args, "popUpTo > ========== Close ");
+            currentNavWindow.closeWindow(controller.getView(), {animated: false});
+            controller = stackController.pop();
+        }
+        // if the controller existe re-push it to the stack
+        if (controller) {
+            stackController.push(controller);
+        }
+    }
+}
 
 // pour ouvrire un liste de window et
 function openAndCloseAll(path,params={}){

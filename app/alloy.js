@@ -10,6 +10,9 @@
 //
 // Alloy.Globals.someGlobalFunction = function(){};
 
+const HOME = "HOME";
+const TEST = "TEST";
+
 Alloy.Globals.isAndroid = (Ti.Platform.osname=='android') ? true : false;
 Alloy.Globals.isIOS = (Ti.Platform.osname=='iphone') ? true : false;
 

@@ -12,6 +12,10 @@ var navManager = require("/services/navManager"),
 
 const LOCALE_FILE = Alloy.Globals.DATA_FILE;
 
+_.extend($.args, {
+    tag: HOME
+});
+
 
 
 (function constructor(){

@@ -106,7 +106,7 @@ function setup_refreshController(){
 
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
-    navManager.closeWindow($.window);
+    navManager.closeWindow($);
 }
 
 function onItemclick(e){

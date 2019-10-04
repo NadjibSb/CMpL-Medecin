@@ -13,7 +13,7 @@ const SOKAL = "SOKAL";
 
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
-    navManager.closeWindow($.window);
+    navManager.closeWindow($);
 }
 
 function onCalculer(e){
