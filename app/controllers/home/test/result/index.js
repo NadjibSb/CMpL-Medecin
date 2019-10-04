@@ -16,6 +16,9 @@ const TMP_FILE = Alloy.Globals.TMP_FILE;
 var args = $.args;
 var result;
 
+_.extend($ , {
+    androidBack: androidBack
+});
 
 // CONSTRUCTOR ------------------------------------------------------------------------
 (function contructor(){
@@ -44,6 +47,9 @@ var result;
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
     navManager.popUpTo($,TEST);
+}
+function androidBack(e){
+    navigateUp(e);
 }
 
 function navigateToRecommendations(e){

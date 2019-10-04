@@ -12,8 +12,13 @@ const TMP_FILE = Alloy.Globals.TMP_FILE,
 var args = $.args;
 var visite;
 
+// Public INTERFACE
 _.extend($.args, {
     tag: TEST
+});
+
+_.extend($ , {
+    androidBack: androidBack
 });
 
 
@@ -37,6 +42,9 @@ _.extend($.args, {
 function navigateUp(e){
     fileManager.deleteFile(TMP_FILE);
     navManager.popUpTo($, HOME);
+}
+function androidBack(e){
+    navigateUp(e);
 }
 
 function navigateToSettings(e){

@@ -13,6 +13,10 @@ const GOOD = 1, MOY = 0, LOW = -1;
 const TMP_FILE = Alloy.Globals.TMP_FILE;
 var args = $.args;
 
+_.extend($ , {
+    androidBack: androidBack
+});
+
 
 // CONSTRUCTOR ------------------------------------------------------------------------
 (function contructor(){
@@ -135,6 +139,9 @@ function saveData(args, message){
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
     navManager.popUpTo($,TEST);
+}
+function androidBack(e){
+    navigateUp(e);
 }
 
 function navigateToRecommendations(e){

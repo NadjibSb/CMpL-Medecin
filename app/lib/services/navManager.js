@@ -35,15 +35,19 @@ function openWindow(path,params={},newNavWindowFlag, oldNavWindow) {
         log("create controller", "openWindow");
     	var controller = Alloy.createController(path, params);
         stackController.push(controller);
-        log("taille stack apres push : "+ stackController.length);
+        log("stackController.length after push : "+ stackController.length);
 
         if (Alloy.Globals.isAndroid) {
           // quand on press back
-          controller.getView().addEventListener('android:back',()=>{
-            var cont = stackController.pop();
-            log("apres le pop :"+ stackController.length);
-            cont.getView().close();
-          })
+            controller.getView().addEventListener('android:back',(e)=>{
+                if( _.isFunction( controller.androidBack ) ) {
+    				controller.androidBack(e);
+    			} else {
+                    var cont = stackController.pop();
+                    log("apres le pop :"+ stackController.length , "android:back");
+                    cont.getView().close();
+    			}
+            });
           //ouvrire la view
           controller.getView().open();
 
@@ -74,7 +78,7 @@ function closeWindow(controller) {
     log("closeWindow");
     if (OS_ANDROID) {
         var cont = stackController.pop();
-        log("apres le pop :"+ stackController.length);
+        log("apres le pop :"+ stackController.length , "closeWindow");
         cont.getView().close();
     }else{
         log(controller.args, "closeWindow > ========== Close ");
@@ -84,46 +88,57 @@ function closeWindow(controller) {
 };
 
 function popUpTo(controller, returnTag){
+    controller = stackController.pop();
     if (OS_ANDROID) {
-        closeWindow(controller);
+        //closeWindow(controller);
+        // popup into the taged controller
+        while (controller && controller.args && (controller.args.tag != returnTag)) {
+            log(controller.args, "popUpTo > ========== Close ");
+            controller.getView().close();
+            controller = stackController.pop();
+        }
+
     }else {
         // popup into the taged controller
-        controller = stackController.pop();
-        while (!(controller && controller.args && controller.args.tag == returnTag)) {
+        while (controller && controller.args && (controller.args.tag != returnTag)) {
             log(controller.args, "popUpTo > ========== Close ");
             currentNavWindow.closeWindow(controller.getView(), {animated: false});
             controller = stackController.pop();
         }
-        // if the controller existe re-push it to the stack
-        if (controller) {
-            stackController.push(controller);
-        }
+    }
+    // if the controller existe re-push it to the stack
+    if (controller) {
+        stackController.push(controller);
     }
 }
 
 // pour ouvrire un liste de window et
 function openAndCloseAll(path,params={}){
-    if(OS_ANDROID){
-        var stack = stackController;
-        stackController=[];
-        log("stack.length = "+stack.length , " before openAndCloseAll");
-        openWindow(path,params);
-        // vider la liste
-        for (var i = 0; i < stack.length; i++) {
-          var cont=stack.pop();
-          cont.getView().close();
-        }
-        log("stack.length = "+stackController.length, "after openAndCloseAll");
+    log("stackController.length "+stackController.length, "before openAndCloseAll");
 
+    if(OS_ANDROID){
+        var currentController = openWindow(path, params);
+        currentController.getView().exitOnClose = true;
+        var controller = stackController.pop(); // pop the currentController
+
+        setTimeout( function() {
+            controller = stackController.pop(); // pop the previous controllers and close them
+            while (controller) {
+                log(controller, "openAndCloseAll > ========== Close ");
+                controller.getView().exitOnClose = false;
+                controller.getView().close();
+                controller = stackController.pop();
+            }
+            stackController.push(currentController);
+    	}, 100 );
 
     }else{ //iOS
-        log("current Window in openClose "+stackController.length, "before openAndCloseAll");
         var currentController = openWindow(path, params, true, currentNavWindow);
         if (currentController.args && currentController.args.navWindow) {
             currentController.args.navWindow.close();
         }
         stackController = [];
         stackController.push(currentController);
-        log("current Window in openClose "+stackController.length, "after openAndCloseAll");
     }
+    log("stackController.length "+stackController.length, "after openAndCloseAll");
 };
