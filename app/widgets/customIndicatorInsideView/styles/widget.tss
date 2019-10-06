@@ -26,5 +26,6 @@
 	indicatorColor: "#58b783"
 }
 "#activityIndicator[platform=android]": {
-	style: Titanium.UI.ActivityIndicatorStyle.BIG_DARK
+	style: Titanium.UI.ActivityIndicatorStyle.BIG_DARK,
+    indicatorColor: "#58b783"
 }

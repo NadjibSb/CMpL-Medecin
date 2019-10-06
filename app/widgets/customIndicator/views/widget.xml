@@ -1,7 +1,0 @@
-<Alloy>
-	<View id="container">
-		<View id="activityContainer">
-			<ActivityIndicator id="activityIndicator"/>
-		</View>
-	</View>
-</Alloy>

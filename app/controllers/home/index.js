@@ -25,6 +25,7 @@ _.extend($.args, {
 })();
 
 
+
 // FUNCTIONS ----------------------------------------------------------------
 
 function createLocalFile(){
@@ -41,36 +42,25 @@ function createLocalFile(){
 }
 
 function syncronization(){
-    $.progressIndicator.setMessage(L("home_syncronization"));
-    $.progressIndicator.show();
+    $.progressIndicator.show("Syncroniser ...");
     var localData = fileManager.readFile(LOCALE_FILE);
-    log(localData, "localData1");
     if (fileManager.fileExists(LOCALE_FILE)) {
         var localData = fileManager.readFile(LOCALE_FILE);
-        // localData = JSON.parse(localData);
-        /*
-        log(typeof(localData.visites) , "Visite type ---------------");
-        log(typeof(localData.visites[0]) , "Visite 0 type ---------------");
-        log(localData.visites.length , "Visite len ---------------");
-        log(localData.visites , "localData ---------------");
-        log(localData , LOCALE_FILE);*/
         log(localData, "localData");
         httpManager.request({
             url: BASE_URL + "medecins/sync",
             fullResponse: true,
-            //header: {"Content-Type": "application/json"},
             params: {data: localData},
             method: "POST"
         },
         (r)=>{
-            log(typeof( r), "reponse");
-            log(typeof( JSON.parse(r)), "reponse parse");
-            log(typeof( JSON.parse(r).visites), "visites");
             log(r, "reponse");
-            $.progressIndicator.hide();
+            fileManager.deleteFile(LOCALE_FILE);
+            createLocalFile();
+            $.progressIndicator.sucess("Synchronisation réussie");
         },
         (e)=>{
-            $.progressIndicator.hide();
+            $.progressIndicator.failed("Echec de la synchronisation");
             log(e, "error");
         });
     }
@@ -101,4 +91,8 @@ function clickButton(e){
 
 function navigateToSettings(e){
     navManager.openWindow("home/settings");
+}
+
+function exitSyncBox(e){
+    $.progressIndicator.hide();
 }

@@ -42,6 +42,6 @@
         "customNavBar": "*",
         "dzmob.widget.TextField": "*",
         "customIndicatorInsideView": "*",
-        "customIndicator": "*"
+        "progressBox": "*"
     }
 }
