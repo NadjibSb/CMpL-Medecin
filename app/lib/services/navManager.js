@@ -1,6 +1,6 @@
 const log = require('/services/logger')({
     tag : "navManager",
-    hidelag : false
+    hideLog : true
 });
 
 

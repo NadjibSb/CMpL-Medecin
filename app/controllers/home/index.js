@@ -19,32 +19,11 @@ _.extend($.args, {
 
 
 (function constructor(){
-    if (Alloy.Globals.isAndroid) {
-        checkPermission(()=>{
-            createLocalFile();
-        });
-    }else {
-        createLocalFile();
-    }
+    $.progressIndicator.hide();
+    createLocalFile();
 
 })();
 
-function checkPermission(callback){
-    if (!Ti.Filesystem.hasStoragePermissions()) {
-        Ti.Filesystem.requestStoragePermissions(function(result) {
-          log('Permission granted? ' + result.success);
-          if (result.success) {
-              _.isFunction( callback ) && callback();
-          }
-          else {
-            alert('Permission denied.');
-          }
-        });
-    }else {
-        log('Permission granted');
-        _.isFunction( callback ) && callback();
-    }
-}
 
 // FUNCTIONS ----------------------------------------------------------------
 

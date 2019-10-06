@@ -1,7 +1,7 @@
 // DEPENDENCIES
 var log = require( 'services/logger' )( {
 		tag: "fileManager",
-		hideLog: false
+		hideLog: true
 	} );
 
 //PUBLIC INTERFACE
@@ -17,7 +17,7 @@ var $ = module.exports = {
 function deleteFile(fileName){
     log("delete file...");
     var file = getFile(fileName);
-    if (file.exists()) {
+    if (fileExists(fileName)) {
         log(file.deleteFile(), fileName + " > Delete file ");
     }
 }
@@ -26,7 +26,7 @@ function deleteFile(fileName){
 function writeToFile(fileName, data){
     log("write to file...");
     var file = getFile(fileName);
-    if (file.exists()){
+    if (fileExists(fileName)){
         if (data) {
             var dataToSave = typeof(data)== "string" ? data : JSON.stringify(data);
             log( dataToSave , fileName + ' > Write data '+ file.write(JSON.stringify(dataToSave)));
@@ -38,17 +38,29 @@ function readFile(fileName){
     log("read file ...");
     var data;
     var file = getFile(fileName);
-    if (file.exists()){
+    if (fileExists(fileName)){
         data = JSON.parse(file.read());
     }
     return data
 }
 
 function fileExists(fileName){
+    var exists = false;
     var dir = getRootDir();
     var file = Titanium.Filesystem.getFile(dir.resolve(), fileName);
-    log(file.exists(), "file exists");
-    return file.exists()
+
+    if (Alloy.Globals.isAndroid) { // in android file.exists() always return false
+        if (file.createFile()) { // if the creation success , the file donsnt exists => delete the created file
+            file.deleteFile();
+        }else { // if the creation failed , the file exists
+            exists = true;
+        }
+        log(exists, "file exists");
+    }else {
+        log(file.exists(), "file exists");
+        exists = file.exists();
+    }
+    return exists
 }
 
 
@@ -60,9 +72,7 @@ function getFile(fileName){
 
     var dir = getRootDir();
     var file = Titanium.Filesystem.getFile(dir.resolve(), fileName);
-    if (!file.exists()) {
-        log(file.createFile(), fileName+" > Create file");
-    }
+    log(file.createFile(), fileName+" > Create file"); // if the file exists , ir return false
     return file
 }
 

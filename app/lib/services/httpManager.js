@@ -1,7 +1,7 @@
 // DEPENDENCIES
 var log = require( 'services/logger' )( {
 		tag: "HttpManager",
-		hideLog: false
+		hideLog: true
 	} ),
 	responseHandler = require( 'services/httpResponseHandler' );
 

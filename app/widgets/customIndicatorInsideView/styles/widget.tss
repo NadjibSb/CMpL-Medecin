@@ -5,7 +5,7 @@
 	zIndex: 10000,
 	touchEnabled : false,
 	bubbleParent: false,
-    visible: false
+    visible: true
 }
 
 "#activityContainer[if=$.args.blockScreen]":{
