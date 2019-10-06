@@ -33,7 +33,8 @@ function fillPickerData(){
     var data = []
     wilayas.forEach(wilaya =>{
         data[wilaya.id] = Ti.UI.createPickerRow({
-            title : wilaya.nom
+            title : wilaya.nom,
+            id: wilaya.id
         });
         $.wilayaColumn.addRow(data[wilaya.id]);
         //log(wilaya.id+" "+wilaya.nom,"remplireWilaya");
@@ -59,7 +60,7 @@ function onEdit(e){
         if (Alloy.Globals.isAndroid) {
             var medical = $.textFieldNom.value || "";
             var wilaya = choosedWilaya ? choosedWilaya : Alloy.Globals.getWilaya();
-            if (wilaya && wilaya.id && wilaya.name && medical.length >0) {
+            if (wilaya && (wilaya.id>=0) && wilaya.name && (medical.length >0)) {
                 log(wilaya.id+ wilaya.name+ ' - '+ medical, 'onEdit');
                 Alloy.Globals.setWilaya(wilaya.name, wilaya.id);
                 Alloy.Globals.setMedical(medical);
@@ -69,10 +70,10 @@ function onEdit(e){
             }
         }else {
             var medical = $.textFieldNom.value || "";
-            var wilaya = $.labelWilaya.text;
-            if( medical.length >0){
+            var wilaya = choosedWilaya ? choosedWilaya : Alloy.Globals.getWilaya();
+            if( wilaya && (wilaya.id>=0) && wilaya.name && medical.length >0){
                 log(wilaya+ ' - '+ medical, 'onEdit');
-                Alloy.Globals.setWilaya(wilaya);
+                Alloy.Globals.setWilaya(wilaya.name, wilaya.id);
                 Alloy.Globals.setMedical(medical);
                 navManager.closeWindow($);
             }else {
@@ -110,22 +111,25 @@ function chooseWilaya(e){
     log("choose Wilaya");
     if (touchEnabled) {
         exitPickerAndKeyboard();
-        (!currentWilaya) && (currentWilaya = wilayas[0].nom);
+        (!choosedWilaya) && (choosedWilaya = Alloy.Globals.getWilaya());
+        currentWilaya = choosedWilaya;
         setTimeout(()=>{
             $.pickerContainer.visible = true;
+            $.picker.setSelectedRow(0, currentWilaya.id-1, false);
         }, 100);
     }
 }
 
 function wilayaChanged(e){
-    currentWilaya = e.row.title;
+    currentWilaya = {name: e.row.title, id: e.row.id};
     log(currentWilaya);
 }
 
 function wilayaChoosed(e){
-  $.labelWilaya.text = currentWilaya;
-  $.labelWilaya.color =  "#000";
-  $.pickerContainer.visible = false
+    choosedWilaya = currentWilaya;
+    $.labelWilaya.text = choosedWilaya.name;
+    $.labelWilaya.color =  "#000";
+    $.pickerContainer.visible = false
 }
 
 function exitPickerAndKeyboard(e){

@@ -4,7 +4,7 @@
             <View class="insideContainer vLayout">
                 <Label id="title" text="title"></Label>
                 <View class="separator"></View>
-                <ListView onItemclick="onItemclick">
+                <ListView id="listView" onItemclick="onItemclick">
                     <Templates>
                         <ItemTemplate name="listTemplate">
                             <View class="hSize itemContainer">

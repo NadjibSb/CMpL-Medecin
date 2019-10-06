@@ -1,21 +1,4 @@
-/*
-setTimeout(()=>{
-    var list = [];
-    for (var i = 0; i < 15; i++) {
-        list.push({
-            template: "listTemplate",
-            text: {text: "titre "+i}
-            //icon: {image: "/images/checkmark.png"}
-        });
-    }
-    //Ti.API.info(JSON.stringify(list));
 
-    $.section.items = list;
-    _.extend(list[2] , {
-        icon: {image: "/images/checkmark.png"}
-    });
-    $.section.items = list;
-},1000);*/
 
 _.extend($ , {
     fillData: fillData,
@@ -46,6 +29,7 @@ function selectItem(id){
         });
     })
     $.section.items = list;
+    $.listView.scrollToItem(0,id, {animated: false});
 }
 
 function onItemclick(e){
