@@ -28,4 +28,19 @@ function onError(e){
 function OnLoaded(e){
     //log(e, 'onloaded');
     $.ProgressIndecator.hide();
+    if (Alloy.Globals.isAndroid) {
+        //navigateUp();
+        var button = Titanium.UI.createButton({
+            title: "Ouvrir dans le navigateur",
+            backgroundColor: '#EEE',
+            color: 'black',
+            bottom: 8,
+            right: 8,
+            height: 35
+        });
+        button.addEventListener("click", (e)=>{
+            Ti.Platform.openURL(Alloy.CFG.urls.recommendations);
+        });
+        $.container.add(button);
+    }
 }
