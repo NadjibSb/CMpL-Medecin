@@ -1,0 +1,61 @@
+
+
+'#vue': {
+    zIndex: 10,
+    backgroundColor: "#66DDDDDD",
+    bubbleParent: false
+}
+
+'#container': {
+    width: "80%",
+    height: "60%",
+    borderRadius: 10,
+    backgroundColor: 'white',
+    bubbleParent: false,
+    elevation: 10
+}
+
+'.insideContainer': {
+    top: 16,
+    bottom: 16,
+    right: 16,
+    left: 16
+}
+
+'#title': {
+    left: 0,
+    color: 'black',
+    font: {
+        fontSize: 16,
+        fontFamily: "Lato-Regular"
+    },
+}
+
+'.separator': {
+    height: 1,
+    top: 8,
+    backgroundColor: "#AADDDDDD"
+}
+
+'.lable': {
+    left: 0,
+    right: 32,
+    color: 'black',
+    font: {
+        fontSize: 16,
+        fontFamily: "Lato-Light"
+    },
+}
+
+'.icon': {
+    right: 0,
+    width: 24,
+    height: 24
+}
+
+'.itemContainer': {
+    top: 8,
+    bottom: 8,
+    left: 8,
+    right: 8
+}

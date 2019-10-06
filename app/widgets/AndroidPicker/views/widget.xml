@@ -1,0 +1,21 @@
+<Alloy>
+    <View id="vue" onClick="exit">
+        <View id="container">
+            <View class="insideContainer vLayout">
+                <Label id="title" text="title"></Label>
+                <View class="separator"></View>
+                <ListView onItemclick="onItemclick">
+                    <Templates>
+                        <ItemTemplate name="listTemplate">
+                            <View class="hSize itemContainer">
+                                <Label class="lable" bindId="text"></Label>
+                                <ImageView class="icon" bindId="icon"></ImageView>
+                            </View>
+                        </ItemTemplate>
+                    </Templates>
+                    <ListSection id="section"></ListSection>
+                </ListView>
+            </View>
+        </View>
+    </View>
+</Alloy>

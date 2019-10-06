@@ -16,7 +16,6 @@
 }
 
 "#indecator":{
-    top: 16,
 	visible: true,
 	height: Titanium.UI.SIZE,
 	width: Titanium.UI.SIZE,

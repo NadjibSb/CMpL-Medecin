@@ -24,12 +24,14 @@ Alloy.Globals.DATA_FILE = "cmplMedecin_Data.json";
 Alloy.Globals.TMP_FILE = "cmplMedecin_Tmp.json";
 
 
-Alloy.Globals.setWilaya = (wilaya)=>{
-  Ti.App.Properties.setString(Alloy.Globals.WILAYA_NAME,wilaya)
+Alloy.Globals.setWilaya = (wilaya,id)=>{
+  Ti.App.Properties.setString(Alloy.Globals.WILAYA_NAME,wilaya+"/"+id)
 }
 
 Alloy.Globals.getWilaya = ()=>{
-  return Ti.App.Properties.getString(Alloy.Globals.WILAYA_NAME)
+  var data =  Ti.App.Properties.getString(Alloy.Globals.WILAYA_NAME);
+  var r = data.split("/");
+  return {id: r[1], name: r[0]}
 }
 
 Alloy.Globals.setMedical = function setMedical(medical){

@@ -11,14 +11,21 @@ var navManager = require("/services/navManager"),
 
 // PRIVATE VAR-------------------------------------------------------------------
 var currentWilaya,
+    choosedWilaya,
     touchEnabled = false;
 
 
 // CONSTRUCTOR ------------------------------------------------------------------
 (function constructor(){
-    fillPickerData();
     getLocalData();
+    if (Alloy.Globals.isAndroid) {
+        $.androidPicker.hide();
+        $.androidPicker.fillData("Choisissez une Wilaya :",wilayas);
+    }else {
+        fillPickerData();
+    }
 })();
+
 
 
 // PRIVATE FUNCTIONS------------------------------------------------------------------
@@ -34,7 +41,8 @@ function fillPickerData(){
 }
 
 function getLocalData(){
-    $.labelWilaya.text = Alloy.Globals.getWilaya();
+    log(Alloy.Globals.getWilaya(), "Alloy.Globals.getWilaya()");
+    $.labelWilaya.text = Alloy.Globals.getWilaya().name;
     $.textFieldNom.value = Alloy.Globals.getMedical();
 }
 
@@ -48,25 +56,51 @@ function navigateUp(e){
 function onEdit(e){
     log("on Edit");
     if (touchEnabled) {
-        var medical = $.textFieldNom.value || "";
-        var wilaya = $.labelWilaya.text;
-        if( medical.length >0){
-            log(wilaya+ ' - '+ medical, 'onEdit');
-            Alloy.Globals.setWilaya(wilaya);
-            Alloy.Globals.setMedical(medical);
-            navManager.closeWindow($);
+        if (Alloy.Globals.isAndroid) {
+            var medical = $.textFieldNom.value || "";
+            var wilaya = choosedWilaya ? choosedWilaya : Alloy.Globals.getWilaya();
+            if (wilaya && wilaya.id && wilaya.name && medical.length >0) {
+                log(wilaya.id+ wilaya.name+ ' - '+ medical, 'onEdit');
+                Alloy.Globals.setWilaya(wilaya.name, wilaya.id);
+                Alloy.Globals.setMedical(medical);
+                navManager.closeWindow($);
+            }else {
+                alertDialog.show(L("alertDialog_fill_regis_data"));
+            }
         }else {
-            alertDialog.show(L("alertDialog_fill_regis_data"));
+            var medical = $.textFieldNom.value || "";
+            var wilaya = $.labelWilaya.text;
+            if( medical.length >0){
+                log(wilaya+ ' - '+ medical, 'onEdit');
+                Alloy.Globals.setWilaya(wilaya);
+                Alloy.Globals.setMedical(medical);
+                navManager.closeWindow($);
+            }else {
+                alertDialog.show(L("alertDialog_fill_regis_data"));
+            }
         }
     }else {
         touchEnabled = true;
         $.labelWilaya.color = "black";
         $.textFieldNom.color = 'black';
         $.textFieldNom.editable = true;
-        $.editBtn.setTitle(L("save"))
-        $.containerWilaya.addEventListener('click', (e)=>{
-            chooseWilaya(e);
-        } );
+        $.editBtn.setTitle(L("save"));
+        if (Alloy.Globals.isAndroid) {
+            $.containerWilaya.addEventListener('click', (e)=>{
+                var id;
+                if (choosedWilaya) {
+                    id = choosedWilaya.id;
+                    $.androidPicker.selectItem(id);
+                }else if ( id = Alloy.Globals.getWilaya().id) {
+                    $.androidPicker.selectItem(id);
+                }
+                $.androidPicker.show();
+            } );
+        }else {
+            $.containerWilaya.addEventListener('click', (e)=>{
+                chooseWilaya(e);
+            } );
+        }
     }
 }
 
@@ -100,4 +134,17 @@ function exitPickerAndKeyboard(e){
     if (Alloy.Globals.isAndroid) {
         Ti.UI.Android.hideSoftKeyboard();
     }
+}
+
+
+
+
+function exitAndroidPicker(e){
+    $.androidPicker.hide();
+}
+
+function onItemselected(_id){
+    choosedWilaya = {name: wilayas[_id].nom, id: _id};
+    $.labelWilaya.text = choosedWilaya.name;
+    log(choosedWilaya, "itemselected");
 }

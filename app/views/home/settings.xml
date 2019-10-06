@@ -2,28 +2,31 @@
 	<Window id="window">
         <View class="vLayout">
             <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
-            <ScrollView class="vLayout" onClick="exitPickerAndKeyboard">
-                <View class="QRcontainer hSize vLayout">
-                    <View class="hSize wSize hLayout" horizontalWrap="false">
-                        <Label class="QRText RegularFont"></Label>
-                        <ImageView class="downArrow"></ImageView>
+            <View>
+                <ScrollView top="0" class="vLayout" onClick="exitPickerAndKeyboard">
+                    <View class="QRcontainer hSize vLayout">
+                        <View class="hSize wSize hLayout" horizontalWrap="false">
+                            <Label class="QRText RegularFont"></Label>
+                            <ImageView class="downArrow"></ImageView>
+                        </View>
+                        <ImageView class="QRimage"></ImageView>
                     </View>
-                    <ImageView class="QRimage"></ImageView>
-                </View>
-                <View class="vLayout hSize" top="32">
-                    <View id="containerWilaya" class="hSize containerDonnee">
-                        <Label id="labelWilaya"></Label>
-                        <ImageView id="localisationImage"></ImageView>
+                    <View class="vLayout hSize" top="32">
+                        <View id="containerWilaya" class="hSize containerDonnee">
+                            <Label id="labelWilaya"></Label>
+                            <ImageView id="localisationImage"></ImageView>
+                        </View>
+                        <View id="containerDonnee" class="hSize containerDonnee" >
+                            <TextField id="textFieldNom"></TextField>
+                            <ImageView id="meubleImage"></ImageView>
+                        </View>
+                        <Require src="/component/buttonImgCentre" id="editBtn" onClick="onEdit"></Require>
                     </View>
-                    <View id="containerDonnee" class="hSize containerDonnee" >
-                        <TextField id="textFieldNom"></TextField>
-                        <ImageView id="meubleImage"></ImageView>
-                    </View>
-                    <Require src="/component/buttonImgCentre" id="editBtn" onClick="onEdit"></Require>
-                </View>
-            </ScrollView>
+                </ScrollView>
+                <Widget id="androidPicker" platform="android" src="AndroidPicker" onExit="exitAndroidPicker" onItemselected="onItemselected"></Widget>
+            </View>
         </View>
-        <View id="pickerContainer" class="vLayout" >
+        <View id="pickerContainer" class="vLayout">
           <View id="viewButton" class="lightgrey" >
             <Button id="buttonDone" onClick="wilayaChoosed"></Button>
           </View>
