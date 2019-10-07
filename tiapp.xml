@@ -39,6 +39,8 @@
         <false/>
         <key>UIStatusBarStyle</key>
         <string>UIStatusBarStyleDefault</string>
+        <key>NSCameraUsageDescription</key>
+        <string>Need permission to access your device camera.</string>
       </dict>
     </plist>
   </ios>
@@ -47,10 +49,13 @@
     <manifest 
       xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1">
       <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+      <uses-permission android:name="android.permission.CAMERA"/>
     </manifest>
   </android>
   <modules>
     <module platform="commonjs">ti.cloud</module>
+    <module>ti.barcode</module>
   </modules>
   <deployment-targets>
     <target device="android">true</target>
