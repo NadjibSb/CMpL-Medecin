@@ -2,31 +2,34 @@
 	<Window id="window">
 		<View class="vLayout" >
 			<Widget src="customNavBar" id="navBar" class="navBar" ></Widget>
-            <ScrollView class="vLayout" scrollType="vertical" onClick="exitPickerAndKeyboard">
-                <View id="scrollableViewContainer" class="vLayout">
-                      <ScrollableView id="scrollableView"  onScrollend="onScrollend" scrollingEnabled="false">
-                        <Require src="/register/code"></Require>
-                        <Require id="donneeComponent" src="/register/donnee" onChooseWilaya="chooseWilaya" onHidePicker="exitPicker"></Require>
-                        <Require src="/register/info"></Require>
-                      </ScrollableView>
-                </View>
-                <View id="bottomContainer" class="hSize vLayout" >
-                    <View id="treePoint" class="hSize" >
-                  		<View class="point" id="point1">
-                          <Label class="label_enreg boldFont">1</Label>
-                        </View>
-                    	<View class="point" id="point2">
-                            <Label class="label_enreg">2</Label>
-                        </View>
-                    	<View class="point" id="point3">
-                            <Label class="label_enreg">3</Label>
-                        </View>
+            <View>
+                <ScrollView top="0" class="vLayout" scrollType="vertical" onClick="exitPickerAndKeyboard">
+                    <View id="scrollableViewContainer" class="vLayout">
+                          <ScrollableView id="scrollableView"  onScrollend="onScrollend" scrollingEnabled="false">
+                            <Require src="/register/code"></Require>
+                            <Require id="donneeComponent" src="/register/donnee" onChooseWilaya="chooseWilaya" onHidePicker="exitPicker"></Require>
+                            <Require src="/register/info"></Require>
+                          </ScrollableView>
                     </View>
-                    <Require src="/component/buttonImgCentre" id="btStart" onClick="btnClicked"></Require>
-                </View>
-            </ScrollView>
+                    <View id="bottomContainer" class="hSize vLayout" >
+                        <View id="treePoint" class="hSize" >
+                      		<View class="point" id="point1">
+                              <Label class="label_enreg boldFont">1</Label>
+                            </View>
+                        	<View class="point" id="point2">
+                                <Label class="label_enreg">2</Label>
+                            </View>
+                        	<View class="point" id="point3">
+                                <Label class="label_enreg">3</Label>
+                            </View>
+                        </View>
+                        <Require src="/component/buttonImgCentre" id="btStart" onClick="btnClicked"></Require>
+                    </View>
+                </ScrollView>
+                <Widget id="androidPicker" platform="android" src="AndroidPicker" onExit="exitAndroidPicker" onItemselected="onItemselected"></Widget>
+            </View>
 		</View>
-        <View id="pickerContainer" class="vLayout" >
+        <View platform="ios" id="pickerContainer" class="vLayout" >
           <View id="viewButton" class="lightgrey" >
             <Button id="buttonDone" onClick="wilayaChoosed"></Button>
           </View>

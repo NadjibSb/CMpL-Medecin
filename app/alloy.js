@@ -29,9 +29,14 @@ Alloy.Globals.setWilaya = (wilaya,id)=>{
 }
 
 Alloy.Globals.getWilaya = ()=>{
-  var data =  Ti.App.Properties.getString(Alloy.Globals.WILAYA_NAME);
-  var r = data.split("/");
-  return {id: r[1], name: r[0]}
+  var data =  Ti.App.Properties.getString(Alloy.Globals.WILAYA_NAME, null);
+  if (data) {
+      var r = data.split("/");
+      return {id: r[1], name: r[0]}
+  }else {
+      return null
+  }
+
 }
 
 Alloy.Globals.setMedical = function setMedical(medical){
@@ -39,11 +44,11 @@ Alloy.Globals.setMedical = function setMedical(medical){
 }
 
 Alloy.Globals.getMedical = ()=>{
-  return Ti.App.Properties.getString(Alloy.Globals.MEDICAL_NAME)
+  return Ti.App.Properties.getString(Alloy.Globals.MEDICAL_NAME, null)
 }
 
 Alloy.Globals.getCode = ()=>{
-  return Ti.App.Properties.getString(Alloy.Globals.AUTHCODE)
+  return Ti.App.Properties.getString(Alloy.Globals.AUTHCODE, null)
 }
 
 Alloy.Globals.setCode = (code)=>{

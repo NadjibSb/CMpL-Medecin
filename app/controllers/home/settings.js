@@ -20,7 +20,7 @@ var currentWilaya,
     getLocalData();
     if (Alloy.Globals.isAndroid) {
         $.androidPicker.hide();
-        $.androidPicker.fillData("Choisissez une Wilaya :",wilayas);
+        $.androidPicker.fillData(L("picker_choose_wilaya"),wilayas);
     }else {
         fillPickerData();
     }
@@ -29,6 +29,9 @@ var currentWilaya,
 
 
 // PRIVATE FUNCTIONS------------------------------------------------------------------
+
+
+// on iOS
 function fillPickerData(){
     var data = []
     wilayas.forEach(wilaya =>{
@@ -57,28 +60,15 @@ function navigateUp(e){
 function onEdit(e){
     log("on Edit");
     if (touchEnabled) {
-        if (Alloy.Globals.isAndroid) {
-            var medical = $.textFieldNom.value || "";
-            var wilaya = choosedWilaya ? choosedWilaya : Alloy.Globals.getWilaya();
-            if (wilaya && (wilaya.id>=0) && wilaya.name && (medical.length >0)) {
-                log(wilaya.id+ wilaya.name+ ' - '+ medical, 'onEdit');
-                Alloy.Globals.setWilaya(wilaya.name, wilaya.id);
-                Alloy.Globals.setMedical(medical);
-                navManager.closeWindow($);
-            }else {
-                alertDialog.show(L("alertDialog_fill_regis_data"));
-            }
+        var medical = $.textFieldNom.value || "";
+        var wilaya = choosedWilaya ? choosedWilaya : Alloy.Globals.getWilaya(); // if not choosed, get the local data
+        if (wilaya && (wilaya.id>=0) && wilaya.name && (medical.length >0)) {
+            log(wilaya.id+ wilaya.name+ ' - '+ medical, 'onEdit');
+            Alloy.Globals.setWilaya(wilaya.name, wilaya.id);
+            Alloy.Globals.setMedical(medical);
+            navManager.closeWindow($);
         }else {
-            var medical = $.textFieldNom.value || "";
-            var wilaya = choosedWilaya ? choosedWilaya : Alloy.Globals.getWilaya();
-            if( wilaya && (wilaya.id>=0) && wilaya.name && medical.length >0){
-                log(wilaya+ ' - '+ medical, 'onEdit');
-                Alloy.Globals.setWilaya(wilaya.name, wilaya.id);
-                Alloy.Globals.setMedical(medical);
-                navManager.closeWindow($);
-            }else {
-                alertDialog.show(L("alertDialog_fill_regis_data"));
-            }
+            alertDialog.show(L("alertDialog_fill_regis_data"));
         }
     }else {
         touchEnabled = true;
@@ -86,14 +76,16 @@ function onEdit(e){
         $.textFieldNom.color = 'black';
         $.textFieldNom.editable = true;
         $.editBtn.setTitle(L("save"));
+
         if (Alloy.Globals.isAndroid) {
             $.containerWilaya.addEventListener('click', (e)=>{
                 var id;
-                if (choosedWilaya) {
+                exitPickerAndKeyboard();
+                if (choosedWilaya) { //scroll the the choosed one
                     id = choosedWilaya.id;
-                    $.androidPicker.selectItem(id);
-                }else if ( id = Alloy.Globals.getWilaya().id) {
-                    $.androidPicker.selectItem(id);
+                    $.androidPicker.selectItem(id-1);
+                }else if ( id = Alloy.Globals.getWilaya().id) { //scroll the the local data saved
+                    $.androidPicker.selectItem(id-1);
                 }
                 $.androidPicker.show();
             } );
@@ -107,6 +99,7 @@ function onEdit(e){
 
 
 // Picker events
+// on iOS
 function chooseWilaya(e){
     log("choose Wilaya");
     if (touchEnabled) {
@@ -120,11 +113,13 @@ function chooseWilaya(e){
     }
 }
 
+// on iOS
 function wilayaChanged(e){
     currentWilaya = {name: e.row.title, id: e.row.id};
     log(currentWilaya);
 }
 
+// on iOS
 function wilayaChoosed(e){
     choosedWilaya = currentWilaya;
     $.labelWilaya.text = choosedWilaya.name;
@@ -133,7 +128,9 @@ function wilayaChoosed(e){
 }
 
 function exitPickerAndKeyboard(e){
-    $.pickerContainer.visible = false;
+    if (Alloy.Globals.isIOS) {
+        $.pickerContainer.visible = false;
+    }
     $.textFieldNom.blur();
     if (Alloy.Globals.isAndroid) {
         Ti.UI.Android.hideSoftKeyboard();
@@ -143,12 +140,14 @@ function exitPickerAndKeyboard(e){
 
 
 
+// on android
 function exitAndroidPicker(e){
     $.androidPicker.hide();
 }
 
+// on android
 function onItemselected(_id){
-    choosedWilaya = {name: wilayas[_id].nom, id: _id};
+    choosedWilaya = {name: wilayas[_id].nom, id: (_id+1)};
     $.labelWilaya.text = choosedWilaya.name;
     log(choosedWilaya, "itemselected");
 }

@@ -14,7 +14,7 @@ function fillData(title, list){
     _.each(list, (item)=>{
         dataList.push({
             template: "listTemplate",
-            text: {text: item.id +"- "+ item.nom}
+            text: {text: (item.id) +"- "+ item.nom}
             //icon: {image: "/images/checkmark.png"}
         });
     });

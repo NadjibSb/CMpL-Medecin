@@ -7,24 +7,25 @@ const log = require( 'services/logger' )( {
 
 // PUBLIC INTERFACE
 _.extend($, {
-    checkData: checkData,
+    checkLabel: checkLabel,
+    hideKeyBoard: hideKeyBoard
 });
 
 // PRIVATE FUNCTIONS ------------------------------------------------------------
 
-function checkData(){
+function checkLabel(){
     var medical = $.textFieldNom.value || "";
-    var wilaya = $.labelWilaya.text;
-    if( medical.length >0 && wilaya != L('wilaya')){
-        return { wilaya: wilaya , medical: medical}
+    if( medical.length >0 ){
+        return  medical
     }else return null
 }
+
 
 
 // EVENTS Handler ---------------------------------------------------------------
 function choiceWilaya(e){
     hideKeyBoard();
-  $.trigger("chooseWilaya",$.labelWilaya);
+    $.trigger("chooseWilaya",$.labelWilaya);
 }
 
 function hideKeyBoard(e){

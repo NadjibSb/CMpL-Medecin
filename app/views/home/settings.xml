@@ -26,7 +26,7 @@
                 <Widget id="androidPicker" platform="android" src="AndroidPicker" onExit="exitAndroidPicker" onItemselected="onItemselected"></Widget>
             </View>
         </View>
-        <View id="pickerContainer" class="vLayout">
+        <View platform="ios" id="pickerContainer" class="vLayout">
           <View id="viewButton" class="lightgrey" >
             <Button id="buttonDone" onClick="wilayaChoosed"></Button>
           </View>

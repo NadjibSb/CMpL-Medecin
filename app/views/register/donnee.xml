@@ -8,7 +8,7 @@
                 <ImageView id="localisationImage"></ImageView>
             </View>
             <View id="containerDonnee" class="containerDonnee" onClick="hidePicker">
-                <TextField id="textFieldNom"></TextField>
+                <TextField id="textFieldNom" onClick="hidePicker"></TextField>
                 <ImageView id="meubleImage"></ImageView>
             </View>
         </ScrollView>
