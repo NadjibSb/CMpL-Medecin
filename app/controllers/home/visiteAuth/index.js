@@ -5,7 +5,9 @@ const log = require( '/services/logger' )( {
 	} );
 
 var navManager = require("/services/navManager"),
-    alertManager = require("/services/alertManager");
+    alertManager = require("/services/alertManager"),
+    httpManager = require("/services/httpManager"),
+    BASE_URL = Alloy.CFG.urls.apiUrl;
 var barcode = require('ti.barcode');
 
 
@@ -22,13 +24,36 @@ function navigateToSettings(e){
     navManager.openWindow("home/settings");
 }
 
+
 function sucessScan(result, type){
     codePatient = result;
     log(codePatient, "codePatient");
     log(type, "type");
     if (type == barcode.TEXT) {
+        $.progressIndicator.show("Authentification...");
 
-        //navManager.openWindow("home/test/index", {codePatient: codePatient});
+        authPatient(codePatient,
+            (response)=>{
+                setTimeout(()=>{
+                    $.progressIndicator.hide();
+                    navManager.openWindow("home/test/index", {codePatient: codePatient});
+                },1000);
+
+            },
+            (error)=>{
+                $.progressIndicator.hide();
+                if (error.error_message) {
+                    switch (error.error_message) {
+                        case "invalidCode":
+                            alertManager.show(L("codebar_invalide"));
+                            break;
+                        default:
+                            alertManager.show({title: error.error_message , message: L("codebar_invalide")});
+                    }
+                }else {
+                    alertManager.show(error);
+                }
+        });
     }else {
         setTimeout(()=>{
             alertManager.show(L("codebar_unkown"));
@@ -36,7 +61,27 @@ function sucessScan(result, type){
     }
 }
 
-
+function authPatient(code, successCallback, errorCallback){
+    httpManager.request({
+        url: BASE_URL+ "patients/verify/"+code,
+        fullResponse: true,
+        method: "GET",
+        header:{
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        ignoreAlert: true
+        },
+        (r)=>{
+            log(r, "auth sucess");
+            _.isFunction(successCallback) && successCallback(r);
+        },
+        (e,r)=>{
+            log(e, "auth error");
+            log(r, "auth error");
+            _.isFunction(errorCallback) && errorCallback(r);
+        }
+    );
+}
 
 // CODEBAR ------------------------------------------------------------------
 

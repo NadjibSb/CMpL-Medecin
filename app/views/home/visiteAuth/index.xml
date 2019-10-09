@@ -7,5 +7,6 @@
                 <Require src="/component/buttonImgCentre" id="scanneButton" onClick="scanneCode"></Require>
             </View>
         </View>
+        <Widget id="progressIndicator" src="progressBox"></Widget>
     </Window>
 </Alloy>

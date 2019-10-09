@@ -23,8 +23,10 @@ function sucessScan(result, type){
 
         auth(codeMedecin,
             (response)=>{
-                $.progressIndicator.hide();
-                $.trigger('scanned', codeMedecin);
+                setTimeout(()=>{
+                    $.progressIndicator.hide();
+                    $.trigger('scanned', codeMedecin);
+                },1000);
             },
             (error)=>{
                 $.progressIndicator.hide();
