@@ -10,6 +10,7 @@ var alertDialog = require('/services/alertManager'),
     navmanager = require('/services/navManager');
 
 
+
 // PRIVATE VARIABLES------------------------------------------------------------
 var currentWilaya = null,
     choosedWilaya = null,
@@ -19,10 +20,12 @@ var currentWilaya = null,
 
 
 
+
 // CONSTRUCTOR ------------------------------------------------------------
 (function contructor(){
 
     // select the onGoing vue
+
     if (Alloy.Globals.getCode()) {
         if (Alloy.Globals.getWilaya() && Alloy.Globals.getMedical() ) {
             $.scrollableView.currentPage = 2;
@@ -91,7 +94,12 @@ function btnClicked(e){
             $.scrollableView.moveNext();
         })
     }else{
-      $.scrollableView.moveNext();
+        Alloy.Globals.setCode("M000003");
+        if (Alloy.Globals.getCode()) {
+            $.scrollableView.moveNext();
+        }else {
+            alertDialog.show(L("codebar_missing"));
+        }
     }
 }
 
@@ -154,4 +162,8 @@ function onItemselected(_id){
     labelWilaya.text = choosedWilaya.name;
     labelWilaya.color =  "#000";
     log(choosedWilaya, "itemselected");
+}
+
+function onScanned(e){
+    $.scrollableView.moveNext();
 }

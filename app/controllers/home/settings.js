@@ -48,6 +48,14 @@ function getLocalData(){
     log(Alloy.Globals.getWilaya(), "Alloy.Globals.getWilaya()");
     $.labelWilaya.text = Alloy.Globals.getWilaya().name;
     $.textFieldNom.value = Alloy.Globals.getMedical();
+    // get QRCode img
+    var code = Alloy.Globals.getCode();
+    if (code) {
+        var url = 'http://chart.apis.google.com/chart?cht=qr&chs=250x250&chl=' + encodeURI(code) + '&chld=H|0';
+        $.QRCodeImg.image = url;
+        log(url, "QRCode URL");
+    }
+
 }
 
 

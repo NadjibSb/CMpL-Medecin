@@ -8,11 +8,7 @@ var navManager = require("/services/navManager"),
     alertManager = require("/services/alertManager");
 var barcode = require('ti.barcode');
 
-barcode.allowRotation = true;
-barcode.displayedMessage = 'Scanner le code QR';
-barcode.allowMenu = false;
-barcode.allowInstructions = false;
-barcode.useLED = false;
+
 
 
 var codePatient= "";
@@ -43,6 +39,12 @@ function sucessScan(result, type){
 
 
 // CODEBAR ------------------------------------------------------------------
+
+barcode.allowRotation = true;
+barcode.displayedMessage = 'Scanner le code QR';
+barcode.allowMenu = false;
+barcode.allowInstructions = false;
+barcode.useLED = false;
 
 var overlay = Ti.UI.createView({
     backgroundColor: 'transparent',
@@ -123,32 +125,4 @@ function scanneCode(e){
           keepOpen: true
       });
   });
-}
-
-
-function parseContentType(contentType) {
-    switch (contentType) {
-        case barcode.URL:
-            return 'URL';
-        case barcode.SMS:
-            return 'SMS';
-        case barcode.TELEPHONE:
-            return 'TELEPHONE';
-        case barcode.TEXT:
-            return 'TEXT';
-        case barcode.CALENDAR:
-            return 'CALENDAR';
-        case barcode.GEOLOCATION:
-            return 'GEOLOCATION';
-        case barcode.EMAIL:
-            return 'EMAIL';
-        case barcode.CONTACT:
-            return 'CONTACT';
-        case barcode.BOOKMARK:
-            return 'BOOKMARK';
-        case barcode.WIFI:
-            return 'WIFI';
-        default:
-            return 'UNKNOWN';
-    }
 }

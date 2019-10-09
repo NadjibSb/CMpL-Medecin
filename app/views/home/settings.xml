@@ -1,4 +1,4 @@
-<Alloy>
+<Alloy autoStyle="true">
 	<Window id="window">
         <View class="vLayout">
             <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
@@ -9,7 +9,7 @@
                             <Label class="QRText RegularFont"></Label>
                             <ImageView class="downArrow"></ImageView>
                         </View>
-                        <ImageView class="QRimage"></ImageView>
+                        <ImageView id="QRCodeImg" class="QRimage"></ImageView>
                     </View>
                     <View class="vLayout hSize" top="32">
                         <View id="containerWilaya" class="hSize containerDonnee">
