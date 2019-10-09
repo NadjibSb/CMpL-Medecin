@@ -37,7 +37,7 @@ var currentWilaya = null,
     }else {
         $.treePoint.children[ 0 ].opacity = 1;
     }
-    //$.scrollableView.currentPage = 0;
+    $.scrollableView.currentPage = 0;
     // setup picker
     if (Alloy.Globals.isAndroid) {
         $.androidPicker.hide();

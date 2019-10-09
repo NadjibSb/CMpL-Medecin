@@ -44,7 +44,7 @@ function checkEmptyFields(callback){
             msg = "Le champ 'Rate' doit être renseigné";
             break;
         case $.tfBosiphiles.value:
-            msg = "Le champ 'Bosiphiles' doit être renseigné";
+            msg = "Le champ 'basophiles' doit être renseigné";
             break;
         default:
     }
@@ -63,25 +63,25 @@ function checkValidFields(callback){
     // verify rate
     var rate = parseFloat($.tfRate.value);
     if ( rate>= 1 && rate <= 150) {
-        // verify bosiphiles
+        // verify basophiles
         try {
-            var bosiphiles = parseFloat( $.tfBosiphiles.value.replace(",", ".") );
-            if (bosiphiles >=0 && bosiphiles <=100) {
+            var basophiles = parseFloat( $.tfBosiphiles.value.replace(",", ".") );
+            if (basophiles >=0 && basophiles <=100) {
                 _.isFunction( callback ) && callback({
                     rate: rate,
-                    bosiphiles: bosiphiles
+                    basophiles: basophiles
                 });
             }else {
-                throw "bosiphiles not in the intervale"
+                throw "basophiles not in the intervale"
             }
         } catch (e) {
             log(e);
             alertDialog.show({
                 title: L("invalid_field"),
-                message: "Le champ 'Bosiphiles' doit avoir une valeur comprise entre 0.00 et 100.00"
+                message: "Le champ 'basophiles' doit avoir une valeur comprise entre 0.00 et 100.00"
             });
         }
-        //---- END verify bosiphiles
+        //---- END verify basophiles
 
     }else {
         log("rate not in the intervale");

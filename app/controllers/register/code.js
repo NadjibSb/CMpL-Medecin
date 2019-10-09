@@ -33,10 +33,12 @@ function sucessScan(result, type){
                 if (error.error_message) {
                     switch (error.error_message) {
                         case "codeAlreadyUsed":
-                            alertDialog.show(L("codebar_already_used"));
+                            var msg = L("codebar_already_used");
+                            alertDialog.show(msg);
                             break;
                         case "invalidCode":
-                            alertDialog.show(L("codebar_invalide"));
+                            var msg = L("codebar_invalide");
+                            alertDialog.show(msg);
                             break;
                         default:
                             alertDialog.show({title: error.error_message , message: L("codebar_invalide")});

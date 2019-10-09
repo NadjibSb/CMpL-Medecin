@@ -25,10 +25,9 @@ function navigateToSettings(e){
 }
 
 
-function sucessScan(result, type){
+function sucessScanPatient(result, type){
     codePatient = result;
     log(codePatient, "codePatient");
-    log(type, "type");
     if (type == barcode.TEXT) {
         $.progressIndicator.show("Authentification...");
 
@@ -48,6 +47,7 @@ function sucessScan(result, type){
                             break;
                         default:
                             alertManager.show({title: error.error_message , message: L("codebar_invalide")});
+                            break;
                     }
                 }else {
                     alertManager.show(error);
@@ -133,7 +133,7 @@ barcode.addEventListener('cancel', function(e) {
 barcode.addEventListener('success', function(e) {
     log(e, 'Success called with barcode: ');
     barcode.cancel();
-    sucessScan(e.result,e.contentType);
+    sucessScanPatient(e.result,e.contentType);
 });
 
 //function

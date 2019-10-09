@@ -73,8 +73,8 @@ function calculScore(args){
             }
             break;
         case EUTOS:
-            if (args && args.rate && args.bosiphiles) {
-                result = (7 * args.bosiphiles) + (4 * args.rate);
+            if (args && args.rate && args.basophiles) {
+                result = (7 * args.basophiles) + (4 * args.rate);
             }
             break;
         default:
@@ -152,7 +152,7 @@ function saveData(){
                 data = JSON.parse(data);
                 var toSave = {
                     rate: args.rate,
-                    bosiphiles: args.bosiphiles,
+                    basophiles: args.basophiles,
                     resultat: {
                         note: result,
                         message: getResultMsg(result)
