@@ -25,7 +25,7 @@
 }
 
 '.QRimage': {
-    image: "/images/icn_qrcode.png",
+    defaultImage: "/images/icn_qrcode.png",
     width: "50%",
     top: 16
 }

@@ -17,12 +17,33 @@ var barcode = require('ti.barcode');
 function sucessScan(result, type){
     var codeMedecin = result;
     log(codeMedecin, "codeMedecin");
-    log(type, "type");
     if (type == barcode.TEXT) {
         Alloy.Globals.setCode(codeMedecin);
-        log("go Next");
-        auth(codeMedecin);
-        //$.trigger('scanned', codeMedecin);
+        $.progressIndicator.show("Authentification...");
+
+        auth(codeMedecin,
+            (response)=>{
+                $.progressIndicator.hide();
+                $.trigger('scanned', codeMedecin);
+            },
+            (error)=>{
+                $.progressIndicator.hide();
+                if (error.error_message) {
+                    switch (error.error_message) {
+                        case "codeAlreadyUsed":
+                            alertDialog.show(L("codebar_already_used"));
+                            break;
+                        case "invalidCode":
+                            alertDialog.show(L("codebar_invalide"));
+                            break;
+                        default:
+                            alertDialog.show({title: error.error_message , message: L("codebar_invalide")});
+                    }
+                }else {
+                    alertDialog.show(error);
+                }
+        });
+
     }else {
         setTimeout(()=>{
             alertDialog.show(L("codebar_unkown"));
@@ -30,18 +51,21 @@ function sucessScan(result, type){
     }
 }
 
-function auth(code){
+function auth(code, successCallback, errorCallback){
     httpManager.request({
         url: BASE_URL + "medecins/auth",
         fullResponse: true,
         params: {code: code},
-        method: "POST"
+        method: "POST",
+        ignoreAlert: true
         },
         (r)=>{
             log(r, "auth ");
+            _.isFunction(successCallback) && successCallback(r);
         },
-        (e)=>{
-            log.e(e, "auth ");
+        (e,r)=>{
+            log.e(r, "auth ");
+            _.isFunction(errorCallback) && errorCallback(r);
         }
     );
 }
@@ -72,13 +96,12 @@ var cancelButton = Ti.UI.createButton({
         fontWeight: 'bold',
         fontSize: 16
     },
-    borderColor: '#000',
     borderRadius: 20,
-    borderWidth: 1,
     opacity: 0.7,
     width: "50%",
     height: 40,
-    bottom: 20
+    bottom: 20,
+    elevation: 5
 });
 
 cancelButton.addEventListener('click', function() {
@@ -134,4 +157,7 @@ function scanneCode(e){
           keepOpen: true
       });
   });
+}
+
+function exitSyncBox(e){
 }

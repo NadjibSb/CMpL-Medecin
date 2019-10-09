@@ -6,6 +6,7 @@ _.extend($ , {
     show: show
 })
 
+hide();
 /*
 setTimeout(()=>{
     sucess("eeeee");

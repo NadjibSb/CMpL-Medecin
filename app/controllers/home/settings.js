@@ -6,6 +6,7 @@ const log = require( '/services/logger' )( {
 
 var navManager = require("/services/navManager"),
     alertDialog = require('/services/alertManager'),
+    httpManager = require("/services/httpManager"),
     wilayas = require('/dataFile/wilaya').default;
 
 
@@ -51,7 +52,7 @@ function getLocalData(){
     // get QRCode img
     var code = Alloy.Globals.getCode();
     if (code) {
-        var url = 'http://chart.apis.google.com/chart?cht=qr&chs=250x250&chl=' + encodeURI(code) + '&chld=H|0';
+        var url = 'http://chart.apis.google.com/chart?cht=qr&chs=200x200&chl=' + encodeURI(code) + '&chld=H|1';
         $.QRCodeImg.image = url;
         log(url, "QRCode URL");
     }

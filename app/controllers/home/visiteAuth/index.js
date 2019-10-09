@@ -63,13 +63,12 @@ var cancelButton = Ti.UI.createButton({
         fontWeight: 'bold',
         fontSize: 16
     },
-    borderColor: '#000',
     borderRadius: 20,
-    borderWidth: 1,
     opacity: 0.7,
     width: "50%",
     height: 40,
-    bottom: 20
+    bottom: 20,
+    elevation: 5
 });
 
 cancelButton.addEventListener('click', function() {

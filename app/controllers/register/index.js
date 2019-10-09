@@ -37,6 +37,7 @@ var currentWilaya = null,
     }else {
         $.treePoint.children[ 0 ].opacity = 1;
     }
+    //$.scrollableView.currentPage = 0;
     // setup picker
     if (Alloy.Globals.isAndroid) {
         $.androidPicker.hide();
@@ -88,7 +89,6 @@ function btnClicked(e){
     if ($.scrollableView.currentPage == 2) {
         Alloy.Globals.HAS_AUTHENTIFIED();
         navmanager.openAndCloseAll("home/index");
-        //navmanager.closeWindow($.window);
     }else if ($.scrollableView.currentPage == 1) {
         checkData(()=>{
             $.scrollableView.moveNext();

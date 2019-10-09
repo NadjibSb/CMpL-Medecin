@@ -23,6 +23,7 @@
 	<string name="enregi_fill_donnee">Veuiller remplire les champs suivant.</string>
 	<string name="codebar_unkown">Le code QR est invalide</string>
 	<string name="codebar_invalide">Le code QR est invalide</string>
+	<string name="codebar_already_used">Le code QR est déjà utilisé</string>
 	<string name="codebar_missing">Veuiller scanner votre QR Code pour continuer</string>
 
 

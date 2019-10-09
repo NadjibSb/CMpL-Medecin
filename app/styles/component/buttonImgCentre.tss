@@ -10,6 +10,7 @@
         fontSize: 16,
         fontWeight: "semibold"
     },
+    elevation: 3,
 }
 ".lebelInsideButtonCenter":{
     left : 16,
