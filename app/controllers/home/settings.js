@@ -49,16 +49,43 @@ function getLocalData(){
     log(Alloy.Globals.getWilaya(), "Alloy.Globals.getWilaya()");
     $.labelWilaya.text = Alloy.Globals.getWilaya().name;
     $.textFieldNom.value = Alloy.Globals.getMedical();
-    // get QRCode img
+    // get QRCode img and display it
     var code = Alloy.Globals.getCode();
     if (code) {
-        var url = 'http://chart.apis.google.com/chart?cht=qr&chs=200x200&chl=' + encodeURI(code) + '&chld=H|1';
-        $.QRCodeImg.image = url;
+        var url = 'http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=' + encodeURI(code) + '&chld=H';
+        //$.QRCodeImg.image = url;
         log(url, "QRCode URL");
+        var imageView = createImageViewFromUrl( {
+            top: 8,
+            width: "50%",
+            image: url
+        }, 'qrCode.jpg', Ti.Filesystem.applicationDataDirectory );
+
+        $.QRcontainer.add(imageView);
     }
 
 }
 
+function createImageViewFromUrl( args, filename, directory ) {
+    args = args || {};
+    var file = Ti.Filesystem.getFile( directory, filename );
+
+    if ( file.exists() ) {
+        args.image = file.getNativePath();
+        return Titanium.UI.createImageView( args );
+    } else {
+        var image = Titanium.UI.createImageView( args );
+        function saveImage( e ) {
+            image.removeEventListener( 'load', saveImage );
+            var blob = Ti.UI.createImageView( {
+                image: image.image,
+            } ).toImage();
+            file.write( Alloy.Globals.isAndroid ? blob.media : blob );
+        }
+        image.addEventListener( 'load', saveImage );
+        return image;
+    }
+}
 
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){

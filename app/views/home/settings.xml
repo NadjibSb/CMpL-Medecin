@@ -4,12 +4,12 @@
             <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
             <View>
                 <ScrollView top="0" class="vLayout" onClick="exitPickerAndKeyboard">
-                    <View class="QRcontainer hSize vLayout">
+                    <View id="QRcontainer" class="QRcontainer hSize vLayout">
                         <View class="hSize wSize hLayout" horizontalWrap="false">
                             <Label class="QRText RegularFont"></Label>
                             <ImageView class="downArrow"></ImageView>
                         </View>
-                        <ImageView id="QRCodeImg" class="QRimage"></ImageView>
+                        <!--ImageView id="QRCodeImg" class="QRimage"></ImageView-->
                     </View>
                     <View class="vLayout hSize" top="32">
                         <View id="containerWilaya" class="hSize containerDonnee">

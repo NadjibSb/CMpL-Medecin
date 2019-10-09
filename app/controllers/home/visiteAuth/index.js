@@ -38,7 +38,6 @@ function sucessScan(result, type){
                     $.progressIndicator.hide();
                     navManager.openWindow("home/test/index", {codePatient: codePatient});
                 },1000);
-
             },
             (error)=>{
                 $.progressIndicator.hide();
