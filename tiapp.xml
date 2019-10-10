@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ti:app 
+<ti:app
   xmlns:ti="http://ti.appcelerator.org">
-  <id>com.novartis.cmplmedecin</id>
+  <id>com.dzmob.cmpl.doctor</id>
+  <!--id>com.novartis.cmpl.doctor</id-->
   <name>CMpL Medecin</name>
   <version>1.0</version>
   <publisher>not specified</publisher>
@@ -44,9 +45,9 @@
       </dict>
     </plist>
   </ios>
-  <android 
+  <android
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <manifest 
+    <manifest
       xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1">
       <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
       <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
