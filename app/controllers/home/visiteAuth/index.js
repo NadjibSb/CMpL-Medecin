@@ -25,9 +25,11 @@ function navigateToSettings(e){
 }
 
 
-function sucessScanPatient(result, type){
-    codePatient = result;
+function sucessScan(e){
+    var type = e.contentType;
+    codePatient = e.result;
     log(codePatient, "codePatient");
+    barcode.cancel();
     if (type == barcode.TEXT) {
         $.progressIndicator.show("Authentification...");
 
@@ -35,6 +37,7 @@ function sucessScanPatient(result, type){
             (response)=>{
                 setTimeout(()=>{
                     $.progressIndicator.hide();
+                    barcode.removeEventListener('success', sucessScan); // prevent to call it again if we enter this screen again
                     navManager.openWindow("home/test/index", {codePatient: codePatient});
                 },1000);
             },
@@ -130,11 +133,7 @@ barcode.addEventListener('cancel', function(e) {
     log('Cancel received');
 });
 
-barcode.addEventListener('success', function(e) {
-    log(e, 'Success called with barcode: ');
-    barcode.cancel();
-    sucessScanPatient(e.result,e.contentType);
-});
+barcode.addEventListener('success', sucessScan );
 
 //function
 function cameraPermission(callback) {

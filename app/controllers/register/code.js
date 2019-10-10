@@ -14,9 +14,11 @@ var barcode = require('ti.barcode');
 
 
 
-function sucessScan(result, type){
-    var codeMedecin = result;
+function sucessScan(e){
+    var codeMedecin = e.result,
+        type = e.contentType;
     log(codeMedecin, "codeMedecin");
+    barcode.cancel();
     if (type == barcode.TEXT) {
         Alloy.Globals.setCode(codeMedecin);
         $.progressIndicator.show("Authentification...");
@@ -25,6 +27,7 @@ function sucessScan(result, type){
             (response)=>{
                 setTimeout(()=>{
                     $.progressIndicator.hide();
+                    barcode.removeEventListener('success', sucessScan); // prevent to call it again if we enter this screen again
                     $.trigger('scanned', codeMedecin);
                 },1000);
             },
@@ -123,11 +126,7 @@ barcode.addEventListener('cancel', function(e) {
     log('Cancel received');
 });
 
-barcode.addEventListener('success', function(e) {
-    log(e, 'Success called with barcode: ');
-    barcode.cancel();
-    sucessScan(e.result,e.contentType);
-});
+barcode.addEventListener('success', sucessScan );
 
 //function
 function cameraPermission(callback) {
