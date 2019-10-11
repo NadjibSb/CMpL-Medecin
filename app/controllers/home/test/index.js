@@ -5,6 +5,7 @@ const log = require( '/services/logger' )( {
 	} );
 
 var navManager = require("/services/navManager"),
+    alertDialog = require('/services/alertManager'),
     fileManager = require("/services/fileManager");
 
 const TMP_FILE = Alloy.Globals.TMP_FILE,
@@ -40,9 +41,39 @@ _.extend($ , {
 
 // EVENTS HANDLERS------------------------------------------------------------------
 function navigateUp(e){
-    fileManager.deleteFile(TMP_FILE);
-    navManager.popUpTo($, HOME);
+    if (fileManager.fileExists(TMP_FILE)) {
+        var visiteData = fileManager.readFile(TMP_FILE);
+        visiteData = JSON.parse(visiteData);
+        // if there is data in visite
+        if (!_.isEmpty(visiteData)) {
+            alertDialog.showDialog({
+                message: 'Voulez vous enregistrer cette visite ?'
+            }, ["Oui", "Non, Merci"],
+            (e)=>{
+                log(e,"cancel");
+                if (e.index == 0) {
+                    saveVisite();
+                    setTimeout(()=>{
+                        fileManager.deleteFile(TMP_FILE);
+                        navManager.popUpTo($, HOME);
+                    },100);
+                }else if (e.index == 1){
+                    setTimeout(()=>{
+                        fileManager.deleteFile(TMP_FILE);
+                        navManager.popUpTo($, HOME);
+                    },100);
+                }
+            });
+        }else {
+            fileManager.deleteFile(TMP_FILE);
+            navManager.popUpTo($, HOME);
+        }
+    }else {
+        fileManager.deleteFile(TMP_FILE);
+        navManager.popUpTo($, HOME);
+    }
 }
+
 function androidBack(e){
     navigateUp(e);
 }
@@ -65,7 +96,8 @@ function clickButton(e){
             break;
         case "finish":
             saveVisite();
-            navigateUp();
+            fileManager.deleteFile(TMP_FILE);
+            navManager.popUpTo($, HOME);
             break;
         default:
             navigateUp();

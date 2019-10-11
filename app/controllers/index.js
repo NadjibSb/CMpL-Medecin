@@ -6,12 +6,12 @@ const log = require( '/services/logger' )( {
 
 var navManager = require("/services/navManager");
 
-navManager.openWindow("register/index");
-/*
+//navManager.openWindow("register/index");
+
 if (Alloy.Globals.AUTHENTIFIED()) {
     log("open home/index");
     navManager.openWindow("home/index")
 }else {
     log("open register/index");
     navManager.openWindow("register/index")
-}*/
+}
