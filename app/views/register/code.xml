@@ -1,6 +1,6 @@
 <Alloy>
 	<View class="container hSize">
-        <ScrollView top="0" class="vLayout">
+        <ScrollView top="0" class="vLayout" scrollType="vertical">
             <ImageView id="accuille_logo"></ImageView>
             <Label id="labelCode"></Label>
             <Require src="/component/buttonImgCentre" id="scanneButton" onClick="scanneCode"></Require>

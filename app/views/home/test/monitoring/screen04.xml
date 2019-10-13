@@ -1,6 +1,6 @@
 <Alloy>
 	<View class="container" onClick="exitKeyBoard">
-        <ScrollView class="vLayout">
+        <ScrollView class="vLayout" scrollType="vertical">
             <Label id="lbQst" class="RegularFont"></Label>
             <View id="centerView" class="hSize" onClick="onFocusInTF">
                 <View id="tfContainer" class="wSize hSize hLayout" horizontalWrap="false">

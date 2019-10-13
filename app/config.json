@@ -40,7 +40,6 @@
     "os:windows": {},
     "dependencies": {
         "customNavBar": "*",
-        "dzmob.widget.TextField": "*",
         "customIndicatorInsideView": "*",
         "progressBox": "*",
         "AndroidPicker": "*"

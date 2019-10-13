@@ -25,20 +25,21 @@ overrode the settings with other TSS, XML, or JS settings:
 
 */
 
-//TopBar
-".noTopBar[if=Alloy.Globals.isIOS]" : {
-    top: 20
-}
-
 // Sizes
 "Window": {
     backgroundColor: 'white',
     swipeToClose: false,
     orientationModes: Ti.UI.PORTRAIT
 }
-"Window[if=Alloy.Globals.isIOS]": {
+"Window[platform=ios]": {
     width: Ti.Platform.displayCaps.platformWidth,
-    statusBarStyle: Ti.UI.iOS.StatusBar.LIGHT_CONTENT
+    statusBarStyle: Ti.UI.iOS.StatusBar.LIGHT_CONTENT,
+    navBarHidden: "true",
+}
+
+"Window[platform=android]":{
+    theme : 'Theme.AppCompat.NoTitleBar',
+    top: 25
 }
 
 "Label":{
@@ -46,6 +47,7 @@ overrode the settings with other TSS, XML, or JS settings:
 		fontFamily: Alloy.CFG.fonts.Simple
 	}
 }
+
 
 ".wSize":{
 	width: Ti.UI.SIZE,
@@ -213,28 +215,7 @@ overrode the settings with other TSS, XML, or JS settings:
     left: 15
 }
 
-
-
 ".lebelInsideButton":{
     left: 67,
     color: "#ffffff"
-}
-
-".iosMarginTop[if=Alloy.Globals.isIOS]" : {
-    top: 20
-}
-".iOSwindowTop[if=Alloy.Globals.isIOS]":{
-    top: 25
-}
-"Window[platform=ios]":{
-  navBarHidden: "true",
-}
-
-".androidNoActionBar[if=Alloy.Globals.isAndroid]": {
-    theme: "Theme.AppCompat.NoTitleBar"
-}
-
-"Window[platform=android]":{
-    theme : 'Theme.AppCompat.NoTitleBar',
-    top: 25
 }

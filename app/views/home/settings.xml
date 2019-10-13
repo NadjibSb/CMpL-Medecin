@@ -3,7 +3,7 @@
         <View class="vLayout">
             <Widget src="customNavBar" id="navBar" class="navBar" onLeftButtonClick="navigateUp"></Widget>
             <View>
-                <ScrollView top="0" class="vLayout" onClick="exitPickerAndKeyboard">
+                <ScrollView top="0" class="vLayout" scrollType="vertical" onClick="exitPickerAndKeyboard">
                     <View id="QRcontainer" class="QRcontainer hSize vLayout">
                         <View class="hSize wSize hLayout" horizontalWrap="false">
                             <Label class="QRText RegularFont"></Label>

@@ -4,7 +4,7 @@
             <Widget src="customNavBar" id="navBar" class="navBar" onRightButtonClick="navigateToSettings"></Widget>
             <View>
                 <Widget id="progressIndicator" src="progressBox" onExit="exitSyncBox"></Widget>
-                <ScrollView top="0" class="vLayout">
+                <ScrollView top="0" class="vLayout" scrollType="vertical">
                     <ImageView  id="accuille_logo"></ImageView>
                     <View class="bntContainer hSize vLayout">
                         <Require src="/component/buttonImgCentre" id="button_visite_auth" class="btn" onClick="clickButton"></Require>
