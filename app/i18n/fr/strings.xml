@@ -19,12 +19,12 @@
 	<string name="enregi_title">Enregistrement</string>
 	<string name="enregi_scanner">Scanner</string>
 	<string name="enregi_continuer">Continuer</string>
-	<string name="enregi_scan_code">Veuiller scanner votre QR Code pour continuer.</string>
-	<string name="enregi_fill_donnee">Veuiller remplire les champs suivant.</string>
+	<string name="enregi_scan_code">Veuillez scanner votre QR Code pour continuer.</string>
+	<string name="enregi_fill_donnee">Veuillez remplire les champs suivant.</string>
 	<string name="codebar_unkown">Le code QR est invalide.</string>
 	<string name="codebar_invalide">Le code QR est invalide</string>
 	<string name="codebar_already_used">Le code QR est déjà utilisé</string>
-	<string name="codebar_missing">Veuiller scanner votre QR Code pour continuer</string>
+	<string name="codebar_missing">Veuillez scanner votre QR Code pour continuer</string>
 
 
     <!-- monitoring result -->
@@ -77,7 +77,7 @@
     <!-- Test Med -->
 	<string name="risque_eutos_title">Risque d'EUTOS</string>
 	<string name="risque_sokal_title">Risque de SOKAL</string>
-	<string name="risque_sokal_text">Veuiller renseigner les champs suivants pour le calcul de score de SOKAL de votre patient.</string>
+	<string name="risque_sokal_text">Veuillez renseigner les champs suivants pour le calcul de score de SOKAL de votre patient.</string>
 	<string name="risque_sokal_age_hint">Age (années)</string>
 	<string name="risque_sokal_rate_hint">Rate (cm)</string>
 	<string name="risque_sokal_plaquette_hint">Plaquettes (x10^9)</string>

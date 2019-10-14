@@ -77,7 +77,7 @@
     <!-- Test Med -->
 	<string name="risque_eutos_title">Risque d'EUTOS</string>
 	<string name="risque_sokal_title">Risque de SOKAL</string>
-	<string name="risque_sokal_text">Veuiller renseigner les champs suivants pour le calcul de score de SOKAL de votre patient.</string>
+	<string name="risque_sokal_text">Veuillez renseigner les champs suivants pour le calcul de score de SOKAL de votre patient.</string>
 	<string name="risque_sokal_age_hint">Age (années)</string>
 	<string name="risque_sokal_rate_hint">Rate (cm)</string>
 	<string name="risque_sokal_plaquette_hint">Plaquettes (x10^9)</string>
