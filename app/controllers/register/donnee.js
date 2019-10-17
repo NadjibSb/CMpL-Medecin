@@ -11,6 +11,12 @@ _.extend($, {
     hideKeyBoard: hideKeyBoard
 });
 
+(function constructor(){
+    // exit picker when the keyboard appears
+    $.textFieldNom.addEventListener('focus', ()=>{
+        hidePicker();
+    });
+})();
 // PRIVATE FUNCTIONS ------------------------------------------------------------
 
 function checkLabel(){
@@ -35,6 +41,10 @@ function hideKeyBoard(e){
     }
 }
 
+function focusOnTextField(e){
+    $.textFieldNom.focus();
+}
+
 function hidePicker(e){
-    $.trigger("hidePicker", e);
+    $.trigger("hidepicker", e);
 }

@@ -94,7 +94,7 @@ function btnClicked(e){
             $.scrollableView.moveNext();
         })
     }else{
-        //Alloy.Globals.setCode("M000004");
+        Alloy.Globals.setCode("M000004");
         if (Alloy.Globals.getCode()) {
             $.scrollableView.moveNext();
         }else {
