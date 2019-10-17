@@ -19,11 +19,12 @@ var currentWilaya,
 // CONSTRUCTOR ------------------------------------------------------------------
 (function constructor(){
     getLocalData();
+    // custom picker for ios/android
     if (Alloy.Globals.isAndroid) {
         $.androidPicker.hide();
         $.androidPicker.fillData(L("picker_choose_wilaya"),wilayas);
     }else {
-        fillPickerData();
+        filliOSPickerData();
     }
 })();
 
@@ -33,7 +34,7 @@ var currentWilaya,
 
 
 // on iOS
-function fillPickerData(){
+function filliOSPickerData(){
     var data = []
     wilayas.forEach(wilaya =>{
         data[wilaya.id] = Ti.UI.createPickerRow({
@@ -46,7 +47,8 @@ function fillPickerData(){
 }
 
 function getLocalData(){
-    log(Alloy.Globals.getWilaya(), "Alloy.Globals.getWilaya()");
+    // Get Fields
+    //log(Alloy.Globals.getWilaya(), "Alloy.Globals.getWilaya()");
     $.labelWilaya.text = Alloy.Globals.getWilaya().name;
     $.textFieldNom.value = Alloy.Globals.getMedical();
     // get QRCode img and display it
@@ -55,6 +57,7 @@ function getLocalData(){
         var url = 'http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=' + encodeURI(code) + '&chld=H';
         //$.QRCodeImg.image = url;
         log(url, "QRCode URL");
+        //get remote QRimg if and save it
         var imageView = createImageViewFromUrl( {
             top: 8,
             width: "50%",
@@ -66,14 +69,16 @@ function getLocalData(){
 
 }
 
+//get remote QRimg if and save it if the img not already existe , or simpelly get the img from the saved file
 function createImageViewFromUrl( args, filename, directory ) {
     args = args || {};
     var file = Ti.Filesystem.getFile( directory, filename );
 
-    if ( file.exists() ) {
+    if ( file.exists() ) { // if the img already saved
         args.image = file.nativePath;
         return Titanium.UI.createImageView( args );
-    } else {
+
+    } else { // get remote img and save it to a file
         var image = Titanium.UI.createImageView( args );
         function saveImage( e ) {
             image.removeEventListener( 'load', saveImage );
@@ -95,9 +100,10 @@ function navigateUp(e){
 
 function onEdit(e){
     log("on Edit");
-    if (touchEnabled) {
+    if (touchEnabled) { // if edit is anabled
         var medical = $.textFieldNom.value || "";
         var wilaya = choosedWilaya ? choosedWilaya : Alloy.Globals.getWilaya(); // if not choosed, get the local data
+        //validate data
         if (wilaya && (wilaya.id>=0) && wilaya.name && (medical.length >0)) {
             log(wilaya.id+ wilaya.name+ ' - '+ medical, 'onEdit');
             Alloy.Globals.setWilaya(wilaya.name, wilaya.id);
@@ -106,28 +112,32 @@ function onEdit(e){
         }else {
             alertDialog.show(L("alertDialog_fill_regis_data"));
         }
-    }else {
+    }else { // enable edit
         touchEnabled = true;
         $.labelWilaya.color = "black";
         $.textFieldNom.color = 'black';
         $.textFieldNom.editable = true;
         $.editBtn.setTitle(L("save"));
-
+        // add EventListener for picker and TextField
         if (Alloy.Globals.isAndroid) {
             $.containerWilaya.addEventListener('click', (e)=>{
-                var id;
-                exitPickerAndKeyboard();
-                if (choosedWilaya) { //scroll the the choosed one
-                    id = choosedWilaya.id;
-                    $.androidPicker.selectItem(id-1);
-                }else if ( id = Alloy.Globals.getWilaya().id) { //scroll the the local data saved
-                    $.androidPicker.selectItem(id-1);
-                }
+                // exit Keyboard
+                Ti.UI.Android.hideSoftKeyboard();
+                $.textFieldNom.blur();
+                // scroll to the choosed wilaya
+                var id = choosedWilaya ? $.androidPicker.selectItem(id-1) : Alloy.Globals.getWilaya().id;
+                $.androidPicker.selectItem(id-1);
                 $.androidPicker.show();
             } );
         }else {
             $.containerWilaya.addEventListener('click', (e)=>{
                 chooseWilaya(e);
+            } );
+            $.containerDonnee.addEventListener('click', (e)=>{
+                $.textFieldNom.focus();
+            } );
+            $.textFieldNom.addEventListener('focus', (e)=>{
+                $.pickerContainer.visible = false;
             } );
         }
     }
@@ -139,7 +149,7 @@ function onEdit(e){
 function chooseWilaya(e){
     log("choose Wilaya");
     if (touchEnabled) {
-        exitPickerAndKeyboard();
+        $.textFieldNom.blur();
         (!choosedWilaya) && (choosedWilaya = Alloy.Globals.getWilaya());
         currentWilaya = choosedWilaya;
         setTimeout(()=>{

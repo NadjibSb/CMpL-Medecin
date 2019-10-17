@@ -64,7 +64,8 @@
 }
 
 '#containerDonnee': {
-  top: "5%"
+  top: "5%",
+  bubbleParent: false
 }
 
 '#textFieldNom': {
@@ -81,7 +82,8 @@
         fontSize: 16
     },
     color: 'gray',
-    editable: false
+    editable: false,
+    bubbleParent: true
 }
 
 '#editBtn': {
