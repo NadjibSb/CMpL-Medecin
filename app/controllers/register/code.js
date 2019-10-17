@@ -67,11 +67,11 @@ function auth(code, successCallback, errorCallback){
         ignoreAlert: true
         },
         (r)=>{
-            log(r, "auth ");
+            log(r, "auth success");
             _.isFunction(successCallback) && successCallback(r);
         },
         (e,r)=>{
-            log.e(r, "auth ");
+            log.e(r, "auth error");
             _.isFunction(errorCallback) && errorCallback(r);
         }
     );

@@ -125,7 +125,7 @@ function onEdit(e){
                 Ti.UI.Android.hideSoftKeyboard();
                 $.textFieldNom.blur();
                 // scroll to the choosed wilaya
-                var id = choosedWilaya ? $.androidPicker.selectItem(id-1) : Alloy.Globals.getWilaya().id;
+                var id = choosedWilaya ? choosedWilaya.id : Alloy.Globals.getWilaya().id;
                 $.androidPicker.selectItem(id-1);
                 $.androidPicker.show();
             } );
