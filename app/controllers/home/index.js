@@ -30,8 +30,9 @@ _.extend($.args, {
 
 function createLocalFile(){
     if (!fileManager.fileExists(LOCALE_FILE)) {
+        var codeMedcin = Alloy.Globals.getCode();
         var data = {
-            codeMedcin: "M000001",
+            codeMedcin: codeMedcin,
             visites: []
         };
         fileManager.writeToFile(LOCALE_FILE, data);
@@ -47,22 +48,24 @@ function syncronization(){
     if (fileManager.fileExists(LOCALE_FILE)) {
         var localData = fileManager.readFile(LOCALE_FILE);
         log(localData, "localData");
-        httpManager.request({
-            url: BASE_URL + "medecins/sync",
-            fullResponse: true,
-            params: {data: localData},
-            method: "POST"
-        },
-        (r)=>{
-            log(r, "reponse");
-            fileManager.deleteFile(LOCALE_FILE);
-            createLocalFile();
-            $.progressIndicator.sucess("Synchronisation réussie");
-        },
-        (e)=>{
-            $.progressIndicator.failed("Echec de la synchronisation");
-            log(e, "error");
-        });
+        setTimeout(()=>{// Syncronize
+            httpManager.request({
+                url: BASE_URL + "medecins/sync",
+                fullResponse: true,
+                params: {data: localData},
+                method: "POST"
+            },
+            (r)=>{
+                log(r, "syncronization sucess");
+                fileManager.deleteFile(LOCALE_FILE);
+                createLocalFile();
+                $.progressIndicator.sucess("Synchronisation réussie");
+            },
+            (e)=>{
+                $.progressIndicator.failed("Echec de la synchronisation");
+                log(e, "syncronization error");
+            });
+        },500);
     }
 }
 

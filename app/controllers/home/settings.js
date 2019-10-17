@@ -71,7 +71,7 @@ function createImageViewFromUrl( args, filename, directory ) {
     var file = Ti.Filesystem.getFile( directory, filename );
 
     if ( file.exists() ) {
-        args.image = file.getNativePath();
+        args.image = file.nativePath;
         return Titanium.UI.createImageView( args );
     } else {
         var image = Titanium.UI.createImageView( args );

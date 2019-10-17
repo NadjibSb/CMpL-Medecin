@@ -2,7 +2,7 @@ exports.setHighlightEffect = setHighlightEffect;
 
 function setHighlightEffect( ui, highlightOpacity ) {
 	if( !highlightOpacity ) {
-		highlightOpacity = 0.4;
+		highlightOpacity = 0.7;
 	}
 
 	function touchStart() {

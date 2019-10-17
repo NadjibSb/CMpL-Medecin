@@ -7,7 +7,7 @@
                 <ListView id="listView" onItemclick="onItemclick">
                     <Templates>
                         <ItemTemplate name="listTemplate">
-                            <View class="hSize itemContainer">
+                            <View class="hSize itemContainer" module="module/touchView">
                                 <Label class="lable" bindId="text"></Label>
                                 <ImageView class="icon" bindId="icon"></ImageView>
                             </View>

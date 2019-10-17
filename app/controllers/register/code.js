@@ -20,13 +20,13 @@ function sucessScan(e){
     log(codeMedecin, "codeMedecin");
     barcode.cancel();
     if (type == barcode.TEXT) {
-        Alloy.Globals.setCode(codeMedecin);
         $.progressIndicator.show("Authentification...");
 
         auth(codeMedecin,
             (response)=>{
                 setTimeout(()=>{
                     $.progressIndicator.hide();
+                    Alloy.Globals.setCode(codeMedecin);
                     barcode.removeEventListener('success', sucessScan); // prevent to call it again if we enter this screen again
                     $.trigger('scanned', codeMedecin);
                 },1000);
