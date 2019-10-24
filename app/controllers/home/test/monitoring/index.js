@@ -95,20 +95,28 @@ function onChooseS3(e){
 function onDone(e){
     log(e.buttonId, 'onClick');
     if (e.buttonId == "Done") {
-        try {
-            var bcr = parseFloat( e.tfValue.replace(",", ".") );
-            if (bcr >=0 && bcr <=100) {
-                _.extend(args, {bcr_abl:bcr});
-                navManager.openWindow("home/test/monitoring/result", args);
-            }else {
-                throw "parseFloat error";
+        if (e.tfValue != "") {
+            try {
+                var bcr = parseFloat( e.tfValue.replace(",", ".") );
+                if (bcr >=0 && bcr <=100) {
+                    _.extend(args, {bcr_abl:bcr});
+                    navManager.openWindow("home/test/monitoring/result", args);
+                }else {
+                    throw "parseFloat error";
+                }
+            } catch (e) {
+                alertDialog.show({
+                    title: L("invalid_field") ,
+                    message: L("monitoring_invalid_tf")
+                });
             }
-        } catch (e) {
+        }else {
             alertDialog.show({
-                title: "Champ invalid" ,
-                message: L("monitoring_invalid_tf")
+                title: L("missed_field") ,
+                message: L("monitoring_missing_tf")
             });
         }
+
 
 
 

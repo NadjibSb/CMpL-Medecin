@@ -55,6 +55,7 @@
 	<string name="monitoring_screen03_btn5">Plus de deux ans</string>
 	<string name="monitoring_screen04_text">04. Taux de BCR-ABL ?</string>
 	<string name="monitoring_invalid_tf">Taux de BCR-ADL doit avoir une valeur comprise entre 0.00 et 100.00</string>
+	<string name="monitoring_missing_tf">Le taux de BCR-ADL doit être renseigné</string>
 
     <!-- recommendations -->
 	<string name="recommendations_title">Recommendations</string>
