@@ -95,7 +95,3 @@ function clickButton(e){
 function navigateToSettings(e){
     navManager.openWindow("home/settings");
 }
-
-function exitSyncBox(e){
-    $.progressIndicator.hide();
-}

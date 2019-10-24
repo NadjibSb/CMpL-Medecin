@@ -3,7 +3,7 @@
         <View class="vLayout background">
             <Widget src="customNavBar" id="navBar" class="navBar" onRightButtonClick="navigateToSettings"></Widget>
             <View>
-                <Widget id="progressIndicator" src="progressBox" onExit="exitSyncBox"></Widget>
+                <Widget id="progressIndicator" src="progressBox"></Widget>
                 <ScrollView top="0" class="vLayout" scrollType="vertical">
                     <ImageView  id="accuille_logo"></ImageView>
                     <View class="bntContainer hSize vLayout">

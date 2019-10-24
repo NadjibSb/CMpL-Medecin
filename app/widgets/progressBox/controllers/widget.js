@@ -15,6 +15,9 @@ setTimeout(()=>{
 
 function hide(){
     $.vue.hide();
+    // removeEventListener for the next show()
+    $.vue.removeEventListener("click",hide);
+    $.insideContainer.removeEventListener("click",hide);
 }
 function show(text){
     $.title.text = text;
@@ -37,6 +40,9 @@ function sucess(text){
         repeat : 2
     });
     $.checkContainer.animate(a);
+    // addEventListener to exit the box
+    $.vue.addEventListener("click", hide);
+    $.insideContainer.addEventListener("click", hide);
 }
 
 function failed(text){
@@ -52,8 +58,7 @@ function failed(text){
         repeat : 2
     });
     $.crossContainer.animate(a);
-}
-
-function exit(e){
-    $.trigger('exit', e);
+    // addEventListener to exit the box
+    $.vue.addEventListener("click", hide);
+    $.insideContainer.addEventListener("click", hide);
 }

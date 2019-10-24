@@ -1,19 +1,17 @@
 
-
 '.insideContainer': {
     layout: 'vertical',
     top: 16,
     bottom: 8,
     right: 16,
-    left: 16
+    left: 16,
 }
 
 '#container': {
     width: "60%",
     borderRadius: 10,
     backgroundColor: 'white',
-    bubbleParent: false,
-    elevation: 10
+    elevation: 10,
 }
 
 "#indecator":{
@@ -21,7 +19,6 @@
 	height: Titanium.UI.SIZE,
 	width: Titanium.UI.SIZE,
 	touchEnabled : false,
-	bubbleParent: true
 }
 "#indecator[platform=ios]": {
 	style: Titanium.UI.ActivityIndicatorStyle.BIG,
@@ -33,21 +30,22 @@
 }
 
 '#buttons': {
-    right: 8
+    right: 8,
 }
 
 
 '#vue': {
     zIndex: 100,
-    backgroundColor: "#66EEEEEE",
+    backgroundColor: "#66000000",
     bubbleParent: false
 }
 
 '#title': {
+    text: "Syncroniser ...",
     font: {
         fontSize: 14
     },
-    color: 'black'
+    color: 'black',
 }
 
 '#checkContainer': {
@@ -56,7 +54,7 @@
     borderWidth: 3,
     borderColor: "#58b783",
     borderRadius: 45,
-    visible: false
+    visible: false,
 }
 
 '#checkImg': {
@@ -75,7 +73,7 @@
     borderWidth: 3,
     borderColor: "#D52505",
     borderRadius: 45,
-    visible: false
+    visible: false,
 }
 
 '#crossImg': {
