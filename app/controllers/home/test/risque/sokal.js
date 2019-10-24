@@ -43,16 +43,16 @@ function checkEmptyFields(callback){
     var msg="";
     switch ("") {
         case $.tfAge.value:
-            msg =  "Le champ 'Age' doit être renseigné";
+            msg =  L("risque_sokal_missing_age");
             break;
         case $.tfRate.value:
-            msg = "Le champ 'Rate' doit être renseigné";
+            msg = L("risque_sokal_missing_rate");
             break;
         case $.tfPlaquette.value:
-            msg = "Le champ 'Plaquettes' doit être renseigné";
+            msg = L("risque_sokal_missing_plaquette");
             break;
         case $.tfSang.value:
-            msg = "Le champ 'Myéloblastes dansle sang' doit être renseigné";
+            msg = L("risque_sokal_missing_sang");
             break;
         default:
     }
@@ -91,7 +91,7 @@ function checkValidFields(callback){
                             log("Myéloblastes dansle sang => not in the intervale");
                             alertDialog.show({
                                 title: L("invalid_field"),
-                                message: "Le champ 'Myéloblastes dansle sang' doit avoir une valeur comprise entre 0.00 et 100.00"
+                                message: L("risque_sokal_invalid_sang")
                             });
                         }
 
@@ -103,7 +103,7 @@ function checkValidFields(callback){
                     log(e);
                     alertDialog.show({
                         title: L("invalid_field"),
-                        message: "Le champ 'Plaquette' doit avoir une valeur comprise entre 0.00 et 100.00"
+                        message: L("risque_sokal_invalid_plaquette")
                     });
                 }
                 //---- END verify plaquette
@@ -114,7 +114,7 @@ function checkValidFields(callback){
             log(e);
             alertDialog.show({
                 title: L("invalid_field"),
-                message: "Le champ 'Rate' doit avoir une valeur comprise entre 0.00 et 100.00"
+                message: L("risque_sokal_invalid_rate")
             });
         }
         //---- END verify rate
@@ -123,7 +123,7 @@ function checkValidFields(callback){
         log("age not in the intervale");
         alertDialog.show({
             title: L("invalid_field"),
-            message: "Le champ 'Age' doit avoir une valeur comprise entre 1 et 150"
+            message: L("risque_sokal_invalid_age")
         });
     }
     //---- END verify age

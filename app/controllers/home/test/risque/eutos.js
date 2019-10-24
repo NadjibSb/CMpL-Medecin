@@ -41,10 +41,10 @@ function checkEmptyFields(callback){
     var msg="";
     switch ("") {
         case $.tfRate.value:
-            msg = "Le champ 'Rate' doit être renseigné";
+            msg = L("risque_eutos_missing_rate");
             break;
         case $.tfBosiphiles.value:
-            msg = "Le champ 'basophiles' doit être renseigné";
+            msg = L("risque_eutos_missing_basophiles");
             break;
         default:
     }
@@ -78,7 +78,7 @@ function checkValidFields(callback){
             log(e);
             alertDialog.show({
                 title: L("invalid_field"),
-                message: "Le champ 'basophiles' doit avoir une valeur comprise entre 0.00 et 100.00"
+                message: L("risque_eutos_invalide_basophiles")
             });
         }
         //---- END verify basophiles
@@ -87,7 +87,7 @@ function checkValidFields(callback){
         log("rate not in the intervale");
         alertDialog.show({
             title: L("invalid_field"),
-            message: "Le champ 'Rate' doit avoir une valeur comprise entre 1 et 150"
+            message: L("risque_eutos_invalide_rate")
         });
     }
     //---- END verify rate

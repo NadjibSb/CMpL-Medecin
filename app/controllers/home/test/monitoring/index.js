@@ -104,7 +104,10 @@ function onDone(e){
                 throw "parseFloat error";
             }
         } catch (e) {
-            alertDialog.show({title: "Champ invalid" , message: 'Veuillez remplir le champ correctement'});
+            alertDialog.show({
+                title: "Champ invalid" ,
+                message: L("monitoring_invalid_tf")
+            });
         }
 
 

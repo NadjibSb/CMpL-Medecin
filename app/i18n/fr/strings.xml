@@ -39,10 +39,10 @@
 
     <!-- monitoring tracker -->
 	<string name="monitoring_title">Monitoring tracker</string>
-	<string name="monitoring_screen01_text">01. Dans quel ligne de traitement est votre patient ?</string>
+	<string name="monitoring_screen01_text">01. Dans quelle ligne de traitement est votre patient ?</string>
 	<string name="monitoring_screen01_btn1">1ère ligne</string>
 	<string name="monitoring_screen01_btn2">2ème ligne</string>
-	<string name="monitoring_screen02_text">02. Laquel des ITK votre patient a t-il reçu ?</string>
+	<string name="monitoring_screen02_text">02. Lequel des ITK votre patient a t-il reçu ?</string>
 	<string name="monitoring_screen02_btn1">Imatinib</string>
 	<string name="monitoring_screen02_btn2">Nilotinib</string>
 	<string name="monitoring_screen02_btn3">Dasatinib</string>
@@ -54,6 +54,7 @@
 	<string name="monitoring_screen03_btn4">Plus d'une année</string>
 	<string name="monitoring_screen03_btn5">Plus de deux ans</string>
 	<string name="monitoring_screen04_text">04. Taux de BCR-ABL ?</string>
+	<string name="monitoring_invalid_tf">Taux de BCR-ADL doit avoir une valeur comprise entre 0.00 et 100.00</string>
 
     <!-- recommendations -->
 	<string name="recommendations_title">Recommendations</string>
@@ -64,20 +65,20 @@
 	<string name="result_btn_recommendation">Voir les recommendations</string>
 	<string name="result_faible">Faible</string>
 	<string name="result_intermediate">Intermediaire</string>
-	<string name="result_high">Elevé</string>
-	<string name="result_bien">Bien!</string>
-	<string name="result_attention">Attention!</string>
-	<string name="result_danger">Danger!</string>
+	<string name="result_high">Elevé !</string>
+	<string name="result_bien">Bien !</string>
+	<string name="result_attention">Attention !</string>
+	<string name="result_danger">Danger !</string>
 	<string name="result_sokal_bien">Le risque de SOKAL de votre patient est faible.</string>
 	<string name="result_sokal_intermediate">Le risque de SOKAL de votre patient est inquiétant.</string>
-	<string name="result_sokal_high">Le risque de SOKAL est élevé, votre patient est en danger!</string>
+	<string name="result_sokal_high">Le risque de SOKAL est élevé, votre patient est en danger !</string>
 	<string name="result_eutos_bien">Le risque d'EUTOS de votre patient est faible.</string>
-	<string name="result_eutos_high">Le risque d'EUTOS est élevé, votre patient est en danger!</string>
+	<string name="result_eutos_high">Le risque d'EUTOS est élevé, votre patient est en danger !</string>
 
     <!-- Test Med -->
 	<string name="risque_eutos_title">Risque d'EUTOS</string>
 	<string name="risque_sokal_title">Risque de SOKAL</string>
-	<string name="risque_sokal_text">Veuillez renseigner les champs suivants pour le calcul de score de SOKAL de votre patient.</string>
+	<string name="risque_sokal_text">Veuillez renseigner les champs suivants pour le calcul du score de SOKAL de votre patient.</string>
 	<string name="risque_sokal_age_hint">Age (années)</string>
 	<string name="risque_sokal_rate_hint">Rate (cm)</string>
 	<string name="risque_sokal_plaquette_hint">Plaquettes (x10^9)</string>
@@ -85,6 +86,18 @@
 	<string name="risque_eutos_text">Veuillez renseigner les champs suivants pour le calcul du score d'EUTOS de votre patient.</string>
 	<string name="risque_eutos_rate_hint">Rate (cm)</string>
 	<string name="risque_eutos_basophiles_hint">Basophiles (%)</string>
+	<string name="risque_eutos_missing_rate">Le champ 'Rate' doit être renseigné</string>
+	<string name="risque_eutos_missing_basophiles">Le champ 'basophiles' doit être renseigné</string>
+	<string name="risque_eutos_invalide_basophiles">Le champ 'basophiles' doit avoir une valeur comprise entre 0.00 et 100.00</string>
+	<string name="risque_eutos_invalide_rate">Le champ 'Rate' doit avoir une valeur comprise entre 1 et 150</string>
+	<string name="risque_sokal_missing_age">Le champ 'Age' doit être renseigné</string>
+	<string name="risque_sokal_missing_rate">Le champ 'Rate' doit être renseigné</string>
+	<string name="risque_sokal_missing_plaquette">Le champ 'Plaquettes' doit être renseigné</string>
+	<string name="risque_sokal_missing_sang">Le champ 'Myéloblastes dans le sang' doit être renseigné</string>
+	<string name="risque_sokal_invalid_sang">Le champ 'Myéloblastes dansle sang' doit avoir une valeur comprise entre 0 et 100</string>
+	<string name="risque_sokal_invalid_plaquette">Le champ 'Plaquette' doit avoir une valeur comprise entre 0.00 et 100.00</string>
+	<string name="risque_sokal_invalid_rate">Le champ 'Rate' doit avoir une valeur comprise entre 0.00 et 100.00</string>
+	<string name="risque_sokal_invalid_age">Le champ 'Age' doit avoir une valeur comprise entre 1 et 150</string>
 
     <!-- Test Med -->
 	<string name="test_title">Tests médicaux</string>
