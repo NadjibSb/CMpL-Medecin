@@ -37,7 +37,6 @@
 
 '#tfRate': {
     hintText : L("risque_eutos_rate_hint"),
-    keyboardType: Ti.UI.KEYBOARD_TYPE_NUMBER_PAD,
 }
 
 '#tfBosiphiles': {

@@ -89,7 +89,7 @@
 	<string name="risque_eutos_missing_rate">Le champ 'Rate' doit être renseigné</string>
 	<string name="risque_eutos_missing_basophiles">Le champ 'basophiles' doit être renseigné</string>
 	<string name="risque_eutos_invalide_basophiles">Le champ 'basophiles' doit avoir une valeur comprise entre 0.00 et 100.00</string>
-	<string name="risque_eutos_invalide_rate">Le champ 'Rate' doit avoir une valeur comprise entre 1 et 150</string>
+	<string name="risque_eutos_invalide_rate">Le champ 'Rate' doit avoir une valeur comprise entre 0.00 et 100.00</string>
 	<string name="risque_sokal_missing_age">Le champ 'Age' doit être renseigné</string>
 	<string name="risque_sokal_missing_rate">Le champ 'Rate' doit être renseigné</string>
 	<string name="risque_sokal_missing_plaquette">Le champ 'Plaquettes' doit être renseigné</string>

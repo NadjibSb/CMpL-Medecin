@@ -61,34 +61,40 @@ function checkEmptyFields(callback){
 
 function checkValidFields(callback){
     // verify rate
-    var rate = parseFloat($.tfRate.value);
-    if ( rate>= 1 && rate <= 150) {
-        // verify basophiles
-        try {
-            var basophiles = parseFloat( $.tfBosiphiles.value.replace(",", ".") );
-            if (basophiles >=0 && basophiles <=100) {
-                _.isFunction( callback ) && callback({
-                    rate: rate,
-                    basophiles: basophiles
+    try {
+        var rate = parseFloat( $.tfRate.value.replace(",", ".") );
+        if ( rate>= 0 && rate <= 100) {
+            // verify basophiles
+            try {
+                var basophiles = parseFloat( $.tfBosiphiles.value.replace(",", ".") );
+                if (basophiles >=0 && basophiles <=100) {
+                    _.isFunction( callback ) && callback({
+                        rate: rate,
+                        basophiles: basophiles
+                    });
+                }else {
+                    throw "basophiles not in the intervale"
+                }
+            } catch (e) {
+                log(e);
+                alertDialog.show({
+                    title: L("invalid_field"),
+                    message: L("risque_eutos_invalide_basophiles")
                 });
-            }else {
-                throw "basophiles not in the intervale"
             }
-        } catch (e) {
-            log(e);
-            alertDialog.show({
-                title: L("invalid_field"),
-                message: L("risque_eutos_invalide_basophiles")
-            });
-        }
-        //---- END verify basophiles
+            //---- END verify basophiles
 
-    }else {
-        log("rate not in the intervale");
+        }else {
+            throw "rate not in the intervale";
+        }
+
+    } catch (e) {
+        log(e)
         alertDialog.show({
             title: L("invalid_field"),
             message: L("risque_eutos_invalide_rate")
         });
     }
+
     //---- END verify rate
 }
