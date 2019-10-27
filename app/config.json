@@ -3,7 +3,7 @@
         "urls": {
             "apiUrl": "http://novartis.dzmob.com/api/v1/",
             "backOfficeUrl": "http://novartis.dzmob.com/",
-            "recommendations": "http://www.orimi.com/pdf-test.pdf",
+            "recommendations": "http://novartis.dzmob.com/recommendations.pdf",
             "conditions": "http://novartis.dzmob.com/medecins/policy"
         },
         "colors": {
