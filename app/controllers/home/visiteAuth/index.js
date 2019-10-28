@@ -53,7 +53,11 @@ function sucessScan(e){
                             break;
                     }
                 }else {
-                    alertManager.show(error);
+                    if (error.errorMessage) {
+                        alertManager.show(error.errorMessage);
+                    }else {
+                        alertManager.show(L("HTTP_DEFAULT_ERROR"));
+                    }
                 }
         });
     }else {
@@ -78,8 +82,8 @@ function authPatient(code, successCallback, errorCallback){
             _.isFunction(successCallback) && successCallback(r);
         },
         (e,r)=>{
-            log(e, "auth error");
-            log(r, "auth error");
+            log.e(e, "auth error");
+            log.e(r, "auth error");
             _.isFunction(errorCallback) && errorCallback(r);
         }
     );

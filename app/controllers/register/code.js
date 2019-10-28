@@ -47,7 +47,11 @@ function sucessScan(e){
                             alertDialog.show({title: error.error_message , message: L("codebar_invalide")});
                     }
                 }else {
-                    alertDialog.show(error);
+                    if (error.errorMessage) {
+                        alertDialog.show(error.errorMessage);
+                    }else {
+                        alertDialog.show(L("HTTP_DEFAULT_ERROR"));
+                    }
                 }
         });
 
@@ -71,7 +75,7 @@ function auth(code, successCallback, errorCallback){
             _.isFunction(successCallback) && successCallback(r);
         },
         (e,r)=>{
-            log.e(r, "auth error");
+            log.e(r, "auth error r");
             _.isFunction(errorCallback) && errorCallback(r);
         }
     );
