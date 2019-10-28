@@ -19,7 +19,7 @@ var publications = [],
     setup_refreshController();
 
     loadPage(curentPage, ()=>{
-            setTimeout(function(){
+        setTimeout(function(){
             $.progressIndicator.hide();
         }, 100);
 
@@ -49,6 +49,7 @@ function getDataByPage(pageNbr, successCallback, errorCallback){
     http.request({
         url: BASE_URL + "publications",
         fullResponse: true,
+        ignoreAlert: true,
         params: {page: pageNbr},
         method: "GET"
         },
@@ -68,9 +69,11 @@ function getDataByPage(pageNbr, successCallback, errorCallback){
         },
         (e)=>{
             log.e(e, "getPage "+pageNbr);
-            alertDialog.show({title: 'Error', message:L(e)},()=>{
-                _.isFunction( errorCallback ) && errorCallback();
-            });
+            setTimeout(function(){
+                alertDialog.show({title: 'Error', message:L(e)},()=>{
+                    _.isFunction( errorCallback ) && errorCallback();
+                });
+            }, 500);
         }
     );
 }

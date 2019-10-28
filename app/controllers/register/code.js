@@ -143,7 +143,7 @@ function cameraPermission(callback) {
                     _.isFunction(callback) && callback(true);
                 } else {
                     _.isFunction(callback) && callback(false);
-                    alert('No camera permission');
+                    openSetting(L("activate_camera_permission"));
                 }
             });
         }
@@ -152,6 +152,32 @@ function cameraPermission(callback) {
         _.isFunction(callback) && callback(true);
     }
 };
+
+function openAppSettings() {
+   if( OS_IOS ) {
+       Ti.Platform.openURL('app-settings:');
+   } else if( OS_ANDROID ) {
+       var intent = Ti.Android.createIntent( {
+           action: 'android.settings.APPLICATION_DETAILS_SETTINGS',
+           data: "package:" + Ti.App.id
+       } );
+       intent.addFlags( Ti.Android.FLAG_ACTIVITY_NEW_TASK );
+       Ti.Android.currentActivity.startActivity( intent );
+   }
+}
+
+function openSetting( message ) {
+   alertDialog.showDialog( {
+           message: message
+       }, [ L("settings"), L("cancel") ],
+       function( e ) {
+           if( e.index != 0 ) {
+               return;
+           }
+           openAppSettings();
+       }
+   );
+}
 
 function scanneCode(e){
   // scanner le code qr et envoyer au backend
