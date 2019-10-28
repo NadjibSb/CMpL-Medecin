@@ -97,7 +97,7 @@ function onDone(e){
     if (e.buttonId == "Done") {
         if (e.tfValue != "") {
             try {
-                var floatNumber = /((^[0-9]$)|(^[0-9]+(\.|\,)+[0-9]$))/;
+                var floatNumber = /((^[0-9]*$)|(^[0-9]+(\.|\,)+[0-9]+$))/;
                 var bcr = parseFloat( e.tfValue.replace(",", ".") );
                 if (floatNumber.test(e.tfValue) && bcr >=0 && bcr <=100) {
                     _.extend(args, {bcr_abl:bcr});

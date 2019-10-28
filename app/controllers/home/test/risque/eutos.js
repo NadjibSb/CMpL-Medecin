@@ -61,7 +61,7 @@ function checkEmptyFields(callback){
 
 function checkValidFields(callback){
     // verify rate
-    var floatNumber = /((^[0-9]$)|(^[0-9]+(\.|\,)+[0-9]$))/;
+    var floatNumber = /((^[0-9]*$)|(^[0-9]+(\.|\,)+[0-9]+$))/;
     try {
         var rate = parseFloat( $.tfRate.value.replace(",", ".") );
         if ( floatNumber.test($.tfRate.value) && rate>= 0 && rate <= 100) {

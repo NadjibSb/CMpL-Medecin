@@ -68,7 +68,7 @@ function checkEmptyFields(callback){
 
 function checkValidFields(callback){
     // verify age
-    var floatNumber = /((^[0-9]$)|(^[0-9]+(\.|\,)+[0-9]$))/;
+    var floatNumber = /((^[0-9]*$)|(^[0-9]+(\.|\,)+[0-9]+$))/;
     var age = parseFloat($.tfAge.value);
     if ( age>= 1 && age <= 150) {
         // verify rate
