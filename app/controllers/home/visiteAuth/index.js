@@ -48,6 +48,9 @@ function sucessScan(e){
                         case "invalidCode":
                             alertManager.show(L("codebar_invalide"));
                             break;
+                        case "notRegistered":
+                            alertManager.show({title: L("codebar_not_registered") , message: L("codebar_not_registered_msg")});
+                            break;
                         default:
                             alertManager.show({title: error.error_message , message: L("codebar_invalide")});
                             break;
