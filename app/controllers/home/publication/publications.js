@@ -19,10 +19,12 @@ var publications = [],
     setup_refreshController();
 
     loadPage(curentPage, ()=>{
-        setTimeout(function(){
-        $.progressIndicator.hide();
-    }, 100);
+            setTimeout(function(){
+            $.progressIndicator.hide();
+        }, 100);
 
+    }, ()=>{
+        $.progressIndicator.hide();
     });
 })();
 
@@ -30,7 +32,7 @@ var publications = [],
 
 // PRIVATE FUNCTIONS ------------------------------------------------------------------
 
-function loadPage(page, callback){
+function loadPage(page, sucessCallback, errorCallback ){
     getDataByPage(page, (newList)=>{
         if (newList && newList.length>0) {
             publications.push(...newList) ;
@@ -38,12 +40,12 @@ function loadPage(page, callback){
         }else {
             $.footer.visible = false;
         }
-        _.isFunction( callback ) && callback();
-    });
+        _.isFunction( sucessCallback ) && sucessCallback();
+    }, errorCallback);
 }
 
 
-function getDataByPage(pageNbr, successCallback){
+function getDataByPage(pageNbr, successCallback, errorCallback){
     http.request({
         url: BASE_URL + "publications",
         fullResponse: true,
@@ -59,13 +61,16 @@ function getDataByPage(pageNbr, successCallback){
 
             }catch (e) {
                 log.e( e, "json parse error " );
-                log.e( r, "response " );
-                alertDialog.show({title: 'Error', message:e});
+                alertDialog.show({title: 'Error', message:L("HTTP_DEFAULT_ERROR")},()=>{
+                    navigateUp();
+                });
             }
         },
         (e)=>{
             log.e(e, "getPage "+pageNbr);
-            alertDialog.show({title: 'Error', message:e});
+            alertDialog.show({title: 'Error', message:L(e)},()=>{
+                _.isFunction( errorCallback ) && errorCallback();
+            });
         }
     );
 }
@@ -97,6 +102,8 @@ function setup_refreshController(){
         publications = [];
         listToDisplay = [];
         loadPage(curentPage, ()=>{
+            control.endRefreshing();
+        }, ()=>{
             control.endRefreshing();
         });
     });
