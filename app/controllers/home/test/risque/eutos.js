@@ -61,13 +61,14 @@ function checkEmptyFields(callback){
 
 function checkValidFields(callback){
     // verify rate
+    var floatNumber = /((^[0-9]$)|(^[0-9]+(\.|\,)+[0-9]$))/;
     try {
         var rate = parseFloat( $.tfRate.value.replace(",", ".") );
-        if ( rate>= 0 && rate <= 100) {
+        if ( floatNumber.test($.tfRate.value) && rate>= 0 && rate <= 100) {
             // verify basophiles
             try {
                 var basophiles = parseFloat( $.tfBosiphiles.value.replace(",", ".") );
-                if (basophiles >=0 && basophiles <=100) {
+                if (floatNumber.test($.tfBosiphiles.value) && basophiles >=0 && basophiles <=100) {
                     _.isFunction( callback ) && callback({
                         rate: rate,
                         basophiles: basophiles

@@ -68,16 +68,17 @@ function checkEmptyFields(callback){
 
 function checkValidFields(callback){
     // verify age
+    var floatNumber = /((^[0-9]$)|(^[0-9]+(\.|\,)+[0-9]$))/;
     var age = parseFloat($.tfAge.value);
     if ( age>= 1 && age <= 150) {
         // verify rate
         try {
             var rate = parseFloat( $.tfRate.value.replace(",", ".") );
-            if (rate >=0 && rate <=100) {
+            if (floatNumber.test($.tfRate.value) && rate >=0 && rate <=100) {
                 // verify plaquette
                 try {
                     var plaquette = parseFloat( $.tfPlaquette.value.replace(",", ".") );
-                    if (plaquette >=0 && plaquette <=100) {
+                    if (floatNumber.test($.tfPlaquette.value) && plaquette >=0 && plaquette <=100) {
                         // verify sang
                         var sang = parseFloat($.tfSang.value);
                         if (sang>=0 && sang<=100) {

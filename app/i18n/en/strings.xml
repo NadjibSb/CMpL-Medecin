@@ -3,8 +3,8 @@
 	<!--string name="language_app">en</string-->
 
 	<!-- HTTP ERROR -->
-	<string name="HTTP_CLIENT_NETWORK_TIMEOUT">Merci de vérifier votre connexion internet.</string>
-	<string name="HTTP_CLIENT_NETWORK_OFFLINE">Merci de vérifier votre connexion internet.</string>
+	<string name="HTTP_CLIENT_NETWORK_TIMEOUT">Veuillez vérifier votre connexion internet.</string>
+	<string name="HTTP_CLIENT_NETWORK_OFFLINE">Veuillez vérifier votre connexion internet.</string>
 	<string name="HTTP_CLIENT_URL_NOT_FOUND">Une erreur s'est produite, merci de réessayer plus tard.</string>
 	<string name="HTTP_CLIENT_REQUEST_ERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>
 	<string name="HTTP_CLIENT_API_ERROR">Une erreur s'est produite, merci de réessayer plus tard.</string>

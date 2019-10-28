@@ -97,8 +97,9 @@ function onDone(e){
     if (e.buttonId == "Done") {
         if (e.tfValue != "") {
             try {
+                var floatNumber = /((^[0-9]$)|(^[0-9]+(\.|\,)+[0-9]$))/;
                 var bcr = parseFloat( e.tfValue.replace(",", ".") );
-                if (bcr >=0 && bcr <=100) {
+                if (floatNumber.test(e.tfValue) && bcr >=0 && bcr <=100) {
                     _.extend(args, {bcr_abl:bcr});
                     navManager.openWindow("home/test/monitoring/result", args);
                 }else {
