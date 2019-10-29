@@ -1,3 +1,4 @@
+var args = arguments[ 0 ] || {};
 
 _.extend($ , {
     sucess: sucess,
@@ -7,7 +8,17 @@ _.extend($ , {
 })
 
 hide();
+if (args.backgroundColor) {
+    $.vue.backgroundColor = args.backgroundColor;
+}
 /*
+(function constructor(){
+    hide();
+    if (args.backgroundColor) {
+        $.vue.backgroundColor = args.backgroundColor;
+    }
+})();
+
 setTimeout(()=>{
     sucess("eeeee");
 },3000);

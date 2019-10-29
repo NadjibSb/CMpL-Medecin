@@ -27,3 +27,7 @@
 '.container': {
     top: 0
 }
+
+'#progressIndicator': {
+    backgroundColor: 'transparent'
+}

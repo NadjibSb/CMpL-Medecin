@@ -134,22 +134,17 @@ barcode.addEventListener('success', sucessScan );
 
 //function
 function cameraPermission(callback) {
-    if (Alloy.Globals.isAndroid) {
-        if (Ti.Media.hasCameraPermissions()) {
-            _.isFunction(callback) && callback(true);
-        } else {
-            Ti.Media.requestCameraPermissions(function(e) {
-                if (e.success) {
-                    _.isFunction(callback) && callback(true);
-                } else {
-                    _.isFunction(callback) && callback(false);
-                    openSetting(L("activate_camera_permission"));
-                }
-            });
-        }
-    }
-    if (Alloy.Globals.isIOS) {
+    if (Ti.Media.hasCameraPermissions()) {
         _.isFunction(callback) && callback(true);
+    } else {
+        Ti.Media.requestCameraPermissions(function(e) {
+            if (e.success) {
+                _.isFunction(callback) && callback(true);
+            } else {
+                openSetting(L("activate_camera_permission"));
+                //_.isFunction(callback) && callback(false);
+            }
+        });
     }
 };
 
@@ -171,10 +166,9 @@ function openSetting( message ) {
            message: message
        }, [ L("settings"), L("cancel") ],
        function( e ) {
-           if( e.index != 0 ) {
-               return;
+           if( e.index == 0 ) {
+               openAppSettings();
            }
-           openAppSettings();
        }
    );
 }

@@ -2,7 +2,7 @@
 
 '#vue': {
     zIndex: 10,
-    backgroundColor: "#66DDDDDD",
+    backgroundColor: "#44000000",
     bubbleParent: false
 }
 
