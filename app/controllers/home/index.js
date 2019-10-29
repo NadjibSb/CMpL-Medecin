@@ -52,6 +52,7 @@ function syncronization(){
             httpManager.request({
                 url: BASE_URL + "medecins/sync",
                 fullResponse: true,
+                timeout: 15000,
                 params: {data: localData},
                 method: "POST"
             },
